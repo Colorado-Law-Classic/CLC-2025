@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Colorado Law Classic - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html" class="event-logo">Colorado Law Classic</a>
+                </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="event-details.html">Event Details</a></li>
+                    <li><a href="scholarship-impact.html">Scholarship Impact</a></li>
+                    <li><a href="sponsorship.html">Sponsorship</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html" class="nav-cta">Register</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content container">
+                <h1>The Colorado Law Classic: Teeing Off for Tomorrow's Legal Leaders.</h1>
+                <p>Join us for a premier golf experience dedicated to funding scholarships for students at the University of Colorado Boulder School of Law.</p>
+                <a href="register.html" class="cta-button primary-cta">Register to Play</a>
+                <a href="sponsorship.html" class="secondary-cta-link">Become a Sponsor</a>
+            </div>
+        </section>
+
+        <section class="mission-snippet section-padding">
+            <div class="container">
+                <h2 class="section-title">Golf with Purpose. Impact Through Scholarships.</h2>
+                <p class="section-intro">The Colorado Law Classic is more than just a day on the green; it's a commitment to fostering the next generation of legal talent. Every swing, every sponsorship, every contribution directly supports scholarships for deserving students at the University of Colorado Boulder School of Law, helping to alleviate financial burdens and empower bright futures.</p>
+                </div>
+        </section>
+
+        <section class="event-highlights section-padding light-bg">
+            <div class="container">
+                <h2 class="section-title">Experience the Classic</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <img src="https://placehold.co/400x250/0A2240/F8F7F2?text=Premier+Course" alt="Placeholder for Premier Golf Course" class="highlight-image">
+                        <h3>The Premier Course</h3>
+                        <p>Enjoy a challenging and beautiful round at one of Colorado's finest golf courses, selected for its exceptional playability and stunning scenery.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <img src="https://placehold.co/400x250/B08D57/0A2240?text=Support+Future+Lawyers" alt="Placeholder for Supporting Future Lawyers" class="highlight-image">
+                        <h3>Support Future Lawyers</h3>
+                        <p>Your participation directly contributes to vital scholarship funds, making a tangible difference in the lives of aspiring CU Boulder Law students.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <img src="https://placehold.co/400x250/0A2240/F8F7F2?text=Networking+&+Community" alt="Placeholder for Networking and Community" class="highlight-image">
+                        <h3>Networking & Community</h3>
+                        <p>Connect with legal professionals, community leaders, and fellow supporters of CU Law in a relaxed and engaging atmosphere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sponsor-spotlight section-padding">
+            <div class="container">
+                <h2 class="section-title">Our Generous Sponsors</h2>
+                <p class="section-intro">We are incredibly grateful for the support of our sponsors who share our commitment to legal education.</p>
+                <div class="sponsor-logos">
+                    <img src="https://placehold.co/150x80/D3D3D3/333333?text=Sponsor+Logo+1" alt="Sponsor 1 Logo">
+                    <img src="https://placehold.co/150x80/D3D3D3/333333?text=Sponsor+Logo+2" alt="Sponsor 2 Logo">
+                    <img src="https://placehold.co/150x80/D3D3D3/333333?text=Sponsor+Logo+3" alt="Sponsor 3 Logo">
+                    <img src="https://placehold.co/150x80/D3D3D3/333333?text=Sponsor+Logo+4" alt="Sponsor 4 Logo">
+                </div>
+                <div class="text-center" style="margin-top: 2rem;">
+                    <a href="sponsorship.html" class="cta-button">View Sponsorship Opportunities</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="impact-teaser section-padding light-bg">
+            <div class="container text-center">
+                <h2 class="section-title">Making a Difference, One Scholarship at a Time.</h2>
+                <p class="section-intro">Discover how the Colorado Law Classic contributes to creating opportunities and shaping the future of the legal profession.</p>
+                <a href="scholarship-impact.html" class="cta-button primary-cta">Learn About Our Impact</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="event-logo">Colorado Law Classic</a>
+                    <p class="footer-mission">Supporting scholarships for students at the University of Colorado Boulder School of Law.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="event-details.html">Event Details</a></li>
+                        <li><a href="sponsorship.html">Sponsorship</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>Email: <a href="mailto:info@coloradolawclassic.org">info@coloradolawclassic.org</a></p>
+                    <!-- <div class="social-links">
+                        <a href="#" aria-label="Facebook"><img src="images/facebook-icon.svg" alt="Facebook"></a>
+                        <a href="#" aria-label="LinkedIn"><img src="images/linkedin-icon.svg" alt="LinkedIn"></a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer">[Your Organization Name/Colorado Law Classic] is an independent event dedicated to supporting scholarships for students at the University of Colorado Boulder School of Law. We are not an official affiliate of the University of Colorado.</p>
+                <p>&copy; <span id="currentYear"></span> Colorado Law Classic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Basic mobile navigation toggle
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        navToggle.addEventListener('click', () => {
+            const isExpanded = mainNav.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Colorado Law Classic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html" class="event-logo">Colorado Law Classic</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="event-details.html">Event Details</a></li>
+                    <li><a href="scholarship-impact.html">Scholarship Impact</a></li>
+                    <li><a href="sponsorship.html">Sponsorship</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html" class="nav-cta">Register</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero short-hero">
+            <div class="container">
+                <h1>About The Colorado Law Classic</h1>
+            </div>
+        </section>
+
+        <section class="content-section section-padding">
+            <div class="container content-container">
+                <h2 class="section-title-minor">Our Story</h2>
+                <p>The Colorado Law Classic was founded in [Year, if applicable, or 'with a vision to...'] by a group of passionate individuals committed to supporting legal education and fostering community. Recognizing the financial challenges many aspiring lawyers face, we established this premier golf tournament as a means to directly contribute to scholarship funds for students at the University of Colorado Boulder School of Law.</p>
+                <p>Each year, we strive to create an exceptional event that not only offers a fantastic day of golf and networking but also serves a profound purpose: to invest in the brilliant minds that will shape the future of law.</p>
+
+                <h2 class="section-title-minor">Our Mission</h2>
+                <p>The mission of the Colorado Law Classic is to raise significant funds to provide scholarships for students attending the University of Colorado Boulder School of Law. We aim to alleviate the financial burden of legal education, enabling talented and deserving students to pursue their academic and professional goals without overwhelming debt. Through our annual golf tournament and the generous support of our sponsors and participants, we champion access to legal education and support the development of future leaders in the legal profession and beyond.</p>
+                
+                <h2 class="section-title-minor">Our Values</h2>
+                <ul>
+                    <li><strong>Impact:</strong> Making a tangible difference in the lives of CU Boulder Law students.</li>
+                    <li><strong>Community:</strong> Fostering connections among legal professionals, alumni, and supporters.</li>
+                    <li><strong>Integrity:</strong> Operating with transparency and a clear focus on our charitable goals.</li>
+                    <li><strong>Excellence:</strong> Delivering a high-quality, enjoyable event experience for all involved.</li>
+                </ul>
+
+                <!-- 
+                <h2 class="section-title-minor">Meet the Team</h2>
+                <p>The Colorado Law Classic is organized by a dedicated volunteer committee...</p>
+                <div class="team-grid">
+                    <div class="team-member-card">
+                        <img src="https://placehold.co/150x150/D3D3D3/333333?text=Team+Member" alt="Team Member Placeholder">
+                        <h3>[Name]</h3>
+                        <p>[Role/Title]</p>
+                    </div>
+                </div> 
+                -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="event-logo">Colorado Law Classic</a>
+                    <p class="footer-mission">Supporting scholarships for students at the University of Colorado Boulder School of Law.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="event-details.html">Event Details</a></li>
+                        <li><a href="sponsorship.html">Sponsorship</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>Email: <a href="mailto:info@coloradolawclassic.org">info@coloradolawclassic.org</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer">[Your Organization Name/Colorado Law Classic] is an independent event dedicated to supporting scholarships for students at the University of Colorado Boulder School of Law. We are not an official affiliate of the University of Colorado.</p>
+                <p>&copy; <span id="currentYearAbout"></span> Colorado Law Classic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const navToggleAbout = document.querySelector('.mobile-nav-toggle');
+        const mainNavAbout = document.querySelector('.main-nav');
+        navToggleAbout.addEventListener('click', () => {
+            const isExpanded = mainNavAbout.classList.toggle('active');
+            navToggleAbout.setAttribute('aria-expanded', isExpanded);
+        });
+        document.getElementById('currentYearAbout').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Colorado Law Classic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html" class="event-logo">Colorado Law Classic</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="event-details.html" class="active">Event Details</a></li>
+                    <li><a href="scholarship-impact.html">Scholarship Impact</a></li>
+                    <li><a href="sponsorship.html">Sponsorship</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html" class="nav-cta">Register</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero short-hero">
+            <div class="container">
+                <h1>Colorado Law Classic: Event Information</h1>
+            </div>
+        </section>
+
+        <section class="content-section section-padding">
+            <div class="container content-container">
+                <div class="key-info-block">
+                    <div class="info-item">
+                        <img src="https://placehold.co/60x60/B08D57/FFFFFF?text=📅" alt="Calendar Icon" class="info-icon">
+                        <div>
+                            <h3>Date</h3>
+                            <p>[Insert Event Date - e.g., Friday, September 12, 2025]</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <img src="https://placehold.co/60x60/B08D57/FFFFFF?text=🕒" alt="Clock Icon" class="info-icon">
+                        <div>
+                            <h3>Time</h3>
+                            <p>[Insert Event Time - e.g., Registration: 8:00 AM | Shotgun Start: 9:30 AM]</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <img src="https://placehold.co/60x60/B08D57/FFFFFF?text=📍" alt="Location Pin Icon" class="info-icon">
+                        <div>
+                            <h3>Venue</h3>
+                            <p>[Insert Golf Course Name and Address]</p>
+                            <p><a href="[Link to Google Maps for Venue]" target="_blank" rel="noopener noreferrer">View Map & Directions</a></p>
+                        </div>
+                    </div>
+                     <div class="info-item">
+                        <img src="https://placehold.co/60x60/B08D57/FFFFFF?text=💲" alt="Price Icon" class="info-icon">
+                        <div>
+                            <h3>Price</h3>
+                            <p>[e.g., $XXX per Golfer | $XXXX per Foursome]</p>
+                            <p><a href="register.html">Register Here</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-title-minor">Schedule of Events</h2>
+                <ul class="schedule-list">
+                    <li><strong>[Time - e.g., 8:00 AM - 9:15 AM]:</strong> Registration & Warm-Up (Driving Range & Putting Green Open)</li>
+                    <li><strong>[Time - e.g., 9:15 AM]:</strong> Welcome Remarks & Rules Overview</li>
+                    <li><strong>[Time - e.g., 9:30 AM]:</strong> Shotgun Start</li>
+                    <li><strong>[Time - e.g., 2:30 PM - 4:00 PM (approx.)]:</strong> Post-Tournament Awards Luncheon & Reception</li>
+                    </ul>
+
+                <h2 class="section-title-minor">Tournament Format</h2>
+                <p>[Describe format - e.g., Four-Person Scramble. Each player hits a tee shot. The team selects the best shot, and all four players play their next shot from that spot. This process continues until the ball is holed. Mulligans and strings may be available for purchase.]</p>
+
+                <h2 class="section-title-minor">What's Included</h2>
+                <ul>
+                    <li>Green Fees & Golf Cart</li>
+                    <li>Access to Driving Range & Putting Green</li>
+                    <li>Participant Welcome Gift Bag</li>
+                    <li>On-Course Contests & Activities</li>
+                    <li>Complimentary Beverages On-Course (Specify if applicable)</li>
+                    <li>Post-Tournament Awards Luncheon & Reception</li>
+                    <li>Opportunity to support a great cause!</li>
+                </ul>
+
+                <h2 class="section-title-minor">Contests & Prizes</h2>
+                <p>Get ready for some friendly competition! Prizes will be awarded for:</p>
+                <ul>
+                    <li>Top Finishing Teams (e.g., 1st, 2nd, 3rd Place)</li>
+                    <li>Longest Drive (Men's & Women's)</li>
+                    <li>Closest to the Pin (on designated par-3 holes)</li>
+                    <li>[Other contests - e.g., Hole-in-One Contest, Putting Contest]</li>
+                </ul>
+                
+                <h2 class="section-title-minor">Course Information</h2>
+                <p>We are pleased to host this year's Colorado Law Classic at the prestigious [Insert Golf Course Name]. Known for its [mention key features, e.g., challenging layout, beautiful views, excellent conditions].</p>
+                <p>For more details about the course, please visit their website: <a href="[Link to Golf Course Website]" target="_blank" rel="noopener noreferrer">[Golf Course Website URL]</a></p>
+                <p>Dress Code: [Specify dress code - e.g., Standard golf attire required. Collared shirts, no denim.]</p>
+                <div class="text-center section-padding">
+                    <a href="register.html" class="cta-button primary-cta">Register Your Team Today!</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="event-logo">Colorado Law Classic</a>
+                    <p class="footer-mission">Supporting scholarships for students at the University of Colorado Boulder School of Law.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="event-details.html">Event Details</a></li>
+                        <li><a href="sponsorship.html">Sponsorship</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>Email: <a href="mailto:info@coloradolawclassic.org">info@coloradolawclassic.org</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer">[Your Organization Name/Colorado Law Classic] is an independent event dedicated to supporting scholarships for students at the University of Colorado Boulder School of Law. We are not an official affiliate of the University of Colorado.</p>
+                <p>&copy; <span id="currentYearEvent"></span> Colorado Law Classic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const navToggleEvent = document.querySelector('.mobile-nav-toggle');
+        const mainNavEvent = document.querySelector('.main-nav');
+        navToggleEvent.addEventListener('click', () => {
+            const isExpanded = mainNavEvent.classList.toggle('active');
+            navToggleEvent.setAttribute('aria-expanded', isExpanded);
+        });
+        document.getElementById('currentYearEvent').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Impact - Colorado Law Classic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html" class="event-logo">Colorado Law Classic</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="event-details.html">Event Details</a></li>
+                    <li><a href="scholarship-impact.html" class="active">Scholarship Impact</a></li>
+                    <li><a href="sponsorship.html">Sponsorship</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html" class="nav-cta">Register</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero short-hero">
+            <div class="container">
+                <h1>Investing in the Future of Law: Our Scholarship Impact</h1>
+            </div>
+        </section>
+
+        <section class="content-section section-padding">
+            <div class="container content-container">
+                <h2 class="section-title-minor">The Importance of Scholarships</h2>
+                <p>A legal education at a prestigious institution like the University of Colorado Boulder School of Law provides unparalleled opportunities. However, the cost of this education can be a significant barrier for many talented and aspiring students. Scholarships play a crucial role in:</p>
+                <ul>
+                    <li><strong>Enhancing Access:</strong> Ensuring that financial constraints do not prevent qualified students from pursuing their legal ambitions.</li>
+                    <li><strong>Reducing Debt Burden:</strong> Allowing graduates to pursue a wider range of career paths, including vital public interest law, without the pressure of overwhelming student loan debt.</li>
+                    <li><strong>Fostering Diversity:</strong> Helping to create a more diverse and representative legal profession by supporting students from all backgrounds.</li>
+                    <li><strong>Attracting Top Talent:</strong> Enabling CU Boulder Law to attract and retain the brightest minds from Colorado and across the nation.</li>
+                </ul>
+
+                <div class="impact-visual section-padding">
+                    <img src="https://placehold.co/800x400/0A2240/F8F7F2?text=Scholarship+Impact+Visual" alt="Visual representing scholarship impact" style="width:100%; max-width:600px; margin:auto; display:block; border-radius: 8px;">
+                </div>
+
+                <h2 class="section-title-minor">How The Colorado Law Classic Contributes</h2>
+                <p>The Colorado Law Classic is driven by a singular focus: to generate substantial financial support for scholarships at CU Boulder Law. All net proceeds from our annual golf tournament, including sponsorships, registration fees, and direct donations, are directed towards [Specify how funds are directed, e.g., 'a dedicated scholarship fund administered by the University of Colorado Foundation for the benefit of CU Boulder Law students' or 'scholarship endowments at CU Boulder Law'].</p>
+                <p>Since our inception [or 'Through this event'], we aim to [mention goals, e.g., 'provide multiple scholarships annually,' 'support students with demonstrated financial need and academic merit,' 'grow our contribution each year'].</p>
+                
+                <blockquote class="impact-quote">
+                    <p>"Supporting scholarships is an investment in the individuals who will uphold justice, drive innovation, and lead our communities. We are proud to facilitate this investment through the Colorado Law Classic."</p>
+                    <footer>- The Colorado Law Classic Organizing Committee</footer>
+                </blockquote>
+
+                <h2 class="section-title-minor">The Ripple Effect</h2>
+                <p>The impact of a scholarship extends far beyond the individual recipient. It enriches the law school community, strengthens the legal profession, and ultimately benefits society as a whole. By participating in or sponsoring the Colorado Law Classic, you become part of this positive ripple effect.</p>
+                
+                <div class="text-center section-padding">
+                    <a href="donate.html" class="cta-button primary-cta">Support Our Mission: Donate Today</a>
+                    <a href="register.html" class="cta-button" style="margin-left:10px;">Join Us at the Tournament</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="event-logo">Colorado Law Classic</a>
+                    <p class="footer-mission">Supporting scholarships for students at the University of Colorado Boulder School of Law.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="event-details.html">Event Details</a></li>
+                        <li><a href="sponsorship.html">Sponsorship</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>Email: <a href="mailto:info@coloradolawclassic.org">info@coloradolawclassic.org</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer">[Your Organization Name/Colorado Law Classic] is an independent event dedicated to supporting scholarships for students at the University of Colorado Boulder School of Law. We are not an official affiliate of the University of Colorado.</p>
+                <p>&copy; <span id="currentYearImpact"></span> Colorado Law Classic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const navToggleImpact = document.querySelector('.mobile-nav-toggle');
+        const mainNavImpact = document.querySelector('.main-nav');
+        navToggleImpact.addEventListener('click', () => {
+            const isExpanded = mainNavImpact.classList.toggle('active');
+            navToggleImpact.setAttribute('aria-expanded', isExpanded);
+        });
+        document.getElementById('currentYearImpact').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsorship - Colorado Law Classic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html" class="event-logo">Colorado Law Classic</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="event-details.html">Event Details</a></li>
+                    <li><a href="scholarship-impact.html">Scholarship Impact</a></li>
+                    <li><a href="sponsorship.html" class="active">Sponsorship</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html" class="nav-cta">Register</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero short-hero">
+            <div class="container">
+                <h1>Become a Sponsor: Partner with The Colorado Law Classic</h1>
+            </div>
+        </section>
+
+        <section class="content-section section-padding">
+            <div class="container content-container">
+                <p class="section-intro text-center">Align your organization with a prestigious event that makes a real difference. Sponsoring the Colorado Law Classic offers exceptional visibility, networking opportunities, and the chance to invest in the future of legal talent emerging from the University of Colorado Boulder School of Law.</p>
+
+                <h2 class="section-title-minor">Sponsorship Levels & Benefits</h2>
+                <div class="sponsorship-levels">
+                    <div class="sponsorship-card">
+                        <h3>Platinum Sponsor</h3>
+                        <p class="sponsor-price">[e.g., $10,000]</p>
+                        <ul>
+                            <li>Premier logo recognition on all event materials & website</li>
+                            <li>Speaking opportunity at awards luncheon (brief remarks)</li>
+                            <li>Two complimentary foursomes (8 golfers)</li>
+                            <li>Prominent signage at registration and key course locations</li>
+                            <li>Full-page ad in event program (if applicable)</li>
+                            <li>Recognition in press releases and social media</li>
+                            <li>Exclusive hole sponsorship with company presence</li>
+                        </ul>
+                        <a href="contact.html?level=platinum" class="cta-button primary-cta">Become a Platinum Sponsor</a>
+                    </div>
+
+                    <div class="sponsorship-card">
+                        <h3>Gold Sponsor</h3>
+                        <p class="sponsor-price">[e.g., $5,000]</p>
+                        <ul>
+                            <li>Prominent logo recognition on event materials & website</li>
+                            <li>One complimentary foursome (4 golfers)</li>
+                            <li>Signage at a prominent course location</li>
+                            <li>Half-page ad in event program (if applicable)</li>
+                            <li>Recognition in social media</li>
+                            <li>Shared hole sponsorship</li>
+                        </ul>
+                        <a href="contact.html?level=gold" class="cta-button primary-cta">Become a Gold Sponsor</a>
+                    </div>
+
+                    <div class="sponsorship-card">
+                        <h3>Silver Sponsor</h3>
+                        <p class="sponsor-price">[e.g., $2,500]</p>
+                        <ul>
+                            <li>Logo recognition on event materials & website</li>
+                            <li>Two complimentary golfer registrations</li>
+                            <li>Shared signage at a course location</li>
+                            <li>Quarter-page ad in event program (if applicable)</li>
+                            <li>Recognition in social media</li>
+                        </ul>
+                        <a href="contact.html?level=silver" class="cta-button primary-cta">Become a Silver Sponsor</a>
+                    </div>
+
+                    <div class="sponsorship-card">
+                        <h3>Hole Sponsor</h3>
+                        <p class="sponsor-price">[e.g., $1,000]</p>
+                        <ul>
+                            <li>Company name/logo on signage at one tee box</li>
+                            <li>Recognition on website</li>
+                            <li>Option to have a presence at your sponsored hole (e.g., table with giveaways)</li>
+                        </ul>
+                        <a href="contact.html?level=hole" class="cta-button primary-cta">Become a Hole Sponsor</a>
+                    </div>
+                </div>
+
+                <h2 class="section-title-minor">Custom Sponsorship Opportunities</h2>
+                <p>We are happy to discuss custom sponsorship packages tailored to your organization's specific marketing goals and budget. Opportunities may include sponsoring specific contests (e.g., Longest Drive, Closest to Pin), the awards luncheon, beverage carts, or participant gift bags.</p>
+                <p>For more information on sponsorship or to discuss a custom package, please contact us.</p>
+                <div class="text-center section-padding">
+                    <a href="contact.html" class="cta-button">Inquire About Sponsorship</a>
+                </div>
+
+                <h2 class="section-title-minor">Our Current Sponsors</h2>
+                <p class="text-center">Thank you to the organizations already committed to supporting the Colorado Law Classic!</p>
+                <div class="sponsor-logos section-padding">
+                    <img src="https://placehold.co/150x80/D3D3D3/333333?text=Current+Sponsor+A" alt="Current Sponsor A">
+                    <img src="https://placehold.co/150x80/D3D3D3/333333?text=Current+Sponsor+B" alt="Current Sponsor B">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="event-logo">Colorado Law Classic</a>
+                    <p class="footer-mission">Supporting scholarships for students at the University of Colorado Boulder School of Law.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="event-details.html">Event Details</a></li>
+                        <li><a href="sponsorship.html">Sponsorship</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>Email: <a href="mailto:info@coloradolawclassic.org">info@coloradolawclassic.org</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer">[Your Organization Name/Colorado Law Classic] is an independent event dedicated to supporting scholarships for students at the University of Colorado Boulder School of Law. We are not an official affiliate of the University of Colorado.</p>
+                <p>&copy; <span id="currentYearSponsor"></span> Colorado Law Classic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const navToggleSponsor = document.querySelector('.mobile-nav-toggle');
+        const mainNavSponsor = document.querySelector('.main-nav');
+        navToggleSponsor.addEventListener('click', () => {
+            const isExpanded = mainNavSponsor.classList.toggle('active');
+            navToggleSponsor.setAttribute('aria-expanded', isExpanded);
+        });
+        document.getElementById('currentYearSponsor').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Colorado Law Classic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html" class="event-logo">Colorado Law Classic</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="event-details.html">Event Details</a></li>
+                    <li><a href="scholarship-impact.html">Scholarship Impact</a></li>
+                    <li><a href="sponsorship.html">Sponsorship</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html" class="nav-cta">Register</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero short-hero">
+            <div class="container">
+                <h1>Colorado Law Classic Gallery</h1>
+            </div>
+        </section>
+
+        <section class="content-section section-padding">
+            <div class="container">
+                <p class="section-intro text-center">Relive the moments from past Colorado Law Classic tournaments. We're proud to showcase the camaraderie, competition, and community spirit that make this event special.</p>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <a href="https://placehold.co/800x600/0A2240/F8F7F2?text=Event+Photo+1" data-lightbox="clc-gallery" data-title="Description of Photo 1">
+                            <img src="https://placehold.co/400x300/0A2240/F8F7F2?text=Event+Photo+1" alt="Event Photo 1">
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://placehold.co/800x600/B08D57/FFFFFF?text=Event+Photo+2" data-lightbox="clc-gallery" data-title="Description of Photo 2">
+                            <img src="https://placehold.co/400x300/B08D57/FFFFFF?text=Event+Photo+2" alt="Event Photo 2">
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://placehold.co/800x600/0A2240/F8F7F2?text=Event+Photo+3" data-lightbox="clc-gallery" data-title="Description of Photo 3">
+                             <img src="https://placehold.co/400x300/0A2240/F8F7F2?text=Event+Photo+3" alt="Event Photo 3">
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://placehold.co/800x600/B08D57/FFFFFF?text=Event+Photo+4" data-lightbox="clc-gallery" data-title="Description of Photo 4">
+                            <img src="https://placehold.co/400x300/B08D57/FFFFFF?text=Event+Photo+4" alt="Event Photo 4">
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://placehold.co/800x600/0A2240/F8F7F2?text=Event+Photo+5" data-lightbox="clc-gallery" data-title="Description of Photo 5">
+                            <img src="https://placehold.co/400x300/0A2240/F8F7F2?text=Event+Photo+5" alt="Event Photo 5">
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://placehold.co/800x600/B08D57/FFFFFF?text=Event+Photo+6" data-lightbox="clc-gallery" data-title="Description of Photo 6">
+                            <img src="https://placehold.co/400x300/B08D57/FFFFFF?text=Event+Photo+6" alt="Event Photo 6">
+                        </a>
+                    </div>
+                    </div>
+                <p class="text-center section-padding">Have photos from a past event you'd like to share? <a href="contact.html">Contact us!</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="event-logo">Colorado Law Classic</a>
+                    <p class="footer-mission">Supporting scholarships for students at the University of Colorado Boulder School of Law.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="event-details.html">Event Details</a></li>
+                        <li><a href="sponsorship.html">Sponsorship</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>Email: <a href="mailto:info@coloradolawclassic.org">info@coloradolawclassic.org</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer">[Your Organization Name/Colorado Law Classic] is an independent event dedicated to supporting scholarships for students at the University of Colorado Boulder School of Law. We are not an official affiliate of the University of Colorado.</p>
+                <p>&copy; <span id="currentYearGallery"></span> Colorado Law Classic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <style>
+        .lightbox { display: none; position: fixed; z-index: 999; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); text-align: center; }
+        .lightbox img { max-width: 90%; max-height: 80%; margin-top: 5%; border: 3px solid white; }
+        .lightbox .close-lightbox { color: white; font-size: 30px; position: absolute; top: 15px; right: 35px; text-decoration: none; }
+        .lightbox .lightbox-caption { color: #ccc; padding: 10px 0; font-size: 16px; }
+    </style>
+    <div id="imageLightbox" class="lightbox">
+        <a href="#" class="close-lightbox">&times;</a>
+        <img id="lightboxImage" src="#" alt="Lightbox Image">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+    <script>
+        const navToggleGallery = document.querySelector('.mobile-nav-toggle');
+        const mainNavGallery = document.querySelector('.main-nav');
+        navToggleGallery.addEventListener('click', () => {
+            const isExpanded = mainNavGallery.classList.toggle('active');
+            navToggleGallery.setAttribute('aria-expanded', isExpanded);
+        });
+        document.getElementById('currentYearGallery').textContent = new Date().getFullYear();
+
+        // Simple Lightbox functionality
+        const galleryLinks = document.querySelectorAll('.gallery-item a');
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const closeLightbox = document.querySelector('.close-lightbox');
+
+        galleryLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                lightboxImage.src = this.href;
+                lightboxCaption.textContent = this.dataset.title || '';
+                lightbox.style.display = 'block';
+            });
+        });
+        function closeLight() { lightbox.style.display = 'none';}
+        closeLightbox.addEventListener('click', closeLight);
+        lightbox.addEventListener('click', function(e) { if (e.target === lightbox) { closeLight(); }});
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Colorado Law Classic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html" class="event-logo">Colorado Law Classic</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="event-details.html">Event Details</a></li>
+                    <li><a href="scholarship-impact.html">Scholarship Impact</a></li>
+                    <li><a href="sponsorship.html">Sponsorship</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="register.html" class="nav-cta">Register</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero short-hero">
+            <div class="container">
+                <h1>Get In Touch</h1>
+            </div>
+        </section>
+
+        <section class="content-section section-padding">
+            <div class="container content-container contact-page-layout">
+                <div class="contact-info">
+                    <h2 class="section-title-minor">Contact Information</h2>
+                    <p>We'd love to hear from you! Whether you have questions about the event, sponsorship opportunities, or how to get involved, please don't hesitate to reach out.</p>
+                    <p><strong>Email:</strong> <a href="mailto:info@coloradolawclassic.org">info@coloradolawclassic.org</a></p>
+                    <p><strong>Mailing Address (if applicable):</strong></p>
+                    <p>[Your Organization Name/Colorado Law Classic]<br>[Street Address]<br>[City, State, Zip Code]</p>
+                    
+                    <!-- 
+                    <h3 style="margin-top: 2rem;">Follow Us:</h3>
+                    <div class="social-links-contact">
+                        <a href="#" aria-label="Facebook"><img src="images/facebook-icon.svg" alt="Facebook"> Facebook</a><br>
+                        <a href="#" aria-label="LinkedIn"><img src="images/linkedin-icon.svg" alt="LinkedIn"> LinkedIn</a>
+                    </div>
+                    -->
+                </div>
+                <div class="contact-form-container">
+                    <h2 class="section-title-minor">Send Us a Message</h2>
+                    <form id="contactForm" class="contact-form" action="[YOUR_FORM_SUBMISSION_ENDPOINT_OR_MAILTO]" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button primary-cta">Send Message</button>
+                        <p id="formStatus" style="margin-top:1rem;"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="event-logo">Colorado Law Classic</a>
+                    <p class="footer-mission">Supporting scholarships for students at the University of Colorado Boulder School of Law.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="event-details.html">Event Details</a></li>
+                        <li><a href="sponsorship.html">Sponsorship</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>Email: <a href="mailto:info@coloradolawclassic.org">info@coloradolawclassic.org</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer">[Your Organization Name/Colorado Law Classic] is an independent event dedicated to supporting scholarships for students at the University of Colorado Boulder School of Law. We are not an official affiliate of the University of Colorado.</p>
+                <p>&copy; <span id="currentYearContact"></span> Colorado Law Classic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const navToggleContact = document.querySelector('.mobile-nav-toggle');
+        const mainNavContact = document.querySelector('.main-nav');
+        navToggleContact.addEventListener('click', () => {
+            const isExpanded = mainNavContact.classList.toggle('active');
+            navToggleContact.setAttribute('aria-expanded', isExpanded);
+        });
+        document.getElementById('currentYearContact').textContent = new Date().getFullYear();
+
+        // Basic form submission handling (example for Formspree or similar)
+        // You'll need to replace YOUR_FORM_SUBMISSION_ENDPOINT with your actual endpoint.
+        // For a simple mailto, the form action handles it, but no JS confirmation is easy.
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        if (contactForm && contactForm.action !== "mailto:info@coloradolawclassic.org") { // Check if it's not a mailto link
+            contactForm.addEventListener('submit', async function(event) {
+                event.preventDefault();
+                const formData = new FormData(contactForm);
+                const action = contactForm.action;
+                
+                formStatus.textContent = 'Sending...';
+                formStatus.style.color = '#333';
+
+                try {
+                    const response = await fetch(action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        formStatus.textContent = 'Thanks for your message! We will get back to you soon.';
+                        formStatus.style.color = 'green';
+                        contactForm.reset();
+                    } else {
+                        const data = await response.json();
+                        if (Object.hasOwn(data, 'errors')) {
+                            formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            formStatus.textContent = 'Oops! There was a problem submitting your form. Please try again or email us directly.';
+                        }
+                        formStatus.style.color = 'red';
+                    }
+                } catch (error) {
+                    formStatus.textContent = 'Oops! There was a problem submitting your form. Please try again or email us directly.';
+                    formStatus.style.color = 'red';
+                }
+            });
+        } else if (contactForm) {
+            // If it's a mailto link, provide a simple message.
+             contactForm.addEventListener('submit', function(event) {
+                formStatus.textContent = 'Please complete sending your message via your email client.';
+                formStatus.style.color = '#333';
+             });
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Colorado Law Classic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html" class="event-logo">Colorado Law Classic</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="event-details.html">Event Details</a></li>
+                    <li><a href="scholarship-impact.html">Scholarship Impact</a></li>
+                    <li><a href="sponsorship.html">Sponsorship</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html" class="nav-cta active">Register</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero short-hero">
+            <div class="container">
+                <h1>Register for The Colorado Law Classic</h1>
+            </div>
+        </section>
+
+        <section class="content-section section-padding">
+            <div class="container content-container">
+                <p class="section-intro text-center">Secure your spot at the Colorado Law Classic! Your participation directly contributes to scholarship funds for students at the University of Colorado Boulder School of Law. We look forward to welcoming you for a memorable day of golf for a great cause.</p>
+
+                <div class="registration-options">
+                    <div class="registration-card">
+                        <h3>Individual Golfer</h3>
+                        <p class="registration-price">[e.g., $250]</p>
+                        <ul>
+                            <li>One spot in the tournament</li>
+                            <li>Green fees & golf cart</li>
+                            <li>Participant welcome gift</li>
+                            <li>Awards luncheon & reception</li>
+                        </ul>
+                        <a href="[LINK_TO_YOUR_REGISTRATION_PLATFORM_INDIVIDUAL]" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">Register as Individual</a>
+                    </div>
+
+                    <div class="registration-card">
+                        <h3>Foursome Package</h3>
+                        <p class="registration-price">[e.g., $900 - Save $100!]</p>
+                        <ul>
+                            <li>Four spots in the tournament (full team)</li>
+                            <li>Green fees & golf carts for four</li>
+                            <li>Participant welcome gifts for four</li>
+                            <li>Awards luncheon & reception for four</li>
+                            <li>Option to include company/team name on cart signage</li>
+                        </ul>
+                        <a href="[LINK_TO_YOUR_REGISTRATION_PLATFORM_FOURSOME]" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">Register a Foursome</a>
+                    </div>
+                    
+                    <div class="registration-card">
+                        <h3>Luncheon Only Ticket</h3>
+                        <p class="registration-price">[e.g., $75]</p>
+                        <ul>
+                            <li>Access to the post-tournament awards luncheon & reception</li>
+                            <li>Networking opportunities</li>
+                            <li>Support the cause even if you don't golf!</li>
+                        </ul>
+                        <a href="[LINK_TO_YOUR_REGISTRATION_PLATFORM_LUNCHEON]" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">Purchase Luncheon Ticket</a>
+                    </div>
+                </div>
+
+                <div class="registration-info section-padding">
+                    <h2 class="section-title-minor">Registration Details</h2>
+                    <p><strong>Registration Deadline:</strong> [Insert Registration Deadline Date]</p>
+                    <p><strong>Payment:</strong> All registrations must be paid in full prior to the event. We accept [List payment methods - e.g., Visa, MasterCard, Amex, Check].</p>
+                    <p><strong>Cancellation Policy:</strong> [Insert Cancellation Policy - e.g., Cancellations received by [Date] will receive a full refund. No refunds will be issued after this date, but registrations are transferable.]</p>
+                    <p><strong>Questions?</strong> If you have any questions regarding registration, please <a href="contact.html">contact us</a>.</p>
+                    <p class="important-note">Space is limited, so register early to guarantee your participation!</p>
+                </div>
+                 <p class="text-center section-intro"><strong>Important:</strong> Please replace "[LINK_TO_YOUR_REGISTRATION_PLATFORM_...]" with the actual URL of your chosen online registration and payment processing service (e.g., Eventbrite, Golf Genius, or a custom payment page).</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="event-logo">Colorado Law Classic</a>
+                    <p class="footer-mission">Supporting scholarships for students at the University of Colorado Boulder School of Law.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="event-details.html">Event Details</a></li>
+                        <li><a href="sponsorship.html">Sponsorship</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>Email: <a href="mailto:info@coloradolawclassic.org">info@coloradolawclassic.org</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer">[Your Organization Name/Colorado Law Classic] is an independent event dedicated to supporting scholarships for students at the University of Colorado Boulder School of Law. We are not an official affiliate of the University of Colorado.</p>
+                <p>&copy; <span id="currentYearRegister"></span> Colorado Law Classic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const navToggleRegister = document.querySelector('.mobile-nav-toggle');
+        const mainNavRegister = document.querySelector('.main-nav');
+        navToggleRegister.addEventListener('click', () => {
+            const isExpanded = mainNavRegister.classList.toggle('active');
+            navToggleRegister.setAttribute('aria-expanded', isExpanded);
+        });
+        document.getElementById('currentYearRegister').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Colorado Law Classic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html" class="event-logo">Colorado Law Classic</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="event-details.html">Event Details</a></li>
+                    <li><a href="scholarship-impact.html">Scholarship Impact</a></li>
+                    <li><a href="sponsorship.html">Sponsorship</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html" class="nav-cta">Register</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero short-hero">
+            <div class="container">
+                <h1>Support Future Lawyers: Donate Today</h1>
+            </div>
+        </section>
+
+        <section class="content-section section-padding">
+            <div class="container content-container">
+                <p class="section-intro text-center">Even if you cannot attend the Colorado Law Classic, you can still make a significant impact by donating directly to our scholarship fundraising efforts. Your generous contribution will help provide vital financial assistance to deserving students at the University of Colorado Boulder School of Law.</p>
+
+                <div class="donation-cta-area">
+                    <img src="https://placehold.co/600x350/B08D57/FFFFFF?text=Support+Our+Students" alt="Image representing student support" class="donation-image">
+                    <h2 class="section-title-minor">Your Donation Matters</h2>
+                    <p>Every dollar donated helps us get closer to our goal of ensuring that talented students can pursue their legal education without an insurmountable financial burden. Your support can help cover tuition, books, and other essential educational expenses.</p>
+                    <p>All net proceeds from donations are directed to [Specify how funds are directed, e.g., 'a dedicated scholarship fund administered by the University of Colorado Foundation for the benefit of CU Boulder Law students'].</p>
+                    
+                    <div class="text-center section-padding">
+                        <a href="[LINK_TO_YOUR_DONATION_PLATFORM_OR_CU_FOUNDATION_PAGE]" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta large-cta">Donate Securely Online</a>
+                        <p class="important-note" style="margin-top:1rem;">Please replace the link above with your actual online donation portal.</p>
+                    </div>
+                </div>
+
+                <div class="donation-info section-padding">
+                    <h2 class="section-title-minor">Other Ways to Give</h2>
+                    <p><strong>Mail a Check:</strong> If you prefer to donate by check, please make it payable to "[Your Organization Name/Colorado Law Classic - specify exact payee]" and mail it to:</p>
+                    <address>
+                        [Your Organization Name/Colorado Law Classic]<br>
+                        [Mailing Address]<br>
+                        [City, State, Zip Code]
+                    </address>
+                    <p>Please indicate "Scholarship Fund" in the memo line.</p>
+                    
+                    <p><strong>Corporate Matching Gifts:</strong> Many companies offer matching gift programs that can double or even triple your donation. Please check with your employer to see if they participate.</p>
+
+                    <p><strong>Tax Information:</strong> [Your Organization Name/Colorado Law Classic] is a [Your Tax Status, e.g., 501(c)(3) non-profit organization]. Donations may be tax-deductible to the extent allowed by law. Please consult with your tax advisor. Our EIN is [Your EIN, if applicable].</p>
+
+                    <p>Thank you for your generosity and for investing in the future of the legal profession!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="event-logo">Colorado Law Classic</a>
+                    <p class="footer-mission">Supporting scholarships for students at the University of Colorado Boulder School of Law.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="event-details.html">Event Details</a></li>
+                        <li><a href="sponsorship.html">Sponsorship</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>Email: <a href="mailto:info@coloradolawclassic.org">info@coloradolawclassic.org</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer">[Your Organization Name/Colorado Law Classic] is an independent event dedicated to supporting scholarships for students at the University of Colorado Boulder School of Law. We are not an official affiliate of the University of Colorado.</p>
+                <p>&copy; <span id="currentYearDonate"></span> Colorado Law Classic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const navToggleDonate = document.querySelector('.mobile-nav-toggle');
+        const mainNavDonate = document.querySelector('.main-nav');
+        navToggleDonate.addEventListener('click', () => {
+            const isExpanded = mainNavDonate.classList.toggle('active');
+            navToggleDonate.setAttribute('aria-expanded', isExpanded);
+        });
+        document.getElementById('currentYearDonate').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+<style>
+/* -------------------------------------------------------------------------- */
+/* Global Styles                                */
+/* -------------------------------------------------------------------------- */
+:root {
+    --primary-color: #0A2240; /* Deep Navy Blue */
+    --secondary-color: #B08D57; /* Sophisticated Gold/Bronze */
+    --accent-color-darker: #9c7b4d; /* Darker Gold for hover */
+    --light-neutral: #F8F7F2; /* Warm Off-White */
+    --medium-neutral: #D3D3D3; /* Light Stone Gray */
+    --dark-neutral: #333333; /* Dark Gray for text */
+    --white: #FFFFFF;
+    --black: #000000;
+
+    --font-primary: 'Open Sans', sans-serif;
+    --font-headings: 'Montserrat', sans-serif; /* Using Montserrat for main headings */
+    --font-logo: 'Roboto Slab', serif; /* Example for logo if text-based */
+
+    --container-width: 1140px;
+    --section-padding: 4rem 0;
+    --card-border-radius: 8px;
+    --button-border-radius: 5px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.7;
+    color: var(--dark-neutral);
+    background-color: var(--light-neutral);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color-darker);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; } /* Section Titles */
+h3 { font-size: 1.6rem; } /* Card Titles, etc. */
+h4 { font-size: 1.2rem; }
+
+.section-padding {
+    padding: var(--section-padding);
+}
+
+.light-bg {
+    background-color: var(--white); /* Or a very slightly off-white if preferred over pure white */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem; /* Main section titles */
+}
+.section-title-minor { /* For sub-sections within a page */
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--medium-neutral);
+    padding-bottom: 0.5rem;
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto 2rem auto;
+    color: #555;
+}
+.content-container {
+    max-width: 900px; /* For pages with more text content */
+}
+.content-container ul {
+    list-style-position: outside;
+    padding-left: 20px;
+    margin-bottom: 1.5rem;
+}
+.content-container ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Header                                    */
+/* -------------------------------------------------------------------------- */
+.site-header {
+    background-color: var(--white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-logo {
+    font-family: var(--font-logo);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.event-logo img { /* If using an image logo */
+    max-height: 50px; 
+}
+
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li {
+    margin-left: 1.8rem;
+}
+
+.main-nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--secondary-color);
+}
+
+.nav-cta {
+    background-color: var(--secondary-color);
+    color: var(--white) !important; /* Override other link styles */
+    padding: 0.6rem 1.2rem !important; /* Override other link padding */
+    border-radius: var(--button-border-radius);
+    transition: background-color 0.3s ease;
+}
+.nav-cta:hover {
+    background-color: var(--accent-color-darker);
+    color: var(--white) !important;
+}
+.nav-cta::after { /* Remove underline effect for button-style CTA */
+    display: none;
+}
+
+
+.mobile-nav-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.mobile-nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Hero Section                               */
+/* -------------------------------------------------------------------------- */
+.hero {
+    background-color: var(--primary-color); /* Placeholder */
+    /* background-image: url('YOUR_HERO_IMAGE_PATH_HERE.jpg'); */
+    background-size: cover;
+    background-position: center center;
+    color: var(--light-neutral);
+    height: calc(100vh - 80px); /* Adjust if header height changes */
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* For potential overlay */
+}
+.hero::before { /* Optional overlay for better text readability over image */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(10, 34, 64, 0.5); /* Darker overlay on primary color */
+}
+
+.hero-content {
+    position: relative; /* To sit above overlay */
+    z-index: 1;
+    max-width: 850px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: var(--light-neutral);
+    opacity: 0.9;
+}
+
+/* Call to Action Buttons */
+.cta-button {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    font-family: var(--font-headings);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    border-radius: var(--button-border-radius);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    border: none;
+    margin: 0.5rem;
+}
+
+.primary-cta {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+.primary-cta:hover {
+    background-color: var(--accent-color-darker);
+    transform: translateY(-2px);
+    color: var(--white);
+}
+
+.secondary-cta-link { /* For text links that act as secondary CTAs */
+    display: inline-block;
+    color: var(--medium-neutral);
+    margin-top: 1.5rem;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.secondary-cta-link:hover {
+    color: var(--light-neutral);
+}
+
+.cta-button.large-cta {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Page Hero (Short)                            */
+/* -------------------------------------------------------------------------- */
+.page-hero.short-hero {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 0;
+    text-align: center;
+    min-height: auto; /* Override full hero height */
+}
+.page-hero.short-hero h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Content Sections & Cards                           */
+/* -------------------------------------------------------------------------- */
+.mission-snippet p {
+    text-align: center;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.highlight-card {
+    background-color: var(--white);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.highlight-image {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+.highlight-card h3 {
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    font-size: 1.4rem;
+}
+.highlight-card p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    font-size: 0.95rem;
+    color: #555;
+    flex-grow: 1; /* Allows paragraph to take up remaining space if cards have varying text length */
+}
+
+.sponsor-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.sponsor-logos img {
+    max-height: 60px; /* Adjust as needed */
+    width: auto;
+    filter: grayscale(100%); /* Optional: for a uniform look */
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+.sponsor-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.impact-quote {
+    background-color: var(--light-neutral);
+    border-left: 5px solid var(--secondary-color);
+    padding: 1.5rem 2rem;
+    margin: 2rem auto;
+    max-width: 700px;
+    font-style: italic;
+}
+.impact-quote p {
+    margin-bottom: 0.5rem;
+}
+.impact-quote footer {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: right;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Specific Page Sections                           */
+/* -------------------------------------------------------------------------- */
+/* Event Details Page */
+.key-info-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 3rem;
+}
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.info-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain; /* If using actual icons */
+    /* For placeholder text icons, adjust styling as needed */
+    background-color: var(--secondary-color); /* Example for placeholder */
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.info-item h3 {
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+.info-item p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+.schedule-list {
+    list-style: none;
+    padding-left: 0;
+}
+.schedule-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--medium-neutral);
+}
+.schedule-list li:last-child {
+    border-bottom: none;
+}
+
+/* Sponsorship Page */
+.sponsorship-levels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.sponsorship-card {
+    background-color: var(--white);
+    border: 1px solid var(--medium-neutral);
+    border-radius: var(--card-border-radius);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.sponsorship-card h3 {
+    font-size: 1.7rem;
+    color: var(--primary-color);
+}
+.sponsor-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin: 0.5rem 0 1.5rem 0;
+}
+.sponsorship-card ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+.sponsorship-card ul li {
+    padding: 0.4rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px dotted #eee;
+}
+.sponsorship-card ul li::before {
+    content: '✓'; /* Checkmark */
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+.sponsorship-card .cta-button {
+    margin-top: auto; /* Pushes button to bottom if card heights vary */
+}
+
+/* Gallery Page */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--card-border-radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Contact Page */
+.contact-page-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Adjust ratio as needed */
+    gap: 3rem;
+}
+.contact-info p { margin-bottom: 1rem; }
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--medium-neutral);
+    border-radius: var(--button-border-radius);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+}
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(176, 141, 87, 0.2);
+}
+
+/* Registration Page */
+.registration-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.registration-card {
+    background-color: var(--white);
+    border: 1px solid var(--medium-neutral);
+    border-radius: var(--card-border-radius);
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.registration-card h3 { font-size: 1.7rem; }
+.registration-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin: 0.5rem 0 1.5rem 0;
+}
+.registration-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+.registration-card ul li {
+    margin-bottom: 0.5rem;
+}
+.important-note {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 1rem;
+}
+
+/* Donate Page */
+.donation-cta-area {
+    text-align: center;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.donation-image {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto 2rem auto;
+    border-radius: var(--card-border-radius);
+}
+.donation-info address {
+    font-style: normal;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-left: 3px solid var(--secondary-color);
+    margin: 1rem 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Footer                                   */
+/* -------------------------------------------------------------------------- */
+.site-footer {
+    background-color: var(--primary-color);
+    color: var(--medium-neutral);
+    font-size: 0.9rem;
+}
+.site-footer .event-logo {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-logo p.footer-mission {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+.footer-nav h4, .footer-contact h4 {
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+.footer-nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+.footer-nav li a {
+    color: var(--medium-neutral);
+    padding: 0.3rem 0;
+    display: inline-block;
+}
+.footer-nav li a:hover {
+    color: var(--white);
+}
+.footer-contact p {
+    margin-bottom: 0.5rem;
+}
+.footer-contact a {
+    color: var(--medium-neutral);
+}
+.footer-contact a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    padding-top: 1.5rem;
+    text-align: center;
+}
+.footer-bottom .disclaimer {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer-bottom p {
+    margin: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Responsive Design                             */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .header-container {
+        padding: 0 20px; /* Ensure padding for logo on smaller screens */
+    }
+    .main-nav {
+        display: none; /* Hide on tablet/mobile initially */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        flex-direction: column;
+        align-items: stretch; /* Full width items */
+    }
+    .main-nav.active {
+        display: flex;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .main-nav li {
+        margin: 0;
+        width: 100%;
+        text-align: left;
+    }
+    .main-nav a {
+        padding: 1rem 1.5rem;
+        display: block; /* Make links take full width */
+        border-bottom: 1px solid #eee;
+    }
+    .main-nav a::after { display: none; } /* No underline for mobile nav items */
+    .nav-cta {
+        margin: 1rem 1.5rem; /* Give button style some space */
+        text-align: center;
+    }
+
+    .mobile-nav-toggle {
+        display: block; /* Show hamburger */
+    }
+    .mobile-nav-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .mobile-nav-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-nav-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.1rem; }
+    .section-title { font-size: 2rem; }
+    .section-title-minor { font-size: 1.6rem; }
+
+    .contact-page-layout {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    html { font-size: 15px; } /* Slightly smaller base font for mobile */
+    h1 { font-size: 2.2rem; }
+    .hero { height: auto; min-height: calc(100vh - 70px); padding: 4rem 0;} /* Adjust hero height for content */
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    .highlights-grid, .sponsorship-levels, .registration-options, .gallery-grid {
+        grid-template-columns: 1fr; /* Stack cards */
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-nav ul { align-items: center; }
+}
+
+@media (max-width: 480px) {
+    .event-logo { font-size: 1.5rem; }
+    .hero h1 { font-size: 1.8rem; }
+    .hero p { font-size: 0.95rem; }
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        width: calc(100% - 1rem); /* Make buttons more prominent */
+        max-width: 300px;
+        box-sizing: border-box;
+    }
+    .nav-cta {
+        display: block;
+        margin: 0.5rem 1rem 1rem 1rem;
+    }
+}
+
+</style>
