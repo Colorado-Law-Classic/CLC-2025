@@ -1,6 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
+import EventDetailsCard from './EventDetailsCard'
+import RegistrationForm from './RegistrationForm' // Import the form
+
+type RegistrationType = 'individual' | 'team' | null;
 
 const RegistrationPage: React.FC = () => {
+  const [selectedRegistrationType, setSelectedRegistrationType] = useState<RegistrationType>(null);
+
+  const eventDetails = {
+    schedule: {
+      date: 'Sunday, August 17th, 2025',
+      time: '6:30 AM Check-in, 7:30 AM Start',
+      details: [
+        'Check-in: 6:30 AM',
+        'Start: 7:30 AM',
+      ],
+    },
+    location: {
+      name: 'City Park Golf Course',
+      address: 'Denver, Colorado',
+      mapLink: '#', // Replace with actual map link
+    },
+  };
+
+  const registrationPageSpecificInfo = (
+    <div>
+      <h4 className="font-medium text-gray-900 mt-4 text-lg">Format</h4>
+      <p className="text-gray-600">18-hole scramble</p>
+    </div>
+  );
+
+  const handleSelectRegistrationType = (type: 'individual' | 'team') => {
+    setSelectedRegistrationType(type);
+    // Scroll to the form section if needed
+    const formSection = document.getElementById('registration-form-section');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleCloseForm = () => {
+    setSelectedRegistrationType(null);
+  };
+
+
   return (
     <div className="py-12">
       <div className="container">
@@ -19,7 +62,12 @@ const RegistrationPage: React.FC = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-semibold">$150 per player</span>
-                    <button className="btn btn-primary">Select</button>
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => handleSelectRegistrationType('individual')}
+                    >
+                      Select
+                    </button>
                   </div>
                 </div>
                 
@@ -30,7 +78,12 @@ const RegistrationPage: React.FC = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-semibold">$600 per team</span>
-                    <button className="btn btn-primary">Select</button>
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => handleSelectRegistrationType('team')}
+                    >
+                      Select
+                    </button>
                   </div>
                 </div>
                 
@@ -89,37 +142,27 @@ const RegistrationPage: React.FC = () => {
               </ul>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <h3 className="text-xl font-semibold mb-4">Event Details</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-medium text-gray-900">Date & Time</h4>
-                  <p className="text-gray-600">Sunday, August 17th, 2025</p>
-                  <p className="text-gray-600">Check-in: 6:30 AM</p>
-                  <p className="text-gray-600">Start: 7:30 AM</p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900">Location</h4>
-                  <p className="text-gray-600">City Park Golf Course</p>
-                  <p className="text-gray-600">Denver, Colorado</p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900">Format</h4>
-                  <p className="text-gray-600">18-hole scramble</p>
-                </div>
-              </div>
-            </div>
+            <EventDetailsCard
+              schedule={eventDetails.schedule}
+              location={eventDetails.location}
+              additionalInfo={registrationPageSpecificInfo}
+            />
           </div>
         </div>
         
-        <div className="bg-gray-50 p-8 rounded-lg">
-          <h2 className="text-2xl font-semibold mb-6">Registration Form</h2>
-          <p className="text-gray-600 mb-6">Please select a registration option above to continue.</p>
-          
-          {/* Form would be dynamically shown based on selection */}
-          <div className="text-center text-gray-500">
-            <p>Registration form will appear here after selecting an option</p>
-          </div>
+        <div id="registration-form-section" className="bg-gray-50 p-8 rounded-lg">
+          {!selectedRegistrationType && (
+            <>
+              <h2 className="text-2xl font-semibold mb-6 text-center">Registration Form</h2>
+              <p className="text-gray-600 mb-6 text-center">Please select a registration option above to view the form.</p>
+            </>
+          )}
+          {selectedRegistrationType && (
+            <RegistrationForm
+              registrationType={selectedRegistrationType}
+              onCloseForm={handleCloseForm}
+            />
+          )}
         </div>
       </div>
     </div>

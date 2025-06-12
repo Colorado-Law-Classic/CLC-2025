@@ -1,6 +1,64 @@
 import React from 'react'
+import SponsorshipCard from './SponsorshipCard' // Assuming SponsorshipCard is in the same directory
+
+const sponsorshipTiers = [
+  {
+    level: 'Platinum Sponsor',
+    price: '$2,500',
+    benefits: [
+      'One foursome entry (4 players)',
+      'Premium logo placement on all materials',
+      'Banner display at registration and lunch',
+      'Recognition during awards ceremony',
+      'Opportunity to include items in gift bags',
+    ],
+    actionText: 'Select Platinum',
+    isFeatured: true, // Example: Highlight Platinum
+  },
+  {
+    level: 'Gold Sponsor',
+    price: '$2,000',
+    benefits: [
+      'One foursome entry (4 players)',
+      'Logo placement on tournament materials',
+      'Signage at registration',
+      'Recognition during awards ceremony',
+      'Opportunity to include items in gift bags',
+    ],
+    actionText: 'Select Gold',
+  },
+  {
+    level: 'Hole Sponsor',
+    price: '$1,500',
+    benefits: [
+      'One foursome entry (4 players)',
+      'Signage at one hole on the course',
+      'Logo in tournament program',
+      'Recognition on website',
+      'Opportunity to provide promotional items',
+    ],
+    actionText: 'Select Hole Sponsor',
+  },
+  {
+    level: 'Hole Sponsor (No Golf)',
+    price: '$1,000',
+    benefits: [
+      'Signage at one hole on the course',
+      'Logo in tournament program',
+      'Recognition on website',
+      'Opportunity to provide promotional items',
+    ],
+    actionText: 'Select Hole Sponsor (No Golf)',
+  },
+];
 
 const SponsorshipPage: React.FC = () => {
+  const handleSelectSponsorship = (level: string) => {
+    // Placeholder for navigation or form display logic
+    console.log(`Selected sponsorship level: ${level}`);
+    // Example: navigate(`/register?sponsorship=${level}`);
+  };
+
   return (
     <div className="py-12">
       <div className="container">
@@ -18,172 +76,17 @@ const SponsorshipPage: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {/* Platinum Sponsor */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-            <div className="bg-primary/10 p-4 text-center">
-              <h3 className="text-xl font-semibold">Platinum Sponsor</h3>
-              <div className="text-3xl font-bold mt-2">$2,500</div>
-            </div>
-            <div className="p-6">
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>One foursome entry (4 players)</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Premium logo placement on all materials</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Banner display at registration and lunch</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Recognition during awards ceremony</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Opportunity to include items in gift bags</span>
-                </li>
-              </ul>
-              <button className="btn btn-primary w-full">Select</button>
-            </div>
-          </div>
-          
-          {/* Gold Sponsor */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-            <div className="bg-primary/10 p-4 text-center">
-              <h3 className="text-xl font-semibold">Gold Sponsor</h3>
-              <div className="text-3xl font-bold mt-2">$2,000</div>
-            </div>
-            <div className="p-6">
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>One foursome entry (4 players)</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Logo placement on tournament materials</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Signage at registration</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Recognition during awards ceremony</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Opportunity to include items in gift bags</span>
-                </li>
-              </ul>
-              <button className="btn btn-primary w-full">Select</button>
-            </div>
-          </div>
-          
-          {/* Hole Sponsor */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-            <div className="bg-primary/10 p-4 text-center">
-              <h3 className="text-xl font-semibold">Hole Sponsor</h3>
-              <div className="text-3xl font-bold mt-2">$1,500</div>
-            </div>
-            <div className="p-6">
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>One foursome entry (4 players)</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Signage at one hole on the course</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Logo in tournament program</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Recognition on website</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Opportunity to provide promotional items</span>
-                </li>
-              </ul>
-              <button className="btn btn-primary w-full">Select</button>
-            </div>
-          </div>
-          
-          {/* Hole Sponsor (Without Golf) */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-            <div className="bg-primary/10 p-4 text-center">
-              <h3 className="text-xl font-semibold">Hole Sponsor</h3>
-              <div className="text-lg text-gray-500 mt-1">(Without Golf)</div>
-              <div className="text-3xl font-bold mt-2">$1,000</div>
-            </div>
-            <div className="p-6">
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Signage at one hole on the course</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Logo in tournament program</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Recognition on website</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Opportunity to provide promotional items</span>
-                </li>
-              </ul>
-              <button className="btn btn-primary w-full">Select</button>
-            </div>
-          </div>
+          {sponsorshipTiers.map((tier) => (
+            <SponsorshipCard
+              key={tier.level}
+              level={tier.level}
+              price={tier.price}
+              benefits={tier.benefits}
+              actionText={tier.actionText}
+              onSelect={() => handleSelectSponsorship(tier.level)}
+              isFeatured={tier.isFeatured}
+            />
+          ))}
         </div>
         
         <div className="bg-gray-50 p-8 rounded-lg mb-12">

@@ -1,20 +1,17 @@
 import React from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 
-interface NavbarProps {
-  currentPage: string
-  setCurrentPage: (page: string) => void
-}
-
-const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) => {
+const Navbar: React.FC = () => {
+  const navigate = useNavigate();
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'registration', label: 'Registration' },
-    { id: 'sponsorship', label: 'Sponsorship' },
-    { id: 'gallery', label: 'Gallery' },
-    { id: 'past-sponsors', label: 'Past Sponsors' },
-    { id: 'faq', label: 'FAQ' },
-    { id: 'contact', label: 'Contact' }
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/registration', label: 'Registration' },
+    { path: '/sponsorship', label: 'Sponsorship' },
+    { path: '/gallery', label: 'Gallery' },
+    { path: '/past-sponsors', label: 'Past Sponsors' },
+    { path: '/faq', label: 'FAQ' },
+    { path: '/contact', label: 'Contact' }
   ]
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
@@ -23,27 +20,33 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) => {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const handleLogoClick = () => {
+    navigate('/');
+  }
+
   return (
     <header className="bg-white shadow-sm">
       <div className="container py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center" onClick={() => setCurrentPage('home')} role="button">
+          <div className="flex items-center" onClick={handleLogoClick} role="button">
             <div className="text-primary font-bold text-xl md:text-2xl">COLORADO LAW CLASSIC</div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => setCurrentPage(item.id)}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  currentPage === item.id ? 'text-primary' : 'text-gray-600'
-                }`}
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors hover:text-primary ${
+                    isActive ? 'text-primary' : 'text-gray-600'
+                  }`
+                }
               >
                 {item.label}
-              </button>
+              </NavLink>
             ))}
           </nav>
 
@@ -84,18 +87,18 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) => {
           <div className="md:hidden mt-4 pb-2">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => {
-                    setCurrentPage(item.id)
-                    setIsMenuOpen(false)
-                  }}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    currentPage === item.id ? 'text-primary' : 'text-gray-600'
-                  }`}
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `text-sm font-medium transition-colors hover:text-primary ${
+                      isActive ? 'text-primary' : 'text-gray-600'
+                    }`
+                  }
                 >
                   {item.label}
-                </button>
+                </NavLink>
               ))}
             </nav>
           </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom';
 import './App.css'
 
 // Import components as they are created
@@ -14,39 +14,22 @@ import FaqPage from './components/FaqPage'
 import ContactPage from './components/ContactPage'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home')
-
-  // Function to render the current page
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <HomePage />
-      case 'about':
-        return <AboutPage />
-      case 'registration':
-        return <RegistrationPage />
-      case 'sponsorship':
-        return <SponsorshipPage />
-      case 'gallery':
-        return <GalleryPage />
-      case 'past-sponsors':
-        return <PastSponsorsPage />
-      case 'faq':
-        return <FaqPage />
-      case 'contact':
-        return <ContactPage />
-      default:
-        return <HomePage />
-    }
-  }
-
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <Navbar />
       <main className="flex-grow">
-        {renderPage()}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/registration" element={<RegistrationPage />} />
+          <Route path="/sponsorship" element={<SponsorshipPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/past-sponsors" element={<PastSponsorsPage />} />
+          <Route path="/faq" element={<FaqPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
       </main>
-      <Footer setCurrentPage={setCurrentPage} />
+      <Footer />
     </div>
   )
 }
