@@ -1,0 +1,13 @@
+# Redirect rules to ensure legacy WordPress slugs continue to work
+RewriteEngine On
+
+# Force HTTPS (if SSL is enabled; comment these two lines out if you do not have a valid certificate)
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect old WordPress registration slug to the new external registration
+RedirectMatch 301 ^/home/register-here/?$ https://coloradolawclassic.org/home/register-here/
+
+# Redirect local register page and any /register/ slug to external registration (future-proof)
+RedirectMatch 301 ^/register\.html?$ https://coloradolawclassic.org/home/register-here/
+RedirectMatch 301 ^/register/?$ https://coloradolawclassic.org/home/register-here/
