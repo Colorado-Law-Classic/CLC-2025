@@ -11,7 +11,7 @@ const AboutPage: React.FC = () => {
             <h2 className="text-2xl font-semibold mb-4">Tournament History</h2>
             <p className="text-gray-600 mb-4">
               The Colorado Law Classic was established to support scholarship funds at the University of Colorado Law School. 
-              Now in its 14th year, the tournament has become a cherished tradition in the Colorado legal community.
+              Now in its 15th year, the tournament has become a cherished tradition in the Colorado legal community.
             </p>
             <p className="text-gray-600">
               Each year, legal professionals, alumni, students, and supporters gather for a day of golf, 
@@ -64,7 +64,7 @@ const AboutPage: React.FC = () => {
         <div className="bg-primary/10 p-8 rounded-lg">
           <h2 className="text-2xl font-semibold mb-4">Join Us This Year</h2>
           <p className="text-gray-600 mb-6">
-            The 14th Annual Colorado Law Classic will take place on Sunday, August 17th, 2025, at City Park Golf Course. 
+            The 15th Annual Colorado Law Classic will take place in August 2026 at City Park Golf Course. 
             We invite you to join us for a day of golf, camaraderie, and supporting a great cause.
           </p>
           <div className="flex flex-wrap gap-4">

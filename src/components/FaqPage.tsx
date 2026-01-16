@@ -5,7 +5,7 @@ const FaqPage: React.FC = () => {
   const faqs = [
     {
       question: "When and where is the Colorado Law Classic held?",
-      answer: "The 14th Annual Colorado Law Classic will be held on Sunday, August 17th, 2025, at City Park Golf Course in Denver, Colorado. Check-in begins at 6:30 AM with a 7:30 AM start time."
+      answer: "The 15th Annual Colorado Law Classic will be held in August 2026 at City Park Golf Course in Denver, Colorado. Check-in begins at 6:30 AM with a 7:30 AM start time. Exact date to be announced."
     },
     {
       question: "How much does it cost to participate?",

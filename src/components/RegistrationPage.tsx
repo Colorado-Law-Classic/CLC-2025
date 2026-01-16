@@ -94,7 +94,7 @@ const RegistrationPage: React.FC = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="font-medium text-gray-900">Date & Time</h4>
-                  <p className="text-gray-600">Sunday, August 17th, 2025</p>
+                  <p className="text-gray-600">August 2026 (Date TBA)</p>
                   <p className="text-gray-600">Check-in: 6:30 AM</p>
                   <p className="text-gray-600">Start: 7:30 AM</p>
                 </div>

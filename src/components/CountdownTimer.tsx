@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const CountdownTimer = () => {
-  // Set the event date (August 17th, 2025)
-  const eventDate = new Date('August 17, 2025 07:30:00').getTime();
+  // Set the event date (August 2026 - placeholder, update when confirmed)
+  const eventDate = new Date('August 16, 2026 07:30:00').getTime();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,

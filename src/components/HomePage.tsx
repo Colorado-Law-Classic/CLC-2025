@@ -9,10 +9,10 @@ const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                14th Annual Colorado Law Classic
+                15th Annual Colorado Law Classic
               </h1>
               <p className="text-xl text-gray-700 mb-6">
-                Sunday, August 17th, 2025 • City Park Golf Course
+                August 2026 • City Park Golf Course
               </p>
               <p className="text-gray-600 mb-8">
                 Join us for a day of golf to benefit scholarship funds at CU Law School. 
@@ -174,7 +174,7 @@ const HomePage: React.FC = () => {
         <div className="container text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Join Us?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Register today for the 14th Annual Colorado Law Classic and help support scholarship funds at CU Law School.
+            Register today for the 15th Annual Colorado Law Classic and help support scholarship funds at CU Law School.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button className="btn bg-white text-primary hover:bg-gray-100 btn-lg">
