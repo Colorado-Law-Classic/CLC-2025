@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLC Brand Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; background: #fafafa; color: #1c1c1c; }
+
+    .section { padding: 3rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid #c9a227; padding-bottom: 0.5rem; }
+
+    /* Color Palette */
+    .colors { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+    .color-box { height: 120px; border-radius: 8px; display: flex; flex-direction: column; justify-content: flex-end; padding: 1rem; font-size: 0.85rem; font-weight: 600; }
+    .color-box span { opacity: 0.8; font-size: 0.75rem; }
+
+    /* Typography */
+    .type-sample { margin-bottom: 1.5rem; padding: 1.5rem; background: white; border-radius: 8px; }
+    .headline-font { font-family: 'Playfair Display', serif; }
+    .body-font { font-family: 'Inter', sans-serif; }
+
+    /* Buttons */
+    .buttons { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+    .btn { padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; cursor: pointer; border: 2px solid transparent; text-decoration: none; display: inline-block; transition: all 0.2s; }
+    .btn-primary { background: #c9a227; color: #fff; border-color: #c9a227; }
+    .btn-primary:hover { background: #b8931f; border-color: #b8931f; }
+    .btn-secondary { background: #1c1c1c; color: #fff; border-color: #1c1c1c; }
+    .btn-secondary:hover { background: #333; border-color: #333; }
+    .btn-outline { background: transparent; color: #1c1c1c; border-color: #1c1c1c; }
+    .btn-outline:hover { background: #1c1c1c; color: #fff; }
+    .btn-outline-gold { background: transparent; color: #c9a227; border-color: #c9a227; }
+    .btn-outline-gold:hover { background: #c9a227; color: #fff; }
+
+    /* Cards */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .card { background: white; border-radius: 8px; padding: 1.5rem; border: 1px solid #e5e5e5; }
+    .card-dark { background: #1c1c1c; color: #fff; border: none; }
+    .card h3 { font-family: 'Playfair Display', serif; margin-bottom: 0.5rem; }
+    .card-dark h3 { color: #c9a227; }
+
+    /* Hero Preview */
+    .hero-preview { background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%); color: #fff; padding: 4rem 2rem; text-align: center; border-radius: 8px; margin-top: 1rem; }
+    .hero-preview h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .hero-preview .gold { color: #c9a227; }
+    .hero-preview p { opacity: 0.9; margin-bottom: 1.5rem; }
+    .hero-preview .countdown { font-size: 1.25rem; margin-bottom: 1.5rem; color: #c9a227; font-weight: 600; }
+
+    /* Nav Preview */
+    .nav-preview { background: #1c1c1c; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; margin-top: 1rem; }
+    .nav-preview .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.1rem; }
+    .nav-preview .links { display: flex; gap: 1.5rem; font-size: 0.9rem; }
+    .nav-preview .links a { color: #fff; text-decoration: none; opacity: 0.8; }
+    .nav-preview .links a:hover { opacity: 1; color: #c9a227; }
+
+    /* Comparison */
+    .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem; }
+    .comparison > div { padding: 1.5rem; border-radius: 8px; }
+    .old { background: linear-gradient(135deg, #14351f 0%, #0e2a18 100%); color: #fff; }
+    .new { background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%); color: #fff; }
+    .comparison h4 { margin-bottom: 1rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; }
+    .comparison h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; }
+
+    @media (max-width: 600px) {
+      .comparison { grid-template-columns: 1fr; }
+      .hero-preview h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <h2 class="section-title">Color Palette</h2>
+    <p style="margin-bottom: 1rem;">Black + Gold from CU Law School. Clean, professional, prestigious.</p>
+    <div class="colors">
+      <div class="color-box" style="background: #1c1c1c; color: #fff;">
+        Charcoal (Primary)<span>#1c1c1c</span>
+      </div>
+      <div class="color-box" style="background: #c9a227; color: #fff;">
+        Gold (Accent)<span>#c9a227</span>
+      </div>
+      <div class="color-box" style="background: #ffffff; color: #1c1c1c; border: 1px solid #e5e5e5;">
+        White<span>#ffffff</span>
+      </div>
+      <div class="color-box" style="background: #f5f5f5; color: #1c1c1c;">
+        Light Gray<span>#f5f5f5</span>
+      </div>
+      <div class="color-box" style="background: #111111; color: #fff;">
+        Black<span>#111111</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Typography</h2>
+    <div class="type-sample">
+      <p style="font-size: 0.75rem; color: #666; margin-bottom: 0.5rem;">HEADLINES — Playfair Display</p>
+      <h1 class="headline-font" style="font-size: 2.5rem; font-weight: 700;">15th Annual Colorado Law Classic</h1>
+    </div>
+    <div class="type-sample">
+      <p style="font-size: 0.75rem; color: #666; margin-bottom: 0.5rem;">BODY TEXT — Inter</p>
+      <p class="body-font" style="font-size: 1rem;">Join us for a day of golf to benefit scholarship funds at CU Law School. Registration includes 18 holes of golf, lunch, gift, and individual and team competition.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Buttons</h2>
+    <div class="buttons">
+      <a href="#" class="btn btn-primary">Register Now</a>
+      <a href="#" class="btn btn-secondary">Learn More</a>
+      <a href="#" class="btn btn-outline">Become a Sponsor</a>
+      <a href="#" class="btn btn-outline-gold">View Gallery</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Cards</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Date & Time</h3>
+        <p>August 2026 (TBA)<br>Check-in 6:30 AM</p>
+      </div>
+      <div class="card">
+        <h3>Location</h3>
+        <p>City Park Golf Course<br>Denver, Colorado</p>
+      </div>
+      <div class="card card-dark">
+        <h3>$150 per player</h3>
+        <p>Includes golf, lunch, gift, and competition entry</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Navigation Preview</h2>
+    <div class="nav-preview">
+      <div class="brand">COLORADO LAW CLASSIC</div>
+      <div class="links">
+        <a href="#">Home</a>
+        <a href="#">Sponsors</a>
+        <a href="#">Gallery</a>
+        <a href="#">FAQ</a>
+        <a href="#" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Register</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Hero Section Preview</h2>
+    <div class="hero-preview">
+      <h1><span class="gold">15th Annual</span><br>Colorado Law Classic</h1>
+      <p>Benefiting Scholarship Funds at CU Law School</p>
+      <div class="countdown">213d 08h 42m 15s until tee-off</div>
+      <div class="buttons" style="justify-content: center;">
+        <a href="#" class="btn btn-primary">Register Now</a>
+        <a href="#" class="btn btn-outline-gold">Become a Sponsor</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Before → After</h2>
+    <p style="margin-bottom: 1rem;">Current site uses green. Proposed uses black + gold.</p>
+    <div class="comparison">
+      <div class="old">
+        <h4>Current (Green)</h4>
+        <h3>14th Annual Colorado Law Classic</h3>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Based on golf course colors — doesn't match CU Law brand</p>
+      </div>
+      <div class="new">
+        <h4>Proposed (Black + Gold)</h4>
+        <h3 style="color: #c9a227;">15th Annual</h3>
+        <h3>Colorado Law Classic</h3>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Matches CU Law School identity — professional, prestigious</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="text-align: center; padding-bottom: 4rem;">
+    <h2 class="section-title" style="border: none; text-align: center;">Does this direction work?</h2>
+    <p>If yes, I'll update the CSS to match this preview.<br>If no, tell me what to change.</p>
+  </div>
+
+</body>
+</html>
