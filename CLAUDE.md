@@ -4,53 +4,50 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Colorado Law Classic (CLC) - A charity golf tournament website benefiting scholarship funds at CU Law School. The repository contains two implementations:
+Colorado Law Classic (CLC) - A charity golf tournament website benefiting scholarship funds at CU Law School. This is a static HTML/CSS/JS site designed for simplicity and easy maintenance.
 
-1. **Static HTML Site** (`colorado-law-classic-site-final/`) - Production-ready static site with vanilla HTML/CSS/JS
-2. **React Application** (`colorado_law_classic_source/`) - Modern React/TypeScript implementation with component architecture
+## Site Structure
 
-## Development Commands (React App)
-
-All commands should be run from `colorado_law_classic_source/`:
-
-```bash
-npm run dev      # Start Vite dev server
-npm run build    # TypeScript compile + Vite production build
-npm run lint     # Run ESLint
-npm run preview  # Preview production build locally
+```
+/
+├── index.html          # Home page with hero, countdown, event details
+├── sponsors.html       # Sponsor tiers and logos
+├── gallery.html        # Photo gallery with year filter
+├── faq.html            # FAQ accordions
+├── register.html       # Registration info (links to external checkout)
+├── brand-guide.html    # Branding guidelines
+└── assets/
+    ├── css/styles.css  # All styles
+    ├── js/main.js      # Countdown timer, nav highlighting, gallery filter
+    └── img/            # Logo, flyer, sponsor logos, gallery photos
 ```
 
-## Architecture
+## Development
 
-### React App (`colorado_law_classic_source/`)
+No build step required. Open any HTML file directly in a browser or use a local server:
 
-- **Build**: Vite + TypeScript
-- **Styling**: Tailwind CSS with custom theme variables (HSL-based color system)
-- **UI Components**: Radix UI primitives wrapped in `src/components/ui/` (shadcn/ui pattern)
-- **Routing**: State-based page switching in `App.tsx` (not react-router despite being a dependency)
-- **Forms**: React Hook Form with Zod validation
-
-Key components:
-- `App.tsx` - Main layout with state-driven page rendering
-- `components/Navbar.tsx` + `Footer.tsx` - Navigation that calls `setCurrentPage()`
-- Page components: `HomePage`, `RegistrationPage`, `SponsorshipPage`, `GalleryPage`, etc.
-
-Path alias: `@` maps to `./src` (configured in `vite.config.ts`)
-
-Utility function `cn()` in `src/lib/utils.ts` merges Tailwind classes using `clsx` + `tailwind-merge`.
-
-### Static Site (`colorado-law-classic-site-final/`)
-
-Simple multi-page HTML site:
-- `index.html`, `sponsors.html`, `gallery.html`, `faq.html`, `register.html`, `brand-guide.html`
-- `assets/css/styles.css` - Custom CSS
-- `assets/js/main.js` - Countdown timer and interactions
-- `assets/img/` - Tournament logos and sponsor images
+```bash
+npx serve .           # or python -m http.server
+```
 
 ## Deployment
 
-The React app builds to static files for deployment to Bluehost via cPanel File Manager. Built files get embedded in the WordPress site via iframe. See `React readme .txt` for detailed Bluehost/WordPress integration steps.
+GitHub Pages serves the site directly from the `main` branch root. Push to `main` and it deploys automatically via GitHub Actions.
 
-## Payment Integration
+Site URL: `https://redeemedduck.github.io/CLC-2025/`
 
-Registration uses external payment links (PayPal and Square hosted checkout pages). Payment URLs are hardcoded in the registration components and must be updated with actual merchant links before production.
+## Brand
+
+- **Primary colors**: Black (#111111) + Gold (#b89b1c)
+- **Affiliation**: CU Law School (black and gold)
+- **Logo**: Mountain silhouette with "COLORADO LAW CLASSIC" text
+
+## Key Files
+
+- `assets/js/main.js` - Contains countdown timer date (update when event date is confirmed)
+- `assets/css/styles.css` - CSS variables at top define colors
+- Registration links point to external `coloradolawclassic.org` checkout
+
+## Archive
+
+Previous implementations (React app, documentation) are preserved in `archive/` for reference.
