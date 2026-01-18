@@ -5,19 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery – Colorado Law Classic</title>
   <meta name="description" content="View photos from past Colorado Law Classic tournaments. Filter by year and relive the excitement on the course.">
+  <link rel="icon" type="image/jpeg" href="assets/img/clc-logo.jpg">
+  <link rel="apple-touch-icon" href="assets/img/clc-logo.jpg">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- GLightbox - lightweight lightbox library for gallery images -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Navigation - Mobile hamburger menu enabled at 768px breakpoint -->
   <nav class="nav">
     <div class="container">
       <a href="index.html" class="brand" data-nav>
         <img src="assets/img/clc-logo.jpg" alt="Colorado Law Classic logo" class="logo-image">
         <span>Colorado Law Classic</span>
       </a>
-      <div>
+      <!-- Hamburger button for mobile - hidden on desktop via CSS -->
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
         <a href="index.html" data-nav>Home</a>
         <a href="sponsors.html" data-nav>Sponsors</a>
         <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn btn-small" data-nav>Register</a>
@@ -25,6 +36,8 @@
         <a href="faq.html" data-nav>FAQ</a>
       </div>
     </div>
+    <!-- Overlay for closing mobile menu when clicking outside -->
+    <div class="nav-overlay"></div>
   </nav>
 
   <section class="container">
@@ -38,13 +51,27 @@
     </div>
     
     <div class="gallery-grid">
-      <!-- Sample image entries; replace with actual photos. Add your images to assets/img/gallery and update the data-year and src accordingly. -->
+      <!--
+        Gallery images wrapped in lightbox links.
+        - data-gallery="clc-gallery" groups all images for navigation
+        - data-year enables year filtering via JS
+        - data-reveal enables scroll-reveal animation
+        Add new images: wrap in <a class="glightbox" href="[full-size-image]" data-gallery="clc-gallery">
+      -->
       <!-- 2026 photos from the upcoming event -->
-      <img src="assets/img/gallery/2025-1.jpg" alt="Colorado Law Classic flyer" data-year="2026" data-reveal loading="lazy">
-      <img src="assets/img/gallery/2025-2.jpg" alt="Colorado Law Classic kickoff speaker" data-year="2026" data-reveal loading="lazy">
+      <a href="assets/img/gallery/2025-1.jpg" class="glightbox" data-gallery="clc-gallery" data-year="2026" data-reveal>
+        <img src="assets/img/gallery/2025-1.jpg" alt="Colorado Law Classic flyer" loading="lazy">
+      </a>
+      <a href="assets/img/gallery/2025-2.jpg" class="glightbox" data-gallery="clc-gallery" data-year="2026" data-reveal>
+        <img src="assets/img/gallery/2025-2.jpg" alt="Colorado Law Classic kickoff speaker" loading="lazy">
+      </a>
       <!-- 2024 photos (real shots from prior tournaments) -->
-      <img src="assets/img/gallery/golfers-group.jpg" alt="2024 Colorado Law Classic golfers" data-year="2024" data-reveal loading="lazy">
-      <img src="assets/img/gallery/trophy-team.jpg" alt="2024 Colorado Law Classic winning team" data-year="2024" data-reveal loading="lazy">
+      <a href="assets/img/gallery/golfers-group.jpg" class="glightbox" data-gallery="clc-gallery" data-year="2024" data-reveal>
+        <img src="assets/img/gallery/golfers-group.jpg" alt="2024 Colorado Law Classic golfers" loading="lazy">
+      </a>
+      <a href="assets/img/gallery/trophy-team.jpg" class="glightbox" data-gallery="clc-gallery" data-year="2024" data-reveal>
+        <img src="assets/img/gallery/trophy-team.jpg" alt="2024 Colorado Law Classic winning team" loading="lazy">
+      </a>
     </div>
   </section>
 
@@ -54,6 +81,8 @@
     </div>
   </footer>
 
+  <!-- GLightbox library - loads only on gallery page -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

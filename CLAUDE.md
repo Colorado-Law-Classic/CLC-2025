@@ -4,50 +4,71 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Colorado Law Classic (CLC) - A charity golf tournament website benefiting scholarship funds at CU Law School. This is a static HTML/CSS/JS site designed for simplicity and easy maintenance.
+Colorado Law Classic (CLC) - A charity golf tournament website benefiting scholarship funds at CU Law School. This is a static HTML/CSS/JS site with no build step.
 
-## Site Structure
+**Design Direction:** "Refined Country Club Prestige" — Black + Gold (CU Law School colors)
 
-```
-/
-├── index.html          # Home page with hero, countdown, event details
-├── sponsors.html       # Sponsor tiers and logos
-├── gallery.html        # Photo gallery with year filter
-├── faq.html            # FAQ accordions
-├── register.html       # Registration info (links to external checkout)
-├── brand-guide.html    # Branding guidelines
-└── assets/
-    ├── css/styles.css  # All styles
-    ├── js/main.js      # Countdown timer, nav highlighting, gallery filter
-    └── img/            # Logo, flyer, sponsor logos, gallery photos
-```
+**Contact Email:** coloradolawgolf@gmail.com
 
 ## Development
 
-No build step required. Open any HTML file directly in a browser or use a local server:
-
 ```bash
-npx serve .           # or python -m http.server
+npx serve .           # or python -m http.server 8080
 ```
+
+No build, lint, or test commands—just open HTML files directly in a browser.
 
 ## Deployment
 
-GitHub Pages serves the site directly from the `main` branch root. Push to `main` and it deploys automatically via GitHub Actions.
+GitHub Pages auto-deploys from `main` branch via `.github/workflows/deploy.yml`.
 
-Site URL: `https://redeemedduck.github.io/CLC-2025/`
+Live URL: `https://redeemedduck.github.io/CLC-2025/`
 
-## Brand
+## Architecture
 
-- **Primary colors**: Black (#111111) + Gold (#b89b1c)
-- **Affiliation**: CU Law School (black and gold)
-- **Logo**: Mountain silhouette with "COLORADO LAW CLASSIC" text
+**No templating system**: Each HTML page duplicates the nav and footer. When updating nav links or footer content, change all `.html` files.
 
-## Key Files
+**CSS theming via custom properties** in `assets/css/styles.css` (`:root` block, lines 31-73):
+- Brand colors: `--clr-black`, `--clr-gold`, `--clr-charcoal`, `--clr-cream`, etc.
+- Spacing scale: `--space-xs` through `--space-2xl`
+- Shadows: `--shadow-sm`, `--shadow-md`, `--shadow-lg`, `--shadow-gold`
+- Transitions: `--transition-fast`, `--transition-base`, `--transition-slow`
+- Typography: Playfair Display (headings) + Inter (body)
 
-- `assets/js/main.js` - Contains countdown timer date (update when event date is confirmed)
-- `assets/css/styles.css` - CSS variables at top define colors
-- Registration links point to external `coloradolawclassic.org` checkout
+**JavaScript modules** in `assets/js/main.js` use IIFEs to avoid globals:
+- Nav highlighting based on current page
+- Mobile hamburger menu toggle
+- Countdown timer (event date at line 28, Denver timezone GMT-0600)
+- Scroll reveal via IntersectionObserver
+- Gallery filter by year (data-filter/data-year attributes)
+- GLightbox initialization for gallery lightbox
+
+## Commonly Updated
+
+| What | Where |
+|------|-------|
+| Event date | `assets/js/main.js:28` — format: `'Month Day, Year HH:MM:SS GMT-0600'` |
+| Colors | `assets/css/styles.css` — `:root` block (lines 31-73) |
+| Registration | External link to `coloradolawclassic.org` (update href in all pages) |
+| Sponsors | `sponsors.html` + add logo images to `assets/img/` |
+| Gallery photos | `gallery.html` — wrap in `<a class="glightbox">` with `data-year` attribute |
+| Contact email | Update in `sponsors.html`, `faq.html`, `register.html` |
+
+## Documentation
+
+- `docs/SITE-IMPROVEMENTS.md` — Detailed changelog and pending improvements
+- `docs/BRAND-GUIDE.md` — Internal brand guidelines (colors, typography, imagery)
+
+## Pending Phase 3 Tasks
+
+See `docs/SITE-IMPROVEMENTS.md` for full details:
+
+1. **Contact Form** — Add contact section with form (Formspree recommended)
+2. **Flyer Design** — Modernize tournament flyer to match website aesthetic
+3. **Sponsor Logos** — Add logos as sponsors are confirmed
+4. **Gallery Images** — Add photos as they become available
+5. **Registration Page** — Build custom registration (may need payment integration)
 
 ## Archive
 
-Previous implementations (React app, documentation) are preserved in `archive/` for reference.
+Previous React implementation preserved in `archive/` for reference.

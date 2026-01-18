@@ -1,11 +1,31 @@
-/* Colorado Law Classic Improved JavaScript
+/*
+ * ==========================================================================
+ * COLORADO LAW CLASSIC - Main JavaScript
+ * ==========================================================================
  *
- * This script provides shared behaviour across the Colorado Law Classic
- * website. It automatically highlights the current page in the navigation,
- * drives the countdown timer on the home page, reveals images lazily as
- * they enter the viewport, and enables simple filtering of gallery images
- * by year. The code is wrapped in IIFEs (Immediately Invoked Function
- * Expressions) to avoid polluting the global namespace.
+ * Shared interactive behaviors for the Colorado Law Classic static website.
+ * All code is wrapped in IIFEs (Immediately Invoked Function Expressions)
+ * to avoid polluting the global namespace.
+ *
+ * DOCUMENTATION RULES (for all contributors):
+ * 1. Documentation in code — Include comments explaining what each section does
+ * 2. Don't make assumptions — Ask clarifying questions when intent is unclear
+ * 3. Include these rules — Reference these principles as reminders
+ *
+ * MODULES:
+ * 1. Active Nav Highlighting — Marks current page link in navigation
+ * 2. Mobile Menu Toggle — Hamburger menu for screens < 768px
+ * 3. Countdown Timer — Days/hours/minutes until event (home page only)
+ * 4. Scroll Reveal — Fade-in animation as elements enter viewport
+ * 5. Gallery Filter — Filter photos by year (gallery page only)
+ * 6. GLightbox Init — Lightbox for full-size image viewing (gallery page only)
+ *
+ * DEPENDENCIES:
+ * - GLightbox (loaded via CDN on gallery.html only)
+ *
+ * Related files:
+ * - assets/css/styles.css — Visual styles these behaviors interact with
+ * - All *.html files — Page markup with data-* attributes for JS hooks
  */
 
 // Highlight the active navigation link based on the current filename.
@@ -16,6 +36,60 @@
     if (href.endsWith(path)) {
       link.classList.add('active');
     }
+  });
+})();
+
+// Mobile hamburger menu toggle.
+// Controls the slide-out navigation on mobile devices (< 768px).
+// Uses aria-expanded for accessibility and manages body scroll lock.
+(function () {
+  const toggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const overlay = document.querySelector('.nav-overlay');
+
+  if (!toggle || !navLinks) return;
+
+  function openMenu() {
+    toggle.classList.add('active');
+    toggle.setAttribute('aria-expanded', 'true');
+    navLinks.classList.add('open');
+    if (overlay) overlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  }
+
+  function closeMenu() {
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+    navLinks.classList.remove('open');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scroll
+  }
+
+  // Toggle menu on hamburger click
+  toggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.contains('open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Close menu when clicking overlay
+  if (overlay) {
+    overlay.addEventListener('click', closeMenu);
+  }
+
+  // Close menu when pressing Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+      closeMenu();
+    }
+  });
+
+  // Close menu when clicking a nav link (for same-page navigation)
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
   });
 })();
 
@@ -64,19 +138,21 @@
 })();
 
 // Gallery filter by year. Buttons should have data-filter attributes ("all" or year),
-// and images should have data-year attributes corresponding to their year.
+// and gallery links (anchors) should have data-year attributes corresponding to their year.
+// Note: data-year moved from <img> to <a> elements to support lightbox wrapper structure.
 (function () {
   const filterButtons = document.querySelectorAll('.gallery-buttons button');
   if (!filterButtons.length) return;
-  const galleryImages = document.querySelectorAll('.gallery-grid img');
+  // Target anchor elements (lightbox wrappers) instead of images
+  const galleryItems = document.querySelectorAll('.gallery-grid a');
 
   function filterGallery(filter) {
-    galleryImages.forEach((img) => {
-      const year = img.getAttribute('data-year');
+    galleryItems.forEach((item) => {
+      const year = item.getAttribute('data-year');
       if (filter === 'all' || filter === year) {
-        img.classList.remove('hidden');
+        item.classList.remove('hidden');
       } else {
-        img.classList.add('hidden');
+        item.classList.add('hidden');
       }
     });
     // Update button active state
@@ -93,4 +169,17 @@
   });
   // Initialize with 'all'
   filterGallery('all');
+})();
+
+// Initialize GLightbox if present (only loads on gallery page).
+// GLightbox provides a lightweight, accessible lightbox for viewing full-size images.
+(function () {
+  if (typeof GLightbox !== 'undefined') {
+    GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      closeButton: true
+    });
+  }
 })();

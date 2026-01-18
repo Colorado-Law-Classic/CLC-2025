@@ -5,19 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ – Colorado Law Classic</title>
   <meta name="description" content="Frequently asked questions about the Colorado Law Classic golf tournament. Find answers to common questions about dress code, parking, registration and more.">
+  <link rel="icon" type="image/jpeg" href="assets/img/clc-logo.jpg">
+  <link rel="apple-touch-icon" href="assets/img/clc-logo.jpg">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Navigation - Mobile hamburger menu enabled at 768px breakpoint -->
   <nav class="nav">
     <div class="container">
       <a href="index.html" class="brand" data-nav>
         <img src="assets/img/clc-logo.jpg" alt="Colorado Law Classic logo" class="logo-image">
         <span>Colorado Law Classic</span>
       </a>
-      <div>
+      <!-- Hamburger button for mobile - hidden on desktop via CSS -->
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
         <a href="index.html" data-nav>Home</a>
         <a href="sponsors.html" data-nav>Sponsors</a>
         <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn btn-small" data-nav>Register</a>
@@ -25,11 +34,13 @@
         <a href="faq.html" data-nav>FAQ</a>
       </div>
     </div>
+    <!-- Overlay for closing mobile menu when clicking outside -->
+    <div class="nav-overlay"></div>
   </nav>
 
   <section class="container">
     <h1>Frequently Asked Questions</h1>
-    <p>If you have questions about the tournament, we have answers! If you don’t see your question here, please email us at <a href="mailto:info@coloradolawclassic.com">info@coloradolawclassic.com</a>.</p>
+    <p>If you have questions about the tournament, we have answers! If you don’t see your question here, please email us at <a href="mailto:coloradolawgolf@gmail.com">coloradolawgolf@gmail.com</a>.</p>
 
     <details>
       <summary>What should I wear?</summary>
@@ -68,7 +79,7 @@
 
     <details>
       <summary>How can I volunteer?</summary>
-      <p>We couldn’t run the event without volunteers! Please email us at <a href="mailto:info@coloradolawclassic.com">info@coloradolawclassic.com</a> if you’re interested in donating your time.</p>
+      <p>We couldn’t run the event without volunteers! Please email us at <a href="mailto:coloradolawgolf@gmail.com">coloradolawgolf@gmail.com</a> if you’re interested in donating your time.</p>
     </details>
   </section>
 

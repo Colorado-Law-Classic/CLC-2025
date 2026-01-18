@@ -5,20 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sponsors – Colorado Law Classic</title>
   <meta name="description" content="Meet the generous sponsors of the Colorado Law Classic. Learn about sponsorship opportunities and how your organization can make a lasting impact.">
+  <link rel="icon" type="image/jpeg" href="assets/img/clc-logo.jpg">
+  <link rel="apple-touch-icon" href="assets/img/clc-logo.jpg">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- Navigation - Mobile hamburger menu enabled at 768px breakpoint -->
   <nav class="nav">
     <div class="container">
       <a href="index.html" class="brand" data-nav>
         <img src="assets/img/clc-logo.jpg" alt="Colorado Law Classic logo" class="logo-image">
         <span>Colorado Law Classic</span>
       </a>
-      <div>
+      <!-- Hamburger button for mobile - hidden on desktop via CSS -->
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
         <a href="index.html" data-nav>Home</a>
         <a href="sponsors.html" data-nav>Sponsors</a>
         <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn btn-small" data-nav>Register</a>
@@ -26,6 +34,8 @@
         <a href="faq.html" data-nav>FAQ</a>
       </div>
     </div>
+    <!-- Overlay for closing mobile menu when clicking outside -->
+    <div class="nav-overlay"></div>
   </nav>
 
   <section class="container">
@@ -52,27 +62,32 @@
         <a href="#" class="logo" aria-label="HROP">
           <img src="assets/img/hrop.png" alt="Hamre, Rodriguez, Ostrander & Prescott logo" loading="lazy">
         </a>
-        <!-- Additional sponsor spots -->
-        <a href="#" class="logo" aria-label="Sponsor Open"><span style="opacity:0.6;">Your Logo Here</span></a>
-        <a href="#" class="logo" aria-label="Sponsor Open"><span style="opacity:0.6;">Your Logo Here</span></a>
+        <!-- Additional sponsor spots - styled as opportunities, not empty placeholders -->
+        <a href="mailto:coloradolawgolf@gmail.com" class="logo sponsor-available" aria-label="Sponsorship Available">
+          <span>Sponsorship<br>Available</span>
+        </a>
+        <a href="mailto:coloradolawgolf@gmail.com" class="logo sponsor-available" aria-label="Sponsorship Available">
+          <span>Sponsorship<br>Available</span>
+        </a>
       </div>
     </div>
     
     <!-- Call to action for sponsorship -->
-    <div class="cta-card" style="margin-top: 2rem;">
+    <div class="cta-card">
       <h3>Become a Sponsor</h3>
       <p>Your partnership helps fund scholarships and makes this event special. Sponsors enjoy brand visibility, complimentary player packages and unique networking opportunities.</p>
       <p><strong>Sponsorship Levels:</strong></p>
-      <ul style="list-style: none; padding-left: 0; text-align: left;">
+      <ul>
         <li><strong>Platinum – $2,500:</strong> Includes golf for four players, signage on the course and at registration, and recognition in all event materials.</li>
         <li><strong>Gold – $2,000:</strong> Includes golf for four players, signage at one hole and name recognition in event materials.</li>
         <li><strong>Hole Sponsor – $1,500:</strong> Includes golf for two players and signage at one hole.</li>
         <li><strong>Hole Sponsor (without golf) – $1,000:</strong> Signage at one hole and recognition in event materials.</li>
       </ul>
-      <p style="margin-top:0.5rem;">Ready to support? Use the link below to register your sponsorship level or contact us for a custom package.</p>
-      <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn" style="margin-right:0.5rem;">Sponsor Registration</a>
-      <a href="mailto:info@coloradolawclassic.com" class="btn btn-outline" style="margin-top:0.5rem;">Contact Us</a>
-      <a href="brand-guide.html" class="btn btn-outline" style="margin-top:0.5rem;">View Brand Guide</a>
+      <p>Ready to support? Use the link below to register your sponsorship level or contact us for a custom package.</p>
+      <div class="cta-buttons">
+        <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn">Sponsor Registration</a>
+        <a href="mailto:coloradolawgolf@gmail.com" class="btn btn-outline">Contact Us</a>
+      </div>
     </div>
   </section>
 
