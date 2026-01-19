@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 Colorado Law Classic Flyer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /*
+     * COLORADO LAW CLASSIC - Print Flyer
+     * Designed for 8.5" x 11" print output
+     * Black + Gold premium aesthetic
+     */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --clr-black: #0a0a0a;
+      --clr-charcoal: #1a1a1a;
+      --clr-gold: #d4af37;
+      --clr-gold-light: #e8c860;
+      --clr-cream: #faf9f7;
+      --clr-white: #ffffff;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+    }
+
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--clr-black);
+      color: var(--clr-white);
+      min-height: 100vh;
+    }
+
+    .flyer {
+      width: 8.5in;
+      height: 11in;
+      margin: 0 auto;
+      background: linear-gradient(180deg, var(--clr-black) 0%, var(--clr-charcoal) 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Decorative gold accent lines */
+    .flyer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--clr-gold), var(--clr-gold-light), var(--clr-gold));
+    }
+
+    .flyer::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--clr-gold), var(--clr-gold-light), var(--clr-gold));
+    }
+
+    /* Header Section */
+    .header {
+      text-align: center;
+      padding: 0.6in 0.5in 0.4in;
+      position: relative;
+    }
+
+    .anniversary-badge {
+      display: inline-block;
+      background: var(--clr-gold);
+      color: var(--clr-black);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4em 1.2em;
+      border-radius: 2px;
+      margin-bottom: 0.3in;
+    }
+
+    .title {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--clr-white);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.15in;
+    }
+
+    .title span {
+      color: var(--clr-gold);
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: var(--clr-gold);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Divider */
+    .divider {
+      width: 3in;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+      margin: 0.3in auto;
+    }
+
+    /* Event Info Section */
+    .event-info {
+      display: flex;
+      justify-content: center;
+      gap: 0.8in;
+      padding: 0 0.5in;
+      margin-bottom: 0.3in;
+    }
+
+    .info-block {
+      text-align: center;
+    }
+
+    .info-label {
+      font-size: 0.65rem;
+      color: var(--clr-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.08in;
+    }
+
+    .info-value {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--clr-white);
+    }
+
+    .info-detail {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 0.04in;
+    }
+
+    /* Main Content Grid */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4in;
+      padding: 0.3in 0.5in;
+      flex: 1;
+    }
+
+    /* Card Style */
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 8px;
+      padding: 0.35in;
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--clr-gold);
+      margin-bottom: 0.2in;
+      padding-bottom: 0.1in;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    /* Registration Card */
+    .registration-price {
+      text-align: center;
+      margin-bottom: 0.2in;
+    }
+
+    .price-amount {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--clr-white);
+    }
+
+    .price-per {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .includes-list {
+      list-style: none;
+    }
+
+    .includes-list li {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.85);
+      padding: 0.06in 0;
+      padding-left: 0.2in;
+      position: relative;
+    }
+
+    .includes-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: var(--clr-gold);
+      border-radius: 50%;
+    }
+
+    /* Sponsorship Card */
+    .sponsor-tier {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.12in 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .sponsor-tier:last-child {
+      border-bottom: none;
+    }
+
+    .tier-name {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--clr-white);
+    }
+
+    .tier-name.platinum { color: #e5e5e5; }
+    .tier-name.gold { color: var(--clr-gold); }
+
+    .tier-price {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--clr-gold);
+    }
+
+    .tier-note {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* Contact Section */
+    .contact-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 0.25in 0.5in 0.35in;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .qr-section {
+      text-align: center;
+    }
+
+    .qr-code {
+      width: 1.1in;
+      height: 1.1in;
+      background: var(--clr-white);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.1in;
+      padding: 0.08in;
+    }
+
+    .qr-code img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .qr-label {
+      font-size: 0.6rem;
+      color: var(--clr-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .contact-info {
+      text-align: right;
+    }
+
+    .website {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--clr-gold);
+      margin-bottom: 0.08in;
+    }
+
+    .email {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* Tax Notice */
+    .tax-notice {
+      text-align: center;
+      padding: 0.15in 0.5in;
+      font-size: 0.55rem;
+      color: rgba(255,255,255,0.5);
+      background: rgba(0,0,0,0.5);
+    }
+
+    /* Logo placeholder */
+    .logo-area {
+      position: absolute;
+      top: 0.4in;
+      right: 0.4in;
+      width: 0.9in;
+      height: 0.9in;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--clr-gold);
+    }
+
+    .logo-area img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Print button (hidden in print) */
+    .print-controls {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .print-btn {
+      background: var(--clr-gold);
+      color: var(--clr-black);
+      border: none;
+      padding: 12px 24px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .print-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+    }
+
+    @media print {
+      .print-controls {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .flyer {
+        box-shadow: none;
+      }
+    }
+
+    /* Screen view styling */
+    @media screen {
+      body {
+        padding: 40px;
+        background: #333;
+      }
+
+      .flyer {
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="flyer">
+    <!-- Logo -->
+    <div class="logo-area">
+      <img src="assets/img/clc-logo.jpg" alt="CLC Logo">
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="anniversary-badge">Celebrating 15 Years</div>
+      <h1 class="title">Colorado Law <span>Classic</span></h1>
+      <p class="tagline">Benefiting Scholarship Funds at CU Law School</p>
+    </header>
+
+    <div class="divider"></div>
+
+    <!-- Event Info -->
+    <div class="event-info">
+      <div class="info-block">
+        <div class="info-label">Date</div>
+        <div class="info-value">August 2026</div>
+        <div class="info-detail">Date TBA</div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Location</div>
+        <div class="info-value">City Park Golf Course</div>
+        <div class="info-detail">Denver, Colorado</div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Schedule</div>
+        <div class="info-value">Check-in 6:30 AM</div>
+        <div class="info-detail">Shotgun Start 7:30 AM</div>
+      </div>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="content-grid">
+      <!-- Registration Card -->
+      <div class="card">
+        <h2 class="card-title">Player Registration</h2>
+        <div class="registration-price">
+          <div class="price-amount">$150</div>
+          <div class="price-per">per player</div>
+        </div>
+        <ul class="includes-list">
+          <li>18 holes of golf</li>
+          <li>Lunch included</li>
+          <li>Player gift bag</li>
+          <li>Individual competition entry</li>
+          <li>Team competition entry</li>
+          <li>Complimentary beverages on course</li>
+        </ul>
+      </div>
+
+      <!-- Sponsorship Card -->
+      <div class="card">
+        <h2 class="card-title">Sponsorship Opportunities</h2>
+        <div class="sponsor-tier">
+          <span class="tier-name platinum">Platinum Sponsor</span>
+          <span class="tier-price">$2,500</span>
+        </div>
+        <div class="sponsor-tier">
+          <span class="tier-name gold">Gold Sponsor</span>
+          <span class="tier-price">$2,000</span>
+        </div>
+        <div class="sponsor-tier">
+          <div>
+            <span class="tier-name">Hole Sponsor</span>
+          </div>
+          <span class="tier-price">$1,500</span>
+        </div>
+        <div class="sponsor-tier">
+          <div>
+            <span class="tier-name">Hole Sponsor</span>
+            <div class="tier-note">(without golf)</div>
+          </div>
+          <span class="tier-price">$1,000</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+      <div class="qr-section">
+        <div class="qr-code">
+          <!-- QR code placeholder - generate at qr-code-generator.com -->
+          <svg viewBox="0 0 100 100" fill="#000">
+            <rect x="10" y="10" width="25" height="25"/>
+            <rect x="65" y="10" width="25" height="25"/>
+            <rect x="10" y="65" width="25" height="25"/>
+            <rect x="40" y="10" width="5" height="5"/>
+            <rect x="50" y="10" width="5" height="5"/>
+            <rect x="40" y="20" width="5" height="5"/>
+            <rect x="45" y="25" width="5" height="5"/>
+            <rect x="40" y="40" width="5" height="5"/>
+            <rect x="50" y="40" width="5" height="5"/>
+            <rect x="60" y="40" width="5" height="5"/>
+            <rect x="70" y="40" width="5" height="5"/>
+            <rect x="80" y="40" width="5" height="5"/>
+            <rect x="40" y="50" width="5" height="5"/>
+            <rect x="40" y="60" width="5" height="5"/>
+            <rect x="50" y="65" width="5" height="5"/>
+            <rect x="65" y="50" width="5" height="5"/>
+            <rect x="75" y="55" width="5" height="5"/>
+            <rect x="65" y="65" width="5" height="5"/>
+            <rect x="80" y="70" width="5" height="5"/>
+            <rect x="70" y="80" width="5" height="5"/>
+            <rect x="15" y="15" width="15" height="15" fill="#fff"/>
+            <rect x="18" y="18" width="9" height="9"/>
+            <rect x="70" y="15" width="15" height="15" fill="#fff"/>
+            <rect x="73" y="18" width="9" height="9"/>
+            <rect x="15" y="70" width="15" height="15" fill="#fff"/>
+            <rect x="18" y="73" width="9" height="9"/>
+          </svg>
+        </div>
+        <div class="qr-label">Scan to Register</div>
+      </div>
+
+      <div class="contact-info">
+        <div class="website">coloradolawclassic.org</div>
+        <div class="email">coloradolawgolf@gmail.com</div>
+      </div>
+    </div>
+
+    <!-- Tax Notice -->
+    <div class="tax-notice">
+      For tax purposes, the approximate value of goods and services exchanged for each registrant is $100.
+    </div>
+  </div>
+
+  <!-- Print Controls -->
+  <div class="print-controls">
+    <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+</body>
+</html>
