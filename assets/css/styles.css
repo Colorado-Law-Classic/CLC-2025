@@ -84,6 +84,109 @@
 
   /* Effects */
   --blur-md: 10px;
+
+  /* Theme-aware colors (default: light mode) */
+  --clr-bg: var(--clr-light);
+  --clr-bg-alt: var(--clr-cream);
+  --clr-surface: var(--clr-light);
+  --clr-text-primary: var(--clr-text);
+  --clr-text-secondary: var(--clr-text-muted);
+}
+
+/* Dark mode - activated by .dark-mode class on html element */
+html.dark-mode {
+  --clr-bg: #121212;
+  --clr-bg-alt: #1a1a1a;
+  --clr-surface: #1e1e1e;
+  --clr-text-primary: #f5f5f5;
+  --clr-text-secondary: #a0a0a0;
+  --clr-border: #333333;
+  --clr-border-dark: #444444;
+  --clr-cream: #1a1a1a;
+  --clr-muted: #252525;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Smooth transition when toggling themes */
+html.dark-mode-transition,
+html.dark-mode-transition *,
+html.dark-mode-transition *::before,
+html.dark-mode-transition *::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--clr-light);
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  margin-left: var(--space-sm);
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(15deg);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 2px;
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-base);
+}
+
+/* Show/hide sun and moon icons based on theme */
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+
+html.dark-mode .theme-toggle .icon-sun { display: block; }
+html.dark-mode .theme-toggle .icon-moon { display: none; }
+
+/* Dark mode specific overrides */
+html.dark-mode .card {
+  background: var(--clr-surface);
+  border-color: var(--clr-border);
+}
+
+html.dark-mode .btn-outline {
+  border-color: var(--clr-gold);
+  color: var(--clr-gold);
+}
+
+html.dark-mode .upload-section,
+html.dark-mode .testimonial-form {
+  background: var(--clr-surface);
+}
+
+html.dark-mode .upload-zone {
+  background: var(--clr-bg-alt);
+}
+
+html.dark-mode input,
+html.dark-mode select,
+html.dark-mode textarea {
+  background: var(--clr-bg-alt);
+  color: var(--clr-text-primary);
+  border-color: var(--clr-border);
+}
+
+html.dark-mode .memory-placeholder {
+  background: var(--clr-surface);
+  border-color: var(--clr-border);
 }
 
 /* ---------- Skip Link (Accessibility) ---------- */
@@ -141,8 +244,8 @@ html {
 body {
   font-family: var(--font-body);
   line-height: var(--line-height-base);
-  color: var(--clr-text);
-  background-color: var(--clr-cream);
+  color: var(--clr-text-primary);
+  background-color: var(--clr-bg-alt);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -164,7 +267,7 @@ h1, h2, h3, h4, h5 {
   font-family: var(--font-heading);
   font-weight: 600;
   line-height: 1.2;
-  color: var(--clr-charcoal);
+  color: var(--clr-text-primary);
   letter-spacing: -0.01em;
 }
 
@@ -282,10 +385,41 @@ section + section {
 .nav {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: var(--z-nav);
   background: var(--clr-charcoal);
   color: var(--clr-light);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  transition: background var(--transition-base), box-shadow var(--transition-base), padding var(--transition-base);
+}
+
+/* Scroll-aware nav: smaller, more prominent when scrolled */
+.nav.scrolled {
+  background: rgba(26, 26, 26, 0.98);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), 0 0 1px rgba(212, 175, 55, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav.scrolled .container {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.nav.scrolled .brand img.logo-image {
+  height: 28px;
+}
+
+/* Reading progress bar - shows scroll position */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-gold) 0%, var(--clr-gold-light) 100%);
+  z-index: calc(var(--z-nav) + 1);
+  transition: width 0.1s linear;
+  pointer-events: none;
 }
 
 .nav .container {
@@ -293,6 +427,7 @@ section + section {
   align-items: center;
   justify-content: space-between;
   padding: var(--space-sm) var(--space-md);
+  transition: padding var(--transition-base);
 }
 
 .nav .brand {
@@ -309,6 +444,7 @@ section + section {
   height: 36px;
   width: auto;
   margin-right: 0.75rem;
+  transition: height var(--transition-base);
 }
 
 .nav-links {
@@ -420,12 +556,129 @@ section + section {
   color: var(--clr-light);
 }
 
-.hero-card .countdown {
-  font-size: 1.5rem;
-  font-weight: 600;
+/* Flip-clock countdown timer */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
   margin-bottom: var(--space-lg);
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-flip {
+  position: relative;
+  width: 70px;
+  height: 80px;
+  perspective: 400px;
+}
+
+.countdown-flip-card {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.countdown-flip-top,
+.countdown-flip-bottom {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, var(--clr-charcoal) 0%, var(--clr-black) 100%);
   color: var(--clr-gold);
-  letter-spacing: 0.05em;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-flip-top {
+  top: 0;
+  align-items: flex-end;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.countdown-flip-top span {
+  transform: translateY(50%);
+}
+
+.countdown-flip-bottom {
+  bottom: 0;
+  align-items: flex-start;
+  padding-top: 2px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.countdown-flip-bottom span {
+  transform: translateY(-50%);
+}
+
+/* Flip animation cards */
+.countdown-flip-card-top,
+.countdown-flip-card-bottom {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.countdown-flip-card-top {
+  top: 0;
+  transform-origin: bottom;
+}
+
+.countdown-flip-card-bottom {
+  bottom: 0;
+  transform-origin: top;
+  transform: rotateX(90deg);
+}
+
+.countdown-flip.flip .countdown-flip-card-top {
+  animation: flipTop 0.3s ease-in forwards;
+}
+
+.countdown-flip.flip .countdown-flip-card-bottom {
+  animation: flipBottom 0.3s ease-out 0.15s forwards;
+}
+
+@keyframes flipTop {
+  to { transform: rotateX(-90deg); }
+}
+
+@keyframes flipBottom {
+  to { transform: rotateX(0deg); }
+}
+
+.countdown-label {
+  margin-top: var(--space-xs);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-cream);
+  opacity: 0.8;
+}
+
+/* Tee-off message below countdown */
+.countdown-message {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--clr-gold);
+  margin-top: calc(-1 * var(--space-sm));
+  margin-bottom: var(--space-lg);
 }
 
 .hero-buttons {
@@ -862,8 +1115,22 @@ footer a:hover {
     font-size: 2rem;
   }
 
-  .hero-card .countdown {
-    font-size: 1.2rem;
+  .countdown {
+    gap: var(--space-sm);
+  }
+
+  .countdown-flip {
+    width: 50px;
+    height: 60px;
+  }
+
+  .countdown-flip-top,
+  .countdown-flip-bottom {
+    font-size: 1.75rem;
+  }
+
+  .countdown-label {
+    font-size: 0.65rem;
   }
 
   /* Mobile navigation */

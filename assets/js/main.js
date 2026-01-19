@@ -14,11 +14,14 @@
  *
  * MODULES:
  * 1. Active Nav Highlighting — Marks current page link in navigation
- * 2. Mobile Menu Toggle — Hamburger menu for screens < 768px
- * 3. Countdown Timer — Days/hours/minutes until event (home page only)
- * 4. Scroll Reveal — Fade-in animation as elements enter viewport
- * 5. Gallery Filter — Filter photos by year (gallery page only)
- * 6. GLightbox Init — Lightbox for full-size image viewing (gallery page only)
+ * 2. Scroll-Aware Nav — Compact nav styling when scrolled (adds .scrolled class)
+ * 3. Reading Progress Bar — Gold bar at top showing scroll position
+ * 4. Dark Mode Toggle — Theme switcher with localStorage persistence
+ * 5. Mobile Menu Toggle — Hamburger menu for screens < 768px
+ * 6. Countdown Timer — Days/hours/minutes until event (home page only)
+ * 7. Scroll Reveal — Fade-in animation as elements enter viewport
+ * 8. Gallery Filter — Filter photos by year (gallery page only)
+ * 9. GLightbox Init — Lightbox for full-size image viewing (gallery page only)
  *
  * DEPENDENCIES:
  * - GLightbox (loaded via CDN on gallery.html only)
@@ -37,6 +40,155 @@
       link.classList.add('active');
     }
   });
+})();
+
+// Scroll-aware navigation styling.
+// Adds .scrolled class when user scrolls down, triggering compact nav styling.
+// Uses requestAnimationFrame for smooth, performant updates.
+(function () {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  const SCROLL_THRESHOLD = 50; // Pixels before nav changes
+  let lastScrollY = 0;
+  let ticking = false;
+
+  function updateNav() {
+    const scrollY = window.scrollY;
+
+    if (scrollY > SCROLL_THRESHOLD) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+
+    lastScrollY = scrollY;
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(updateNav);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Check initial scroll position (for page refresh mid-scroll)
+  updateNav();
+})();
+
+// Reading progress bar.
+// Shows a gold progress bar at the top indicating scroll position.
+// Creates the element dynamically so no HTML changes needed.
+(function () {
+  // Create progress bar element
+  const progressBar = document.createElement('div');
+  progressBar.className = 'reading-progress';
+  progressBar.setAttribute('aria-hidden', 'true');
+  document.body.prepend(progressBar);
+
+  let ticking = false;
+
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+    progressBar.style.width = progress + '%';
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(updateProgress);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', updateProgress, { passive: true });
+
+  // Initial update
+  updateProgress();
+})();
+
+// Dark mode toggle.
+// Persists preference to localStorage and respects system preference.
+// Creates toggle button dynamically in the nav.
+(function () {
+  const STORAGE_KEY = 'clc-theme';
+
+  // Create toggle button with sun/moon icons
+  const toggle = document.createElement('button');
+  toggle.className = 'theme-toggle';
+  toggle.setAttribute('aria-label', 'Toggle dark mode');
+  toggle.setAttribute('title', 'Toggle dark mode');
+  toggle.innerHTML = `
+    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+  `;
+
+  // Insert toggle into nav
+  const navLinks = document.querySelector('.nav-links');
+  if (navLinks) {
+    navLinks.appendChild(toggle);
+  }
+
+  // Get initial theme preference
+  function getPreferredTheme() {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  // Apply theme
+  function setTheme(theme, animate = false) {
+    if (animate) {
+      document.documentElement.classList.add('dark-mode-transition');
+      setTimeout(() => {
+        document.documentElement.classList.remove('dark-mode-transition');
+      }, 300);
+    }
+
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    } else {
+      document.documentElement.classList.remove('dark-mode');
+    }
+
+    localStorage.setItem(STORAGE_KEY, theme);
+  }
+
+  // Toggle theme on click
+  toggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.classList.contains('dark-mode') ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme, true);
+  });
+
+  // Listen for system preference changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem(STORAGE_KEY)) {
+      setTheme(e.matches ? 'dark' : 'light', true);
+    }
+  });
+
+  // Apply initial theme (no animation on page load)
+  setTheme(getPreferredTheme(), false);
 })();
 
 // Mobile hamburger menu toggle.
@@ -93,39 +245,94 @@
   });
 })();
 
-// Countdown timer on the home page. Updates every second.
+// Flip-clock countdown timer on the home page.
+// Creates animated flip cards for days, hours, minutes, seconds.
 // Properly clears interval on page unload to prevent memory leaks.
 (function () {
   const countdownEl = document.getElementById('countdown');
-  if (!countdownEl) return; // Only run on pages with a countdown element
+  if (!countdownEl) return;
 
-  // Event date for the 15th Annual Colorado Law Classic (Denver timezone) - placeholder date
+  // Event date for the 15th Annual Colorado Law Classic (Denver timezone)
   const eventDate = new Date('August 16, 2026 07:30:00 GMT-0600').getTime();
   let countdownInterval = null;
+  let prevValues = { days: -1, hours: -1, minutes: -1, seconds: -1 };
+
+  // Build flip-clock HTML structure
+  function createFlipUnit(label) {
+    return `
+      <div class="countdown-unit">
+        <div class="countdown-flip" data-unit="${label}">
+          <div class="countdown-flip-top"><span>00</span></div>
+          <div class="countdown-flip-bottom"><span>00</span></div>
+        </div>
+        <span class="countdown-label">${label}</span>
+      </div>
+    `;
+  }
+
+  countdownEl.innerHTML = `
+    ${createFlipUnit('days')}
+    ${createFlipUnit('hours')}
+    ${createFlipUnit('minutes')}
+    ${createFlipUnit('seconds')}
+  `;
+
+  // Add message element after countdown
+  const messageEl = document.createElement('div');
+  messageEl.className = 'countdown-message';
+  messageEl.textContent = 'until tee-off';
+  countdownEl.after(messageEl);
+
+  function updateFlipUnit(unit, value) {
+    const flipEl = countdownEl.querySelector(`[data-unit="${unit}"]`);
+    if (!flipEl) return;
+
+    const formattedValue = String(value).padStart(2, '0');
+    const topSpan = flipEl.querySelector('.countdown-flip-top span');
+    const bottomSpan = flipEl.querySelector('.countdown-flip-bottom span');
+
+    if (prevValues[unit] !== value) {
+      // Trigger flip animation
+      flipEl.classList.remove('flip');
+      void flipEl.offsetWidth; // Force reflow
+      flipEl.classList.add('flip');
+
+      // Update the displayed values
+      topSpan.textContent = formattedValue;
+      bottomSpan.textContent = formattedValue;
+
+      prevValues[unit] = value;
+    }
+  }
 
   function updateCountdown() {
     const now = Date.now();
     const distance = eventDate - now;
+
     if (distance <= 0) {
-      countdownEl.textContent = 'Event in progress!';
-      // Clear interval when event has started
+      countdownEl.innerHTML = '<div class="countdown-message" style="margin-top:0">Event in progress!</div>';
+      messageEl.remove();
       if (countdownInterval) {
         clearInterval(countdownInterval);
         countdownInterval = null;
       }
       return;
     }
+
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s until tee-off`;
+
+    updateFlipUnit('days', days);
+    updateFlipUnit('hours', hours);
+    updateFlipUnit('minutes', minutes);
+    updateFlipUnit('seconds', seconds);
   }
 
   updateCountdown();
   countdownInterval = setInterval(updateCountdown, 1000);
 
-  // Clean up interval on page unload to prevent memory leaks
   window.addEventListener('beforeunload', function () {
     if (countdownInterval) {
       clearInterval(countdownInterval);
