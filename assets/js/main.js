@@ -197,3 +197,149 @@
     });
   }
 })();
+
+// ==========================================================================
+// VISUAL POLISH EFFECTS
+// Enhanced animations, micro-interactions, and parallax
+// ==========================================================================
+
+// Enhanced scroll-triggered animations with staggered delays
+(function () {
+  const animatedElements = document.querySelectorAll('[data-animate]');
+  if (!animatedElements.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add delay if specified
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => {
+            entry.target.classList.add('animated');
+          }, delay);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+  );
+
+  animatedElements.forEach((el) => observer.observe(el));
+})();
+
+// Animated counter for statistics (counts up when visible)
+(function () {
+  const counters = document.querySelectorAll('[data-count]');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.count, 10);
+          const duration = parseInt(el.dataset.duration, 10) || 2000;
+          const suffix = el.dataset.suffix || '';
+
+          animateCounter(el, target, duration, suffix);
+          observer.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  function animateCounter(el, target, duration, suffix) {
+    const startTime = performance.now();
+    const startValue = 0;
+
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Easing function (ease-out)
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const currentValue = Math.floor(startValue + (target - startValue) * easeOut);
+
+      el.textContent = currentValue + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target + suffix;
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  counters.forEach((el) => observer.observe(el));
+})();
+
+// Card tilt effect on hover (3D perspective)
+(function () {
+  const tiltCards = document.querySelectorAll('[data-tilt]');
+  if (!tiltCards.length) return;
+
+  tiltCards.forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = (y - centerY) / centerY * -8;
+      const rotateY = (x - centerX) / centerX * 8;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+    });
+  });
+})();
+
+// Parallax effect for hero sections
+(function () {
+  const parallaxElements = document.querySelectorAll('[data-parallax]');
+  if (!parallaxElements.length) return;
+
+  let ticking = false;
+
+  function updateParallax() {
+    const scrollY = window.pageYOffset;
+
+    parallaxElements.forEach((el) => {
+      const speed = parseFloat(el.dataset.parallax) || 0.5;
+      const offset = scrollY * speed;
+      el.style.transform = `translateY(${offset}px)`;
+    });
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
+// Gold shimmer effect on hover for elements with data-shimmer
+(function () {
+  const shimmerElements = document.querySelectorAll('[data-shimmer]');
+  if (!shimmerElements.length) return;
+
+  shimmerElements.forEach((el) => {
+    el.addEventListener('mouseenter', () => {
+      el.classList.add('shimmer-active');
+    });
+
+    el.addEventListener('animationend', () => {
+      el.classList.remove('shimmer-active');
+    });
+  });
+})();

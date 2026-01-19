@@ -1741,6 +1741,204 @@ footer a:hover {
   }
 }
 
+/* ==========================================================================
+   VISUAL POLISH EFFECTS
+   Scroll animations, micro-interactions, parallax, and animated stats
+   ========================================================================== */
+
+/* ---------- Scroll-Triggered Animations ---------- */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-animate].animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation variants */
+[data-animate="fade-up"] {
+  transform: translateY(40px);
+}
+
+[data-animate="fade-in"] {
+  transform: translateY(0);
+}
+
+[data-animate="slide-left"] {
+  transform: translateX(-40px);
+}
+
+[data-animate="slide-right"] {
+  transform: translateX(40px);
+}
+
+[data-animate="scale"] {
+  transform: scale(0.9);
+}
+
+[data-animate="slide-left"].animated,
+[data-animate="slide-right"].animated {
+  transform: translateX(0);
+}
+
+[data-animate="scale"].animated {
+  transform: scale(1);
+}
+
+/* ---------- Card Tilt Effect ---------- */
+[data-tilt] {
+  transition: transform 0.15s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ---------- Animated Statistics ---------- */
+.stat-block {
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--clr-gold);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.stat-label {
+  font-size: 1.125rem;
+  color: var(--clr-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- Gold Shimmer Effect ---------- */
+[data-shimmer] {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-shimmer]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.3),
+    transparent
+  );
+  pointer-events: none;
+}
+
+[data-shimmer].shimmer-active::after {
+  animation: shimmer 0.6s ease-out;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* ---------- Button Pulse Effect ---------- */
+.btn-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+  }
+}
+
+/* ---------- Parallax Container ---------- */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-parallax] {
+  will-change: transform;
+}
+
+/* ---------- Hero with Parallax Background ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  right: 0;
+  bottom: -20%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* ---------- Enhanced Card Hover ---------- */
+.card {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(212, 175, 55, 0.1);
+}
+
+/* ---------- Anniversary Section ---------- */
+.anniversary-banner {
+  background: linear-gradient(135deg, var(--clr-charcoal) 0%, var(--clr-black) 100%);
+  color: var(--clr-light);
+  padding: var(--space-xl) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.anniversary-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.anniversary-content {
+  position: relative;
+  z-index: 1;
+}
+
+.anniversary-banner .stat-number {
+  font-size: 6rem;
+}
+
+@media (max-width: 768px) {
+  .stat-number {
+    font-size: 3rem;
+  }
+
+  .anniversary-banner .stat-number {
+    font-size: 4rem;
+  }
+}
+
 /* ---------- Print Styles ---------- */
 @media print {
   .nav, .nav-toggle, .nav-overlay {
