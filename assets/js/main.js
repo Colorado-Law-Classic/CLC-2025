@@ -94,18 +94,25 @@
 })();
 
 // Countdown timer on the home page. Updates every second.
+// Properly clears interval on page unload to prevent memory leaks.
 (function () {
   const countdownEl = document.getElementById('countdown');
   if (!countdownEl) return; // Only run on pages with a countdown element
 
   // Event date for the 15th Annual Colorado Law Classic (Denver timezone) - placeholder date
   const eventDate = new Date('August 16, 2026 07:30:00 GMT-0600').getTime();
+  let countdownInterval = null;
 
   function updateCountdown() {
     const now = Date.now();
     const distance = eventDate - now;
     if (distance <= 0) {
       countdownEl.textContent = 'Event in progress!';
+      // Clear interval when event has started
+      if (countdownInterval) {
+        clearInterval(countdownInterval);
+        countdownInterval = null;
+      }
       return;
     }
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -116,7 +123,14 @@
   }
 
   updateCountdown();
-  setInterval(updateCountdown, 1000);
+  countdownInterval = setInterval(updateCountdown, 1000);
+
+  // Clean up interval on page unload to prevent memory leaks
+  window.addEventListener('beforeunload', function () {
+    if (countdownInterval) {
+      clearInterval(countdownInterval);
+    }
+  });
 })();
 
 // Intersection observer to reveal elements with the data-reveal attribute as they scroll into view.

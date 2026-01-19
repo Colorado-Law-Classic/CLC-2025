@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery – Colorado Law Classic</title>
   <meta name="description" content="View photos from past Colorado Law Classic tournaments. Filter by year and relive the excitement on the course.">
+  <!-- Open Graph meta tags for social sharing -->
+  <meta property="og:title" content="Gallery – Colorado Law Classic">
+  <meta property="og:description" content="View photos from past Colorado Law Classic tournaments. Filter by year and relive the excitement on the course.">
+  <meta property="og:image" content="https://redeemedduck.github.io/CLC-2025/assets/img/clc-logo.jpg">
+  <meta property="og:url" content="https://redeemedduck.github.io/CLC-2025/gallery.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://redeemedduck.github.io/CLC-2025/gallery.html">
   <link rel="icon" type="image/jpeg" href="assets/img/clc-logo.jpg">
   <link rel="apple-touch-icon" href="assets/img/clc-logo.jpg">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -15,6 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <!-- Navigation - Mobile hamburger menu enabled at 768px breakpoint -->
   <nav class="nav">
     <div class="container">
@@ -33,6 +43,7 @@
         <a href="sponsors.html" data-nav>Sponsors</a>
         <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn btn-small" data-nav>Register</a>
         <a href="gallery.html" data-nav>Gallery</a>
+        <a href="contact.html" data-nav>Contact</a>
         <a href="faq.html" data-nav>FAQ</a>
       </div>
     </div>
@@ -40,14 +51,14 @@
     <div class="nav-overlay"></div>
   </nav>
 
-  <section class="container">
+  <section class="container" id="main-content">
     <h1>Gallery</h1>
     <p>Take a look at highlights from recent Colorado Law Classic tournaments. Click on each year to filter photos.</p>
     
-    <div class="gallery-buttons">
-      <button data-filter="all" class="active">All</button>
-      <button data-filter="2026">2026</button>
-      <button data-filter="2024">2024</button>
+    <div class="gallery-buttons" role="group" aria-label="Filter photos by year">
+      <button data-filter="all" class="active" aria-label="Show all photos">All</button>
+      <button data-filter="2026" aria-label="Show 2026 photos">2026</button>
+      <button data-filter="2024" aria-label="Show 2024 photos">2024</button>
     </div>
     
     <div class="gallery-grid">

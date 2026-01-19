@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://redeemedduck.github.io/CLC-2025/sitemap.xml

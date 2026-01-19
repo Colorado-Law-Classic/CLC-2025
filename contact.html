@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Colorado Law Classic</title>
+  <meta name="description" content="Get in touch with the Colorado Law Classic team. Ask questions about registration, sponsorship opportunities, or volunteering.">
+  <!-- Open Graph meta tags for social sharing -->
+  <meta property="og:title" content="Contact – Colorado Law Classic">
+  <meta property="og:description" content="Get in touch with the Colorado Law Classic team. Ask questions about registration, sponsorship opportunities, or volunteering.">
+  <meta property="og:image" content="https://redeemedduck.github.io/CLC-2025/assets/img/clc-logo.jpg">
+  <meta property="og:url" content="https://redeemedduck.github.io/CLC-2025/contact.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://redeemedduck.github.io/CLC-2025/contact.html">
+  <link rel="icon" type="image/jpeg" href="assets/img/clc-logo.jpg">
+  <link rel="apple-touch-icon" href="assets/img/clc-logo.jpg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Navigation - Mobile hamburger menu enabled at 768px breakpoint -->
+  <nav class="nav">
+    <div class="container">
+      <a href="index.html" class="brand" data-nav>
+        <img src="assets/img/clc-logo.jpg" alt="Colorado Law Classic logo" class="logo-image">
+        <span>Colorado Law Classic</span>
+      </a>
+      <!-- Hamburger button for mobile - hidden on desktop via CSS -->
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" data-nav>Home</a>
+        <a href="sponsors.html" data-nav>Sponsors</a>
+        <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn btn-small" data-nav>Register</a>
+        <a href="gallery.html" data-nav>Gallery</a>
+        <a href="contact.html" data-nav>Contact</a>
+        <a href="faq.html" data-nav>FAQ</a>
+      </div>
+    </div>
+    <!-- Overlay for closing mobile menu when clicking outside -->
+    <div class="nav-overlay"></div>
+  </nav>
+
+  <section class="container" id="main-content">
+    <h1>Contact Us</h1>
+    <p>Have questions about the Colorado Law Classic? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+
+    <form class="contact-form" action="https://formspree.io/f/coloradolawgolf@gmail.com" method="POST">
+      <!-- Honeypot field for spam protection - hidden from users -->
+      <div class="honeypot">
+        <label>Don't fill this out if you're human: <input type="text" name="_gotcha"></label>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="John Smith" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <select id="subject" name="subject" required>
+          <option value="">Select a topic...</option>
+          <option value="registration">Registration Question</option>
+          <option value="sponsorship">Sponsorship Inquiry</option>
+          <option value="volunteer">Volunteering</option>
+          <option value="donation">Donation</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+      </div>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <div style="margin-top: var(--space-xl); text-align: center;">
+      <h2>Other Ways to Reach Us</h2>
+      <p>Prefer email? Contact us directly at <a href="mailto:coloradolawgolf@gmail.com">coloradolawgolf@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Colorado Law Classic. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
