@@ -2,22 +2,123 @@
  * Anniversary Page JavaScript
  * Handles drag-drop photo uploads and testimonial form submission.
  *
- * NOTE: This is frontend-only. Actual file storage requires a backend service.
- * Integration placeholders included for Formspree, Cloudinary, or Firebase.
+ * ============================================================================
+ * SETUP INSTRUCTIONS
+ * ============================================================================
+ *
+ * This file handles two features that need backend services to fully function:
+ *   1. Photo uploads (drag-drop zone)
+ *   2. Testimonial form submissions
+ *
+ * Currently both simulate success. Follow the instructions below to connect
+ * to real services.
+ *
+ * ----------------------------------------------------------------------------
+ * OPTION A: FORMSPREE (Easiest - Free tier: 50 submissions/month)
+ * ----------------------------------------------------------------------------
+ * Best for: Testimonial form submissions (sends to email)
+ *
+ * Setup steps:
+ *   1. Go to https://formspree.io and create a free account
+ *   2. Click "New Form" and name it (e.g., "CLC Testimonials")
+ *   3. Copy your form ID (looks like: xyzabcde)
+ *   4. In CONFIG below, uncomment and set:
+ *        formspreeEndpoint: 'https://formspree.io/f/xyzabcde'
+ *   5. In handleTestimonialSubmit(), replace the simulated submission with:
+ *        await fetch(CONFIG.formspreeEndpoint, {
+ *          method: 'POST',
+ *          body: formData,
+ *          headers: { 'Accept': 'application/json' }
+ *        });
+ *
+ * Note: File uploads via Formspree are limited. Use Cloudinary for photos.
+ *
+ * ----------------------------------------------------------------------------
+ * OPTION B: CLOUDINARY (Recommended for photos - Free tier: 25GB storage)
+ * ----------------------------------------------------------------------------
+ * Best for: Photo uploads with automatic optimization
+ *
+ * Setup steps:
+ *   1. Go to https://cloudinary.com and create a free account
+ *   2. In your Dashboard, find your "Cloud Name" (e.g., "dxyz123ab")
+ *   3. Go to Settings > Upload > Upload Presets
+ *   4. Click "Add upload preset"
+ *        - Signing Mode: Unsigned (required for frontend uploads)
+ *        - Folder: "clc-anniversary" (optional, keeps photos organized)
+ *        - Save the preset name (e.g., "clc_unsigned")
+ *   5. In CONFIG below, uncomment and set:
+ *        cloudinaryCloudName: 'dxyz123ab',
+ *        cloudinaryUploadPreset: 'clc_unsigned'
+ *   6. In handleUpload(), replace simulateUpload() with:
+ *        for (const file of selectedFiles) {
+ *          await uploadToCloudinary(file);
+ *        }
+ *   7. Uncomment the uploadToCloudinary() function below (around line 320)
+ *
+ * To view uploaded photos: Log into Cloudinary > Media Library
+ *
+ * ----------------------------------------------------------------------------
+ * OPTION C: FIREBASE STORAGE (Advanced - Free tier: 5GB storage)
+ * ----------------------------------------------------------------------------
+ * Best for: Full control, real-time database integration
+ *
+ * Setup steps:
+ *   1. Go to https://console.firebase.google.com
+ *   2. Create a new project (or use existing)
+ *   3. Go to Build > Storage and click "Get Started"
+ *   4. Set security rules (start in test mode for development)
+ *   5. Go to Project Settings > General > Your apps > Web
+ *   6. Register your app and copy the config object
+ *   7. Add Firebase SDK to anniversary.html (before this script):
+ *        <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+ *        <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-storage-compat.js"></script>
+ *        <script>
+ *          firebase.initializeApp({
+ *            apiKey: "YOUR_API_KEY",
+ *            authDomain: "YOUR_PROJECT.firebaseapp.com",
+ *            projectId: "YOUR_PROJECT",
+ *            storageBucket: "YOUR_PROJECT.appspot.com"
+ *          });
+ *        </script>
+ *   8. In handleUpload(), replace simulateUpload() with:
+ *        const storage = firebase.storage();
+ *        for (const file of selectedFiles) {
+ *          const ref = storage.ref(`anniversary/${Date.now()}_${file.name}`);
+ *          await ref.put(file);
+ *        }
+ *
+ * ----------------------------------------------------------------------------
+ * TESTING WITHOUT A SERVICE
+ * ----------------------------------------------------------------------------
+ * The current code simulates successful uploads and submissions.
+ * Users will see success messages, but no data is actually saved.
+ * This is useful for testing the UI before connecting a real service.
+ *
+ * ============================================================================
  */
 
 (function() {
   'use strict';
 
-  // Configuration
+  // -------------------------------------------------------------------------
+  // CONFIGURATION - Edit these values to connect to your services
+  // -------------------------------------------------------------------------
   const CONFIG = {
+    // File validation settings
     maxFileSize: 5 * 1024 * 1024, // 5MB in bytes
     allowedTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp'],
     maxFiles: 10,
-    // Uncomment and configure when ready to connect to a service:
+
+    // ----- UNCOMMENT AND CONFIGURE YOUR CHOSEN SERVICE(S) BELOW -----
+
+    // Formspree (for testimonial form)
     // formspreeEndpoint: 'https://formspree.io/f/YOUR_FORM_ID',
+
+    // Cloudinary (for photo uploads)
     // cloudinaryCloudName: 'YOUR_CLOUD_NAME',
     // cloudinaryUploadPreset: 'YOUR_UPLOAD_PRESET'
+
+    // Firebase is configured via <script> tags in the HTML (see instructions above)
   };
 
   // State
@@ -288,10 +389,15 @@
     });
   }
 
-  /**
-   * Example: Cloudinary upload integration
-   * Uncomment and configure to use
-   */
+  // -------------------------------------------------------------------------
+  // CLOUDINARY UPLOAD FUNCTION
+  // -------------------------------------------------------------------------
+  // To enable: Uncomment the function below and configure CONFIG values above.
+  // Then in handleUpload(), replace `await simulateUpload();` with:
+  //   for (const file of selectedFiles) {
+  //     await uploadToCloudinary(file);
+  //   }
+  // -------------------------------------------------------------------------
   /*
   async function uploadToCloudinary(file) {
     const formData = new FormData();
