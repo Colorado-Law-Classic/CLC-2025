@@ -33,13 +33,9 @@
   const CONFIG = {
     packages: {
       individual: { price: 150, players: 1, name: 'Individual Registration' },
-      twosome: { price: 280, players: 2, name: 'Twosome Package' },
-      foursome: { price: 520, players: 4, name: 'Foursome Package' }
+      foursome: { price: 600, players: 4, name: 'Foursome' }
     },
-    addons: {
-      mulligans: { price: 20, perPlayer: true, name: 'Mulligan Pack (3)' },
-      donation: { price: 50, perPlayer: false, name: 'Scholarship Donation' }
-    }
+    addons: {}
   };
 
   // ==========================================================================
