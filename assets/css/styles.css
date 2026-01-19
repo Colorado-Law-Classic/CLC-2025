@@ -248,6 +248,8 @@ body {
   background-color: var(--clr-bg-alt);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Subtle diagonal pattern for texture */
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 a {
@@ -522,6 +524,63 @@ section + section {
   overflow: hidden;
 }
 
+/* Hero Video Background */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Show video when loaded */
+.hero-video-enabled .hero-video {
+  opacity: 1;
+}
+
+/* Overlay for text readability over video */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+/* Ensure hero content is above video */
+.hero-video-enabled .hero-card {
+  z-index: 2;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+}
+
+/* Hide video on mobile for bandwidth */
+@media (max-width: 768px) {
+  .hero-video {
+    display: none;
+  }
+
+  .hero-overlay {
+    display: none;
+  }
+}
+
 /* Subtle pattern overlay */
 .hero::before {
   content: '';
@@ -735,6 +794,104 @@ section + section {
   margin-bottom: var(--space-xs);
 }
 
+/* ---------- Card Icons ---------- */
+.card-icon {
+  text-align: center;
+  padding-top: var(--space-xl);
+}
+
+.card-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--space-md);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 50%;
+  transition: all var(--transition-base);
+}
+
+.card-icon:hover .card-icon-wrapper {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.1) 100%);
+  border-color: var(--clr-gold);
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+.card-icon-svg {
+  width: 28px;
+  height: 28px;
+  color: var(--clr-gold);
+  transition: transform var(--transition-base);
+}
+
+.card-icon:hover .card-icon-svg {
+  transform: scale(1.1);
+}
+
+/* ---------- Section Dividers ---------- */
+.section-divider {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+}
+
+/* Wave divider variant */
+.section-divider-wave {
+  height: 80px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23d4af37' fill-opacity='0.08'/%3E%3C/svg%3E") no-repeat center;
+  background-size: cover;
+}
+
+/* Grass line divider (golf-themed) */
+.section-divider-grass {
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M0,20 Q5,5 10,20 Q15,8 20,20 Q25,3 30,20 Q35,10 40,20 Q45,5 50,20 Q55,8 60,20 Q65,3 70,20 Q75,10 80,20 Q85,5 90,20 Q95,8 100,20 L100,20 L0,20 Z' fill='%232d5a27' fill-opacity='0.15'/%3E%3C/svg%3E") repeat-x center;
+  background-size: 100px 20px;
+}
+
+/* Gold accent line */
+.section-divider-gold {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.section-divider-gold::before,
+.section-divider-gold::after {
+  content: '';
+  flex: 1;
+  max-width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--clr-gold));
+}
+
+.section-divider-gold::after {
+  background: linear-gradient(90deg, var(--clr-gold), transparent);
+}
+
+.section-divider-gold .divider-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--clr-gold);
+  opacity: 0.6;
+}
+
 /* ---------- Grid Layouts ---------- */
 .grid {
   display: grid;
@@ -747,6 +904,45 @@ section + section {
 
 .grid-3 {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ---------- Section Backgrounds ---------- */
+/* Golf texture pattern - subtle fairway lines */
+.section-textured {
+  position: relative;
+  background-color: var(--clr-bg-alt);
+  padding: var(--space-xl) 0;
+}
+
+.section-textured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 30px,
+      rgba(45, 90, 39, 0.03) 30px,
+      rgba(45, 90, 39, 0.03) 60px
+    );
+  pointer-events: none;
+}
+
+/* Gold accent gradient background */
+.section-accent {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.03) 0%,
+    transparent 50%,
+    rgba(212, 175, 55, 0.02) 100%
+  );
+}
+
+/* Dark section with subtle pattern */
+.section-dark-textured {
+  background-color: var(--clr-charcoal);
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* ---------- Section Headers ---------- */
@@ -1010,6 +1206,92 @@ section + section {
   border-color: var(--clr-gold);
 }
 
+.logo img {
+  transition: transform var(--transition-base), filter var(--transition-base);
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+}
+
+/* ---------- Enhanced Image Treatments ---------- */
+/* Universal image card style with gold accent on hover */
+.img-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--clr-charcoal);
+}
+
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow), filter var(--transition-base);
+}
+
+.img-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  pointer-events: none;
+}
+
+.img-card:hover img {
+  transform: scale(1.08);
+}
+
+.img-card:hover::after {
+  border-color: var(--clr-gold);
+  box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Gold shimmer overlay effect */
+.img-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.img-shimmer:hover::before {
+  left: 100%;
+}
+
+/* Blur-up placeholder effect */
+.img-blur-up {
+  background-size: cover;
+  background-position: center;
+}
+
+.img-blur-up img {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.img-blur-up img.loaded {
+  opacity: 1;
+}
+
 /* ---------- In the News Section ---------- */
 .news-section {
   background: var(--clr-charcoal);
@@ -1054,12 +1336,35 @@ section + section {
   align-items: center;
   justify-content: center;
   padding: var(--space-lg);
+  overflow: hidden;
+}
+
+.news-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.news-card:hover .news-image::before {
+  left: 100%;
 }
 
 .news-image img {
   max-width: 200px;
   max-height: 150px;
   object-fit: contain;
+  transition: transform var(--transition-base);
+}
+
+.news-card:hover .news-image img {
+  transform: scale(1.05);
 }
 
 .news-badge {
@@ -1355,6 +1660,11 @@ footer {
   color: var(--clr-light);
   text-align: center;
   position: relative;
+  /* Denver skyline silhouette */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100' preserveAspectRatio='none'%3E%3Cpath fill='%23d4af37' fill-opacity='0.05' d='M0,100 L0,80 L50,80 L50,60 L80,60 L80,70 L100,70 L100,50 L120,50 L120,40 L140,40 L140,60 L160,60 L160,45 L180,45 L180,30 L200,30 L200,50 L230,50 L230,35 L250,35 L250,55 L280,55 L280,40 L320,40 L320,25 L340,25 L340,20 L360,20 L360,35 L400,35 L400,50 L450,50 L450,30 L480,30 L480,15 L500,15 L500,10 L520,10 L520,25 L550,25 L550,45 L600,45 L600,30 L650,30 L650,20 L680,20 L680,35 L720,35 L720,50 L800,50 L800,35 L850,35 L850,25 L880,25 L880,40 L950,40 L950,55 L1000,55 L1000,40 L1050,40 L1050,60 L1100,60 L1100,70 L1150,70 L1150,80 L1200,80 L1200,100 Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 60px;
 }
 
 footer::before {
@@ -1382,6 +1692,273 @@ footer a {
 
 footer a:hover {
   color: var(--clr-gold-light);
+}
+
+/* ---------- Course Map Page ---------- */
+.course-hero {
+  background: linear-gradient(135deg, var(--clr-charcoal) 0%, var(--clr-black) 100%);
+  color: var(--clr-light);
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.course-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: var(--space-sm);
+}
+
+.course-subtitle {
+  font-size: 1.25rem;
+  color: var(--clr-gold);
+  margin-bottom: var(--space-xs);
+}
+
+.course-tagline {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+.course-map-section {
+  padding: var(--space-xl) 0;
+  background: var(--clr-bg-alt);
+}
+
+.course-map-wrapper {
+  position: relative;
+  background: linear-gradient(180deg, #1a3d14 0%, #0d1f0a 100%);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.course-map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hole marker styles */
+.hole-marker {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.hole-marker:hover,
+.hole-marker.hovered {
+  transform: scale(1.2);
+  filter: url(#goldGlow);
+}
+
+.hole-marker.selected circle {
+  fill: var(--clr-gold);
+  stroke: #fff;
+}
+
+.hole-marker.selected text {
+  fill: var(--clr-black);
+}
+
+/* Water animation enhancement */
+.water-feature {
+  filter: drop-shadow(0 0 8px rgba(74, 144, 184, 0.5));
+}
+
+/* Map tooltip */
+.map-tooltip {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: var(--z-modal);
+  border: 1px solid var(--clr-gold);
+}
+
+.map-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.map-tooltip .tooltip-hole {
+  display: block;
+  font-weight: 600;
+  color: var(--clr-gold);
+}
+
+.map-tooltip .tooltip-info {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hole details panel */
+.hole-details-panel {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 240px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  border: 1px solid var(--clr-gold);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(20px);
+  transition: all 0.3s ease;
+}
+
+.hole-details-panel.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.panel-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.panel-close:hover {
+  color: var(--clr-gold);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xs);
+}
+
+.hole-number {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr-gold);
+}
+
+.hole-par {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.hole-yardage {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: var(--space-sm);
+}
+
+.hole-tip {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  margin-bottom: var(--space-sm);
+}
+
+.hole-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hole-badge {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hole-badge.signature {
+  background: linear-gradient(135deg, var(--clr-gold), var(--clr-gold-light));
+  color: var(--clr-black);
+}
+
+.hole-badge.par-3 {
+  background: rgba(100, 200, 100, 0.2);
+  color: #7cdf7c;
+}
+
+.hole-badge.par-4 {
+  background: rgba(100, 150, 255, 0.2);
+  color: #8ab4ff;
+}
+
+.hole-badge.par-5 {
+  background: rgba(255, 150, 100, 0.2);
+  color: #ffb080;
+}
+
+/* Course stats bar */
+.course-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--clr-charcoal);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item .stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--clr-gold);
+  font-family: var(--font-heading);
+}
+
+.stat-item .stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Course map responsive */
+@media (max-width: 768px) {
+  .hole-details-panel {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    transform: translateY(100%);
+  }
+
+  .hole-details-panel.visible {
+    transform: translateY(0);
+  }
+
+  .course-stats {
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .stat-item {
+    flex: 1 1 40%;
+  }
 }
 
 /* ---------- Utility Classes ---------- */

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Map – Colorado Law Classic 2026</title>
+  <meta name="description" content="Interactive course map of City Park Golf Course, host of the Colorado Law Classic charity golf tournament.">
+  <link rel="icon" type="image/jpeg" href="assets/img/clc-logo.jpg">
+  <link rel="apple-touch-icon" href="assets/img/clc-logo.jpg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <a href="index.html" class="brand" data-nav>
+        <img src="assets/img/clc-logo.jpg" alt="Colorado Law Classic logo" class="logo-image">
+        <span>Colorado Law Classic</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" data-nav>Home</a>
+        <a href="sponsors.html" data-nav>Sponsors</a>
+        <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn btn-small" data-nav>Register</a>
+        <a href="gallery.html" data-nav>Gallery</a>
+        <a href="anniversary.html" data-nav>15 Years</a>
+        <a href="course-map.html" data-nav>Course</a>
+        <a href="contact.html" data-nav>Contact</a>
+        <a href="faq.html" data-nav>FAQ</a>
+      </div>
+    </div>
+    <div class="nav-overlay"></div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="course-hero">
+      <div class="container">
+        <h1 data-animate="fade-up">City Park Golf Course</h1>
+        <p class="course-subtitle" data-animate="fade-up" data-delay="100">Par 70 • 6,703 Yards • Denver, Colorado</p>
+        <p class="course-tagline" data-animate="fade-up" data-delay="200">The best skyline and mountain views in the city</p>
+      </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="course-map-section">
+      <div class="container">
+        <div class="course-map-wrapper" data-animate="fade-up">
+          <!-- SVG Course Map -->
+          <svg class="course-map-svg" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet">
+            <!-- Background - Course grounds -->
+            <defs>
+              <!-- Gradient for fairways -->
+              <linearGradient id="fairwayGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#4a7c3f;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#3d6834;stop-opacity:1" />
+              </linearGradient>
+              <!-- Gradient for greens -->
+              <radialGradient id="greenGrad">
+                <stop offset="0%" style="stop-color:#5fa34d" />
+                <stop offset="100%" style="stop-color:#4a8a3d" />
+              </radialGradient>
+              <!-- Water gradient -->
+              <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#4a90b8" />
+                <stop offset="100%" style="stop-color:#3a7a9f" />
+              </linearGradient>
+              <!-- Gold glow filter for hover -->
+              <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Course background -->
+            <rect x="0" y="0" width="1000" height="700" fill="#2d5a27" opacity="0.3"/>
+
+            <!-- Rough/tree areas -->
+            <ellipse cx="100" cy="150" rx="80" ry="60" fill="#1a3d14" opacity="0.6"/>
+            <ellipse cx="900" cy="200" rx="70" ry="50" fill="#1a3d14" opacity="0.6"/>
+            <ellipse cx="150" cy="550" rx="90" ry="70" fill="#1a3d14" opacity="0.6"/>
+            <ellipse cx="850" cy="600" rx="85" ry="65" fill="#1a3d14" opacity="0.6"/>
+
+            <!-- Water feature (lake) -->
+            <path class="water-feature" d="M 400,320 Q 450,280 520,300 Q 580,320 560,380 Q 540,440 480,450 Q 420,460 380,420 Q 340,380 400,320" fill="url(#waterGrad)">
+              <animate attributeName="d"
+                dur="8s"
+                repeatCount="indefinite"
+                values="M 400,320 Q 450,280 520,300 Q 580,320 560,380 Q 540,440 480,450 Q 420,460 380,420 Q 340,380 400,320;
+                        M 405,318 Q 455,282 525,302 Q 582,322 562,382 Q 538,442 478,448 Q 418,458 378,418 Q 342,378 405,318;
+                        M 400,320 Q 450,280 520,300 Q 580,320 560,380 Q 540,440 480,450 Q 420,460 380,420 Q 340,380 400,320"/>
+            </path>
+
+            <!-- Clubhouse -->
+            <g class="landmark" data-landmark="clubhouse">
+              <rect x="470" y="600" width="60" height="40" fill="#8B7355" rx="4"/>
+              <polygon points="470,600 500,575 530,600" fill="#5C4033"/>
+              <text x="500" y="660" text-anchor="middle" fill="#d4af37" font-size="12" font-weight="600">Clubhouse</text>
+            </g>
+
+            <!-- Fairways (simplified shapes representing hole paths) -->
+            <!-- Front Nine -->
+            <path class="fairway" d="M 500,580 Q 450,500 380,420" stroke="url(#fairwayGrad)" stroke-width="25" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 340,400 Q 280,350 220,280" stroke="url(#fairwayGrad)" stroke-width="22" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 200,250 Q 280,200 360,180" stroke="url(#fairwayGrad)" stroke-width="20" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 390,180 Q 480,160 570,190" stroke="url(#fairwayGrad)" stroke-width="24" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 600,200 Q 680,250 720,320" stroke="url(#fairwayGrad)" stroke-width="22" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 740,350 Q 800,420 820,500" stroke="url(#fairwayGrad)" stroke-width="20" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 830,530 Q 780,580 700,590" stroke="url(#fairwayGrad)" stroke-width="25" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 670,580 Q 620,520 600,450" stroke="url(#fairwayGrad)" stroke-width="18" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 590,420 Q 540,360 500,300" stroke="url(#fairwayGrad)" stroke-width="22" fill="none" stroke-linecap="round"/>
+
+            <!-- Back Nine -->
+            <path class="fairway" d="M 480,270 Q 400,240 320,260" stroke="url(#fairwayGrad)" stroke-width="24" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 290,270 Q 220,320 180,400" stroke="url(#fairwayGrad)" stroke-width="20" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 170,430 Q 200,500 260,550" stroke="url(#fairwayGrad)" stroke-width="22" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 290,570 Q 350,600 420,580" stroke="url(#fairwayGrad)" stroke-width="18" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 450,560 Q 380,480 350,400" stroke="url(#fairwayGrad)" stroke-width="25" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 340,370 Q 300,300 320,230" stroke="url(#fairwayGrad)" stroke-width="20" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 340,200 Q 420,140 520,130" stroke="url(#fairwayGrad)" stroke-width="22" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 550,130 Q 650,100 750,140" stroke="url(#fairwayGrad)" stroke-width="24" fill="none" stroke-linecap="round"/>
+            <path class="fairway" d="M 780,160 Q 820,250 780,340" stroke="url(#fairwayGrad)" stroke-width="20" fill="none" stroke-linecap="round"/>
+
+            <!-- Hole markers with data attributes -->
+            <!-- Front Nine -->
+            <g class="hole-marker" data-hole="1" data-par="4" data-yards="395" data-tip="Gentle opener with views of downtown Denver">
+              <circle cx="370" cy="400" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="370" y="405" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">1</text>
+            </g>
+
+            <g class="hole-marker" data-hole="2" data-par="3" data-yards="212" data-tip="First par 3 - elevated tee with mountain backdrop">
+              <circle cx="200" cy="260" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="200" y="265" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">2</text>
+            </g>
+
+            <g class="hole-marker" data-hole="3" data-par="5" data-yards="545" data-tip="Signature hole - risk/reward over water" data-signature="true">
+              <circle cx="380" cy="170" r="18" fill="#1a1a1a" stroke="#d4af37" stroke-width="3"/>
+              <text x="380" y="175" text-anchor="middle" fill="#d4af37" font-size="12" font-weight="bold">3</text>
+            </g>
+
+            <g class="hole-marker" data-hole="4" data-par="4" data-yards="420" data-tip="Dogleg left, bunkers guard the green">
+              <circle cx="590" cy="200" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="590" y="205" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">4</text>
+            </g>
+
+            <g class="hole-marker" data-hole="5" data-par="4" data-yards="380" data-tip="Uphill approach to elevated green">
+              <circle cx="730" cy="340" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="730" y="345" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">5</text>
+            </g>
+
+            <g class="hole-marker" data-hole="6" data-par="4" data-yards="410" data-tip="Strategic tee shot avoids fairway bunkers">
+              <circle cx="830" cy="520" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="830" y="525" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">6</text>
+            </g>
+
+            <g class="hole-marker" data-hole="7" data-par="5" data-yards="520" data-tip="Best views of the Denver skyline" data-signature="true">
+              <circle cx="680" cy="590" r="18" fill="#1a1a1a" stroke="#d4af37" stroke-width="3"/>
+              <text x="680" y="595" text-anchor="middle" fill="#d4af37" font-size="12" font-weight="bold">7</text>
+            </g>
+
+            <g class="hole-marker" data-hole="8" data-par="3" data-yards="157" data-tip="Shortest par 3 - precision required">
+              <circle cx="590" cy="430" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="590" y="435" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">8</text>
+            </g>
+
+            <g class="hole-marker" data-hole="9" data-par="4" data-yards="435" data-tip="Strong finish to front nine, water right">
+              <circle cx="490" cy="280" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="490" y="285" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">9</text>
+            </g>
+
+            <!-- Back Nine -->
+            <g class="hole-marker" data-hole="10" data-par="4" data-yards="405" data-tip="Solid start to back nine">
+              <circle cx="300" cy="270" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="300" y="275" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">10</text>
+            </g>
+
+            <g class="hole-marker" data-hole="11" data-par="4" data-yards="390" data-tip="Downhill tee shot, watch the wind">
+              <circle cx="170" cy="420" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="170" y="425" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">11</text>
+            </g>
+
+            <g class="hole-marker" data-hole="12" data-par="4" data-yards="385" data-tip="Mountain views, tricky green" data-signature="true">
+              <circle cx="275" cy="560" r="18" fill="#1a1a1a" stroke="#d4af37" stroke-width="3"/>
+              <text x="275" y="565" text-anchor="middle" fill="#d4af37" font-size="12" font-weight="bold">12</text>
+            </g>
+
+            <g class="hole-marker" data-hole="13" data-par="3" data-yards="207" data-tip="Mid-length par 3, front bunker">
+              <circle cx="440" cy="570" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="440" y="575" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">13</text>
+            </g>
+
+            <g class="hole-marker" data-hole="14" data-par="5" data-yards="530" data-tip="Reachable in two for big hitters">
+              <circle cx="340" cy="380" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="340" y="385" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">14</text>
+            </g>
+
+            <g class="hole-marker" data-hole="15" data-par="3" data-yards="245" data-tip="Longest par 3 on the course">
+              <circle cx="330" cy="210" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="330" y="215" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">15</text>
+            </g>
+
+            <g class="hole-marker" data-hole="16" data-par="4" data-yards="425" data-tip="Challenging approach over swale">
+              <circle cx="540" cy="125" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="540" y="130" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">16</text>
+            </g>
+
+            <g class="hole-marker" data-hole="17" data-par="4" data-yards="408" data-tip="Dramatic elevation change">
+              <circle cx="770" cy="150" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="770" y="155" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">17</text>
+            </g>
+
+            <g class="hole-marker" data-hole="18" data-par="3" data-yards="214" data-tip="Finishing par 3 back to clubhouse">
+              <circle cx="770" cy="350" r="16" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="770" y="355" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">18</text>
+            </g>
+
+            <!-- Legend -->
+            <g class="map-legend" transform="translate(20, 600)">
+              <rect x="0" y="0" width="140" height="80" fill="rgba(0,0,0,0.7)" rx="8"/>
+              <circle cx="20" cy="20" r="8" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+              <text x="35" y="24" fill="#fff" font-size="11">Hole Marker</text>
+              <circle cx="20" cy="45" r="8" fill="#1a1a1a" stroke="#d4af37" stroke-width="3"/>
+              <text x="35" y="49" fill="#d4af37" font-size="11">Signature Hole</text>
+              <rect x="12" y="60" width="16" height="10" fill="url(#waterGrad)" rx="2"/>
+              <text x="35" y="69" fill="#fff" font-size="11">Water Hazard</text>
+            </g>
+          </svg>
+
+          <!-- Hole Details Panel -->
+          <div class="hole-details-panel" id="holeDetails">
+            <button class="panel-close" aria-label="Close details">&times;</button>
+            <div class="panel-content">
+              <div class="panel-header">
+                <span class="hole-number">Hole 1</span>
+                <span class="hole-par">Par 4</span>
+              </div>
+              <div class="hole-yardage">395 yards</div>
+              <p class="hole-tip">Click a hole marker for details</p>
+              <div class="hole-badges"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Stats -->
+        <div class="course-stats" data-animate="fade-up" data-delay="200">
+          <div class="stat-item">
+            <span class="stat-value">70</span>
+            <span class="stat-label">Par</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">6,703</span>
+            <span class="stat-label">Yards</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">18</span>
+            <span class="stat-label">Holes</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">2021</span>
+            <span class="stat-label">Redesigned</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Info Section -->
+    <section class="container" data-animate="fade-up">
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>About the Course</h2>
+          <p>City Park Golf Course is an urban parkland-style course in the heart of Denver. After a $46 million renovation, it reopened in 2021 with stunning views of the downtown skyline and Rocky Mountains.</p>
+          <p style="margin-top: 0.5rem;">The course is LEED Gold certified and features bent grass tees, fairways, and greens designed by Todd Schoeder and Hale Irwin.</p>
+        </div>
+        <div class="card">
+          <h2>Tournament Day</h2>
+          <p><strong>Format:</strong> 4-person scramble</p>
+          <p><strong>Check-in:</strong> 6:30 AM at the Clubhouse</p>
+          <p><strong>Shotgun Start:</strong> 7:30 AM</p>
+          <p><strong>Lunch & Awards:</strong> Following play</p>
+          <p style="margin-top: 0.5rem;"><a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn">Register Now</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" data-animate="fade-up">
+      <div class="container">
+        <h2>Ready to Play?</h2>
+        <p>Join us for the 15th Annual Colorado Law Classic</p>
+        <div class="cta-buttons">
+          <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn btn-lg">Register a Team</a>
+          <a href="sponsors.html" class="btn btn-outline-light btn-lg">Sponsor a Hole</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Colorado Law Classic. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/course-map.js"></script>
+</body>
+</html>
