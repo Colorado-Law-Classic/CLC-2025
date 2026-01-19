@@ -39,8 +39,10 @@
       <div class="nav-links" id="nav-links">
         <a href="index.html" data-nav>Home</a>
         <a href="sponsors.html" data-nav>Sponsors</a>
-        <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn btn-small" data-nav>Register</a>
+        <a href="register.html" class="btn btn-small" data-nav>Register</a>
         <a href="gallery.html" data-nav>Gallery</a>
+        <a href="anniversary.html" data-nav>15 Years</a>
+        <a href="course-map.html" data-nav>Course</a>
         <a href="contact.html" data-nav>Contact</a>
         <a href="faq.html" data-nav>FAQ</a>
       </div>
@@ -50,14 +52,415 @@
   </nav>
 
   <section class="container" id="main-content">
-    <h1>Register</h1>
-    <p>Thank you for your interest in the Colorado Law Classic! Your participation directly supports scholarship funds for Colorado Law students.</p>
-    <p><strong>When & Where:</strong> August 2026 (Date TBA) at City Park Golf Course in Denver. Check‑in opens at 6:30&nbsp;AM and we tee off at 7:30&nbsp;AM.</p>
-    <p><strong>What’s included:</strong> 18 holes of golf, lunch, a player gift and entry into individual and team competitions. Complimentary beverages will be available on the course.</p>
-    <p><strong>Cost per player:</strong> $150. For income tax purposes, the approximate value of goods and services exchanged per registrant is <strong>$100</strong>.</p>
-    <p style="margin-top:1rem;">Ready to sign up? Click the button below to register your team or yourself. You will be taken to our secure registration page where you can select your package and complete checkout.</p>
-    <p><a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn">Proceed to Registration</a></p>
-    <p style="margin-top:0.8rem;">If you are unable to play but would still like to contribute, please consider becoming a sponsor or making a donation. Contact us at <a href="mailto:coloradolawgolf@gmail.com">coloradolawgolf@gmail.com</a> for more details.</p>
+    <!-- Registration Header -->
+    <div class="register-header">
+      <h1>Register for the 2026 Colorado Law Classic</h1>
+      <p class="register-subtitle">15th Annual Charity Golf Tournament benefiting CU Law Scholarships</p>
+
+      <div class="event-details-banner">
+        <div class="event-detail">
+          <span class="detail-icon">📅</span>
+          <span><strong>Date:</strong> August 2026 (TBA)</span>
+        </div>
+        <div class="event-detail">
+          <span class="detail-icon">📍</span>
+          <span><strong>Location:</strong> City Park Golf Course, Denver</span>
+        </div>
+        <div class="event-detail">
+          <span class="detail-icon">⏰</span>
+          <span><strong>Check-in:</strong> 6:30 AM | <strong>Tee-off:</strong> 7:30 AM</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Steps -->
+    <div class="register-progress">
+      <div class="progress-step active" data-step="1">
+        <span class="step-number">1</span>
+        <span class="step-label">Package</span>
+      </div>
+      <div class="progress-connector"></div>
+      <div class="progress-step" data-step="2">
+        <span class="step-number">2</span>
+        <span class="step-label">Players</span>
+      </div>
+      <div class="progress-connector"></div>
+      <div class="progress-step" data-step="3">
+        <span class="step-number">3</span>
+        <span class="step-label">Review</span>
+      </div>
+      <div class="progress-connector"></div>
+      <div class="progress-step" data-step="4">
+        <span class="step-number">4</span>
+        <span class="step-label">Payment</span>
+      </div>
+    </div>
+
+    <!-- Registration Form -->
+    <form id="registration-form" class="registration-form" novalidate>
+
+      <!-- Step 1: Select Package -->
+      <div class="form-step active" data-step="1">
+        <h2>Select Your Package</h2>
+        <p class="step-description">Choose from individual or team registration options. All packages include 18 holes, lunch, player gift, and entry into competitions.</p>
+
+        <div class="package-grid">
+          <!-- Individual Package -->
+          <label class="package-card">
+            <input type="radio" name="package" value="individual" data-price="150" data-players="1">
+            <div class="package-content">
+              <div class="package-header">
+                <h3>Individual</h3>
+                <span class="package-price">$150</span>
+              </div>
+              <ul class="package-features">
+                <li>Single player registration</li>
+                <li>18 holes of golf</li>
+                <li>Lunch included</li>
+                <li>Player gift bag</li>
+                <li>Competition entry</li>
+              </ul>
+              <span class="package-select-indicator">Select</span>
+            </div>
+          </label>
+
+          <!-- Foursome Package -->
+          <label class="package-card">
+            <input type="radio" name="package" value="foursome" data-price="600" data-players="4">
+            <div class="package-content">
+              <div class="package-header">
+                <h3>Foursome</h3>
+                <span class="package-price">$600</span>
+              </div>
+              <ul class="package-features">
+                <li>4 player registrations</li>
+                <li>18 holes of golf</li>
+                <li>Lunch for all players</li>
+                <li>4 player gift bags</li>
+                <li>Team competition entry</li>
+              </ul>
+              <span class="package-select-indicator">Select</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline" disabled>Back</button>
+          <button type="button" class="btn btn-next" data-next="2">Continue to Player Details</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Player Information -->
+      <div class="form-step" data-step="2">
+        <h2>Player Information</h2>
+        <p class="step-description">Please provide details for all players in your group.</p>
+
+        <!-- Primary Contact (always shown) -->
+        <div class="player-section primary-player">
+          <h3>Primary Contact / Player 1</h3>
+          <p class="section-note">This person will receive all confirmation emails and updates.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="player1_firstName">First Name <span class="required">*</span></label>
+              <input type="text" id="player1_firstName" name="player1_firstName" required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="player1_lastName">Last Name <span class="required">*</span></label>
+              <input type="text" id="player1_lastName" name="player1_lastName" required autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="player1_email">Email Address <span class="required">*</span></label>
+              <input type="email" id="player1_email" name="player1_email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="player1_phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="player1_phone" name="player1_phone" required autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="player1_company">Company/Firm (optional)</label>
+              <input type="text" id="player1_company" name="player1_company" autocomplete="organization">
+            </div>
+            <div class="form-group">
+              <label for="player1_handicap">Handicap (optional)</label>
+              <input type="text" id="player1_handicap" name="player1_handicap" placeholder="e.g., 15 or N/A">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="player1_dietary">Dietary Restrictions (optional)</label>
+            <input type="text" id="player1_dietary" name="player1_dietary" placeholder="e.g., Vegetarian, Gluten-free, None">
+          </div>
+        </div>
+
+        <!-- Additional Players Container (dynamically shown based on package) -->
+        <div id="additional-players-container">
+          <!-- Player 2 -->
+          <div class="player-section additional-player" data-player="2" style="display: none;">
+            <h3>Player 2</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="player2_firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="player2_firstName" name="player2_firstName">
+              </div>
+              <div class="form-group">
+                <label for="player2_lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="player2_lastName" name="player2_lastName">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="player2_email">Email Address</label>
+                <input type="email" id="player2_email" name="player2_email">
+              </div>
+              <div class="form-group">
+                <label for="player2_handicap">Handicap (optional)</label>
+                <input type="text" id="player2_handicap" name="player2_handicap" placeholder="e.g., 15 or N/A">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="player2_dietary">Dietary Restrictions (optional)</label>
+              <input type="text" id="player2_dietary" name="player2_dietary" placeholder="e.g., Vegetarian, Gluten-free, None">
+            </div>
+          </div>
+
+          <!-- Player 3 -->
+          <div class="player-section additional-player" data-player="3" style="display: none;">
+            <h3>Player 3</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="player3_firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="player3_firstName" name="player3_firstName">
+              </div>
+              <div class="form-group">
+                <label for="player3_lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="player3_lastName" name="player3_lastName">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="player3_email">Email Address</label>
+                <input type="email" id="player3_email" name="player3_email">
+              </div>
+              <div class="form-group">
+                <label for="player3_handicap">Handicap (optional)</label>
+                <input type="text" id="player3_handicap" name="player3_handicap" placeholder="e.g., 15 or N/A">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="player3_dietary">Dietary Restrictions (optional)</label>
+              <input type="text" id="player3_dietary" name="player3_dietary" placeholder="e.g., Vegetarian, Gluten-free, None">
+            </div>
+          </div>
+
+          <!-- Player 4 -->
+          <div class="player-section additional-player" data-player="4" style="display: none;">
+            <h3>Player 4</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="player4_firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="player4_firstName" name="player4_firstName">
+              </div>
+              <div class="form-group">
+                <label for="player4_lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="player4_lastName" name="player4_lastName">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="player4_email">Email Address</label>
+                <input type="email" id="player4_email" name="player4_email">
+              </div>
+              <div class="form-group">
+                <label for="player4_handicap">Handicap (optional)</label>
+                <input type="text" id="player4_handicap" name="player4_handicap" placeholder="e.g., 15 or N/A">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="player4_dietary">Dietary Restrictions (optional)</label>
+              <input type="text" id="player4_dietary" name="player4_dietary" placeholder="e.g., Vegetarian, Gluten-free, None">
+            </div>
+          </div>
+        </div>
+
+        <!-- Special Requests -->
+        <div class="special-requests">
+          <h3>Special Requests (optional)</h3>
+          <div class="form-group">
+            <label for="special_requests">Accessibility needs, pairing requests, or other notes</label>
+            <textarea id="special_requests" name="special_requests" rows="3" placeholder="Let us know if you have any special requests or need accommodations..."></textarea>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline btn-back" data-back="1">Back</button>
+          <button type="button" class="btn btn-next" data-next="3">Continue to Review</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Review Order -->
+      <div class="form-step" data-step="3">
+        <h2>Review Your Registration</h2>
+        <p class="step-description">Please review your registration details before proceeding to payment.</p>
+
+        <div class="review-section">
+          <!-- Order Summary -->
+          <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div class="summary-items" id="summary-items">
+              <!-- Populated by JavaScript -->
+            </div>
+            <div class="summary-total">
+              <span>Total</span>
+              <span id="summary-total">$0</span>
+            </div>
+          </div>
+
+          <!-- Player Summary -->
+          <div class="player-summary">
+            <h3>Player Details</h3>
+            <div id="player-summary-list">
+              <!-- Populated by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Special Requests Summary -->
+          <div class="requests-summary" id="requests-summary" style="display: none;">
+            <h3>Special Requests</h3>
+            <p id="requests-summary-text"></p>
+          </div>
+        </div>
+
+        <!-- Tax Deductibility Notice -->
+        <div class="tax-notice">
+          <p><strong>Tax Deductibility:</strong> For income tax purposes, the approximate value of goods and services exchanged per registrant is <strong>$100</strong>. The deductible portion is the amount paid minus $100 per player.</p>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline btn-back" data-back="2">Back</button>
+          <button type="button" class="btn btn-next" data-next="4">Proceed to Payment</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Payment -->
+      <div class="form-step" data-step="4">
+        <h2>Complete Payment</h2>
+        <p class="step-description">Choose your preferred payment method to complete your registration.</p>
+
+        <div class="payment-section">
+          <!-- Order Total Reminder -->
+          <div class="payment-total-box">
+            <span>Total Due:</span>
+            <span class="payment-total" id="payment-total">$0</span>
+          </div>
+
+          <!-- Payment Method Selection -->
+          <div class="payment-methods">
+            <h3>Select Payment Method</h3>
+
+            <!-- Payment method options - placeholders for integration -->
+            <div class="payment-method-grid">
+              <label class="payment-method-card">
+                <input type="radio" name="payment_method" value="card" checked>
+                <span class="payment-method-content">
+                  <span class="payment-icon">💳</span>
+                  <span class="payment-name">Credit/Debit Card</span>
+                </span>
+              </label>
+
+              <label class="payment-method-card">
+                <input type="radio" name="payment_method" value="paypal">
+                <span class="payment-method-content">
+                  <span class="payment-icon">🅿️</span>
+                  <span class="payment-name">PayPal</span>
+                </span>
+              </label>
+            </div>
+
+            <!-- Card Payment Form (placeholder for Stripe/Square/Zeffy integration) -->
+            <div class="card-payment-form" id="card-payment-form">
+              <div class="payment-integration-placeholder">
+                <p><strong>Payment Integration Pending</strong></p>
+                <p>This form will connect to your chosen payment processor (Zeffy, PayPal, or Square).</p>
+                <p>For now, please contact <a href="mailto:coloradolawgolf@gmail.com">coloradolawgolf@gmail.com</a> to complete your registration.</p>
+              </div>
+
+              <!-- Card fields will be injected here by payment processor SDK -->
+              <div id="card-element"></div>
+              <div id="card-errors" class="card-errors" role="alert"></div>
+            </div>
+
+            <!-- PayPal Container (placeholder for PayPal integration) -->
+            <div class="paypal-payment-form" id="paypal-payment-form" style="display: none;">
+              <div class="payment-integration-placeholder">
+                <p><strong>PayPal Integration Pending</strong></p>
+                <p>PayPal button will appear here once integrated.</p>
+              </div>
+              <div id="paypal-button-container"></div>
+            </div>
+          </div>
+
+          <!-- Billing Information -->
+          <div class="billing-info">
+            <h3>Billing Information</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="billing_name">Name on Card <span class="required">*</span></label>
+                <input type="text" id="billing_name" name="billing_name" autocomplete="cc-name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="billing_address">Street Address <span class="required">*</span></label>
+                <input type="text" id="billing_address" name="billing_address" autocomplete="street-address">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="billing_city">City <span class="required">*</span></label>
+                <input type="text" id="billing_city" name="billing_city" autocomplete="address-level2">
+              </div>
+              <div class="form-group form-group-small">
+                <label for="billing_state">State <span class="required">*</span></label>
+                <input type="text" id="billing_state" name="billing_state" maxlength="2" placeholder="CO" autocomplete="address-level1">
+              </div>
+              <div class="form-group form-group-small">
+                <label for="billing_zip">ZIP <span class="required">*</span></label>
+                <input type="text" id="billing_zip" name="billing_zip" maxlength="10" autocomplete="postal-code">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terms and Submit -->
+        <div class="terms-section">
+          <label class="checkbox-label">
+            <input type="checkbox" name="terms_accepted" id="terms_accepted" required>
+            <span>I agree to the <a href="#" id="terms-link">terms and conditions</a> and understand that registration fees are non-refundable but transferable to another player.</span>
+          </label>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline btn-back" data-back="3">Back</button>
+          <button type="submit" class="btn btn-submit" id="submit-btn" disabled>
+            <span class="btn-text">Complete Registration</span>
+            <span class="btn-loading" style="display: none;">Processing...</span>
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+    <!-- Alternative Registration Notice -->
+    <div class="alt-registration">
+      <p>Having trouble? You can also register by contacting us directly at <a href="mailto:coloradolawgolf@gmail.com">coloradolawgolf@gmail.com</a> or calling the event organizers.</p>
+    </div>
   </section>
 
   <footer>
@@ -67,5 +470,6 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/registration.js"></script>
 </body>
 </html>
