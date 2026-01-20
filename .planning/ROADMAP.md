@@ -8,45 +8,44 @@
 
 4 phases focusing on fixing what's broken before adding anything new. Each phase is independently shippable and progressively improves the site.
 
-| Phase | Name | Goal | Est. Effort |
-|-------|------|------|-------------|
-| 1 | Critical Fixes | Working forms, consistent paths | Small |
-| 2 | Technical Polish | Professional touches | Small |
-| 3 | Nav Centralization | Single source of truth | Medium |
-| 4 | Content Enhancements | Demo impressions | Small |
+| Phase | Name | Goal | Status |
+|-------|------|------|--------|
+| 1 | Critical Fixes | Working forms, consistent paths | ✓ Complete |
+| 2 | Technical Polish | Professional touches | Pending |
+| 3 | Nav Centralization | Single source of truth | Pending |
+| 4 | Content Enhancements | Demo impressions | Pending |
 
-## Phase 1: Critical Fixes
+## Phase 1: Critical Fixes ✓
 
+**Status:** Complete (2026-01-20)
 **Goal:** Make broken things work
-
-**Why first:** Broken functionality looks worse than missing features. A contact form that doesn't submit destroys credibility more than not having testimonials.
 
 **Plans:** 2 plans (Wave 1 - parallel)
 
 Plans:
-- [ ] 01-01-PLAN.md — Content fixes (registration path, dates, FAQ weather)
-- [ ] 01-02-PLAN.md — Contact form Formspree fix (requires form ID)
+- [x] 01-01-PLAN.md — Content fixes (registration path, dates, FAQ weather)
+- [⊘] 01-02-PLAN.md — Contact form Formspree fix (deferred by user choice)
 
 ### Deliverables
 
-1. **Fix contact form** — Replace invalid Formspree URL with real form endpoint
-2. **Standardize registration** — Choose external link OR internal form, use everywhere
-3. **Resolve date conflicts** — Update all "TBA" references to match JSON-LD date
-4. **Fix FAQ weather** — Change "September weather" to "August weather"
+1. ~~**Fix contact form**~~ — Deferred (user chose to leave as placeholder)
+2. **Standardize registration** ✓ — All pages use external coloradolawclassic.org
+3. **Resolve date conflicts** ✓ — All dates show August 16, 2026
+4. **Fix FAQ weather** ✓ — August weather reference
 
 ### Requirements Covered
 
-- CRIT-01: Contact form submits
-- CRIT-02: Registration path consistent
-- CRIT-03: Date references consistent
-- CRIT-04: FAQ weather matches
+- CRIT-01: Contact form submits — **Deferred**
+- CRIT-02: Registration path consistent ✓
+- CRIT-03: Date references consistent ✓
+- CRIT-04: FAQ weather matches ✓
 
 ### Success Criteria
 
-- [ ] Contact form submits and receives confirmation
-- [ ] Every "Register" button/link goes to same destination
-- [ ] No "TBA" visible if date is set
-- [ ] FAQ references correct month
+- [ ] Contact form submits and receives confirmation — *deferred*
+- [x] Every "Register" button/link goes to same destination
+- [x] No "TBA" visible if date is set
+- [x] FAQ references correct month
 
 ---
 
@@ -170,4 +169,4 @@ Phase 3 is optional. Can skip to Phase 4 if time is tight.
 
 ---
 *Roadmap created: 2026-01-19*
-*Last updated: 2026-01-19 after Phase 1 planning*
+*Last updated: 2026-01-20 after Phase 1 execution*

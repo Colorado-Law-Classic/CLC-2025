@@ -9,10 +9,10 @@ Requirements for current polish/refinement cycle. Each maps to roadmap phases.
 
 ### Critical Fixes (CRIT)
 
-- [ ] **CRIT-01**: Contact form submits successfully to Formspree
-- [ ] **CRIT-02**: Registration path is consistent across all pages (external OR internal, not both)
-- [ ] **CRIT-03**: All date references are consistent (resolve TBA vs specific date)
-- [ ] **CRIT-04**: FAQ weather reference matches actual event month
+- [ ] **CRIT-01**: Contact form submits successfully to Formspree *(deferred - user choice)*
+- [x] **CRIT-02**: Registration path is consistent across all pages (external OR internal, not both)
+- [x] **CRIT-03**: All date references are consistent (resolve TBA vs specific date)
+- [x] **CRIT-04**: FAQ weather reference matches actual event month
 
 ### Technical Polish (TECH)
 
@@ -76,10 +76,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CRIT-01 | Phase 1 | Pending |
-| CRIT-02 | Phase 1 | Pending |
-| CRIT-03 | Phase 1 | Pending |
-| CRIT-04 | Phase 1 | Pending |
+| CRIT-01 | Phase 1 | Deferred |
+| CRIT-02 | Phase 1 | Complete |
+| CRIT-03 | Phase 1 | Complete |
+| CRIT-04 | Phase 1 | Complete |
 | TECH-01 | Phase 2 | Pending |
 | TECH-02 | Phase 2 | Pending |
 | TECH-03 | Phase 2 | Pending |
@@ -101,4 +101,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-19*
-*Last updated: 2026-01-19 after research synthesis*
+*Last updated: 2026-01-20 after Phase 1 execution*
