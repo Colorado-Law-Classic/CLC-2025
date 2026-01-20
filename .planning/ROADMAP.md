@@ -21,6 +21,12 @@
 
 **Why first:** Broken functionality looks worse than missing features. A contact form that doesn't submit destroys credibility more than not having testimonials.
 
+**Plans:** 2 plans (Wave 1 - parallel)
+
+Plans:
+- [ ] 01-01-PLAN.md — Content fixes (registration path, dates, FAQ weather)
+- [ ] 01-02-PLAN.md — Contact form Formspree fix (requires form ID)
+
 ### Deliverables
 
 1. **Fix contact form** — Replace invalid Formspree URL with real form endpoint
@@ -164,4 +170,4 @@ Phase 3 is optional. Can skip to Phase 4 if time is tight.
 
 ---
 *Roadmap created: 2026-01-19*
-*Last updated: 2026-01-19 after requirements definition*
+*Last updated: 2026-01-19 after Phase 1 planning*
