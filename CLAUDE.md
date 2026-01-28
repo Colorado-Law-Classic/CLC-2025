@@ -20,9 +20,31 @@ No build, lint, or test commands—just open HTML files directly in a browser.
 
 ## Deployment
 
-GitHub Pages auto-deploys from `main` branch via `.github/workflows/deploy.yml`.
+**Dual deployment** - Site is deployed to both GitHub Pages and GitLab Pages:
 
-Live URL: `https://redeemedduck.github.io/CLC-2025/`
+| Platform | URL | Config |
+|----------|-----|--------|
+| GitHub Pages | `https://coloradolawclassic.org/` | `.github/workflows/deploy.yml` |
+| GitLab Pages | `https://clc2155205.gitlab.io/clc-website-2026/` | `.gitlab-ci.yml` |
+
+### Git Remotes
+
+```bash
+origin   → https://github.com/Colorado-Law-Classic/CLC-2025.git
+gitlab   → https://gitlab.com/clc2155205/clc-website-2026.git
+```
+
+### Pushing to Both
+
+```bash
+git push origin main   # GitHub
+git push gitlab main   # GitLab
+```
+
+Or push to both simultaneously:
+```bash
+git push origin main && git push gitlab main
+```
 
 ## Architecture
 

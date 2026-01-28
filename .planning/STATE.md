@@ -1,6 +1,6 @@
 # Project State: Colorado Law Classic
 
-**Last Updated:** 2026-01-20
+**Last Updated:** 2026-01-28
 **Current Phase:** Phase 1 (01-critical-fixes) - Complete (with deferral)
 **Status:** Phase 1 finished; 1 plan executed, 1 deferred
 
@@ -53,7 +53,13 @@ Progress: [##........] Phase 1 complete (with known deferral)
 
 ## Session Context
 
-**Last session:** 2026-01-20
+**Last session:** 2026-01-28
+- Migrated project to GitLab for learning GitLab Ultimate features
+- Set up dual remotes (origin=GitHub, gitlab=GitLab)
+- Created `.gitlab-ci.yml` for GitLab Pages deployment
+- Site now deploys to both platforms automatically
+
+**Previous session:** 2026-01-20
 - Attempted Plan 01-02 (Contact Form fix)
 - User chose to defer at checkpoint:decision
 - CRIT-01 remains unresolved (contact form broken)
@@ -61,6 +67,13 @@ Progress: [##........] Phase 1 complete (with known deferral)
 
 **Resume file:** None
 **Next action:** Execute Phase 2 (02-technical-polish)
+
+## Infrastructure
+
+| Platform | Repository | CI/CD | Status |
+|----------|------------|-------|--------|
+| GitHub | `Colorado-Law-Classic/CLC-2025` | GitHub Actions | Active |
+| GitLab | `clc2155205/clc-website-2026` | GitLab CI/CD | Active (2026-01-28) |
 
 ## Quick Reference
 
