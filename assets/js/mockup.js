@@ -222,12 +222,13 @@
    * Initializes click handlers for interactive tiles.
    */
   function initTileActions() {
-    // Registration tile click -> go to register view
+    // Registration tile click -> go to registration page
     const registerTile = document.querySelector('[data-action="register"]');
     if (registerTile) {
       registerTile.style.cursor = 'pointer';
       registerTile.addEventListener('click', function() {
-        setView('register');
+        // Link to dedicated registration page
+        window.location.href = 'register-mockup.html';
       });
     }
 
