@@ -35,17 +35,15 @@
   // Configuration
   // ==========================================================================
 
+  // NOTE: Pricing should match coloradolawclassic.org
+  // Update these values when the official pricing is confirmed
   const CONFIG = {
     packages: {
       individual: { price: 150, players: 1, name: 'Individual Player' },
       foursome: { price: 600, players: 4, name: 'Foursome' },
       hole_sponsor: { price: 500, players: 0, name: 'Hole Sponsor' }
     },
-    addons: {
-      beverage: { price: 750, name: 'Beverage Cart Sponsor' },
-      lunch: { price: 1000, name: 'Luncheon Sponsor' },
-      contest: { price: 500, name: 'Contest Sponsor' }
-    }
+    addons: {}
   };
 
   // ==========================================================================
