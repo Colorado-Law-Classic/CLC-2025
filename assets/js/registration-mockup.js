@@ -40,8 +40,7 @@
   const CONFIG = {
     packages: {
       individual: { price: 150, players: 1, name: 'Individual Player' },
-      foursome: { price: 600, players: 4, name: 'Foursome' },
-      hole_sponsor: { price: 500, players: 0, name: 'Hole Sponsor' }
+      foursome: { price: 600, players: 4, name: 'Foursome' }
     },
     addons: {}
   };
