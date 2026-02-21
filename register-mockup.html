@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="flatirons">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register – Colorado Law Classic 2026</title>
+  <meta name="description" content="Register for the 2026 Colorado Law Classic charity golf tournament. Individual registration $150, foursomes $600. Benefiting scholarship funds at Colorado Law.">
+  <!-- Open Graph meta tags for social sharing -->
+  <meta property="og:title" content="Register – Colorado Law Classic 2026">
+  <meta property="og:description" content="Register for the 2026 Colorado Law Classic charity golf tournament. Individual registration $150, foursomes $600.">
+  <meta property="og:image" content="https://redeemedduck.github.io/CLC-2025/assets/img/clc-logo.jpg">
+  <meta property="og:url" content="https://redeemedduck.github.io/CLC-2025/register-mockup.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://redeemedduck.github.io/CLC-2025/register-mockup.html">
+  <link rel="icon" type="image/jpeg" href="assets/img/clc-logo.jpg">
+  <link rel="apple-touch-icon" href="assets/img/clc-logo.jpg">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/mockup.css">
+</head>
+<body class="mockup-page">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!--
+    NAVIGATION
+    Simplified navigation for registration flow
+  -->
+  <nav class="bento-nav">
+    <div class="bento-nav-inner">
+      <!-- Brand Logo Area -->
+      <a href="index-mockup.html" class="bento-brand">
+        <div class="bento-brand-icon">
+          <svg class="icon-mountain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
+          </svg>
+          <svg class="icon-triangle" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+            <path d="M12 2L22 20H2L12 2Z"/>
+          </svg>
+        </div>
+        <div class="bento-brand-text">
+          <h1 class="bento-brand-title">Colorado Law Classic</h1>
+          <p class="bento-brand-subtitle">University of Colorado Law School</p>
+        </div>
+      </a>
+
+      <!-- Theme Switcher (Desktop only) -->
+      <div class="theme-switcher">
+        <button class="theme-btn" data-theme="heritage">Heritage</button>
+        <button class="theme-btn active" data-theme="flatirons">Flatirons</button>
+        <button class="theme-btn" data-theme="noir">Black Tie</button>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="bento-nav-links">
+        <a href="index-mockup.html" class="bento-nav-link">Overview</a>
+        <a href="index-mockup.html#mission" class="bento-nav-link">15 Years</a>
+        <a href="register-mockup.html" class="bento-nav-link active">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <div class="register-page">
+
+      <!--
+        REGISTRATION HEADER
+        Event details and progress indicator
+      -->
+      <div class="register-header">
+        <div class="register-header-content">
+          <div class="bento-section-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            <span>15th Annual Tournament</span>
+          </div>
+          <h1 class="register-title">2026 Registration</h1>
+          <p class="register-subtitle">Sunday, August 16, 2026 • City Park Golf Course, Denver</p>
+        </div>
+
+        <!-- Progress Steps -->
+        <div class="register-progress">
+          <div class="progress-step active" data-step="1">
+            <div class="progress-step-number">1</div>
+            <div class="progress-step-label">Package</div>
+          </div>
+          <div class="progress-connector"></div>
+          <div class="progress-step" data-step="2">
+            <div class="progress-step-number">2</div>
+            <div class="progress-step-label">Details</div>
+          </div>
+          <div class="progress-connector"></div>
+          <div class="progress-step" data-step="3">
+            <div class="progress-step-number">3</div>
+            <div class="progress-step-label">Review</div>
+          </div>
+          <div class="progress-connector"></div>
+          <div class="progress-step" data-step="4">
+            <div class="progress-step-number">4</div>
+            <div class="progress-step-label">Payment</div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        REGISTRATION FORM
+        Multi-step form with package selection, player details, review, and payment
+      -->
+      <form id="registration-form" class="register-form" novalidate>
+
+        <!--
+          STEP 1: Package Selection
+        -->
+        <div class="form-step active" data-step="1">
+          <div class="form-step-header">
+            <h2 class="form-step-title">Select Your Package</h2>
+            <p class="form-step-desc">Choose a registration option for the 15th Annual Colorado Law Classic</p>
+          </div>
+
+          <div class="package-grid">
+            <!-- Individual Registration -->
+            <label class="package-card">
+              <input type="radio" name="package" value="individual" required>
+              <div class="package-card-content">
+                <div class="package-card-header">
+                  <span class="package-badge">Most Popular</span>
+                  <div class="package-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="package-name">Individual Player</h3>
+                <p class="package-desc">Single registration with all tournament amenities</p>
+                <div class="package-price">
+                  <span class="price-amount">$150</span>
+                  <span class="price-unit">per player</span>
+                </div>
+                <ul class="package-features">
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    18 holes of golf with cart
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Awards luncheon
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Tournament gift bag
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    On-course contests
+                  </li>
+                </ul>
+                <div class="package-select-indicator">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Selected
+                </div>
+              </div>
+            </label>
+
+            <!-- Foursome Registration -->
+            <label class="package-card">
+              <input type="radio" name="package" value="foursome" required>
+              <div class="package-card-content">
+                <div class="package-card-header">
+                  <span class="package-badge best-value">Best Value</span>
+                  <div class="package-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="package-name">Foursome</h3>
+                <p class="package-desc">Register your full team and save</p>
+                <div class="package-price">
+                  <span class="price-amount">$600</span>
+                  <span class="price-unit">for 4 players</span>
+                </div>
+                <ul class="package-features">
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    All individual benefits x4
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Guaranteed team pairing
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Team photo opportunity
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Save $150 vs. individual
+                  </li>
+                </ul>
+                <div class="package-select-indicator">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Selected
+                </div>
+              </div>
+            </label>
+
+          </div>
+
+          <!-- Step 1 Actions -->
+          <div class="form-actions">
+            <div class="order-total">
+              <span class="total-label">Current Total:</span>
+              <span class="total-amount" id="step1-total">$0</span>
+            </div>
+            <button type="button" class="btn-next" data-next="2">
+              Continue to Details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!--
+          STEP 2: Player Details
+        -->
+        <div class="form-step" data-step="2">
+          <div class="form-step-header">
+            <h2 class="form-step-title">Player Information</h2>
+            <p class="form-step-desc">Enter details for all players in your registration</p>
+          </div>
+
+          <!-- Primary Contact / Player 1 -->
+          <div class="player-section primary-player">
+            <div class="player-section-header">
+              <h3 class="player-section-title">
+                <span class="player-number">1</span>
+                Primary Contact
+              </h3>
+              <span class="player-badge">Required</span>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="player1_firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="player1_firstName" name="player1_firstName" required autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label for="player1_lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="player1_lastName" name="player1_lastName" required autocomplete="family-name">
+              </div>
+              <div class="form-group">
+                <label for="player1_email">Email Address <span class="required">*</span></label>
+                <input type="email" id="player1_email" name="player1_email" required autocomplete="email" placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="player1_phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="player1_phone" name="player1_phone" required autocomplete="tel" placeholder="(303) 555-0123">
+              </div>
+              <div class="form-group full-width">
+                <label for="player1_company">Company / Organization</label>
+                <input type="text" id="player1_company" name="player1_company" autocomplete="organization">
+              </div>
+              <div class="form-group">
+                <label for="player1_handicap">Golf Handicap</label>
+                <input type="text" id="player1_handicap" name="player1_handicap" placeholder="e.g., 15 or N/A">
+              </div>
+              <div class="form-group">
+                <label for="player1_dietary">Dietary Restrictions</label>
+                <select id="player1_dietary" name="player1_dietary">
+                  <option value="">None</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="vegan">Vegan</option>
+                  <option value="gluten-free">Gluten-Free</option>
+                  <option value="other">Other (specify below)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Players (shown for Foursome) -->
+          <div class="player-section additional-player" data-player="2" style="display: none;">
+            <div class="player-section-header">
+              <h3 class="player-section-title">
+                <span class="player-number">2</span>
+                Player 2
+              </h3>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="player2_firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="player2_firstName" name="player2_firstName" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="player2_lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="player2_lastName" name="player2_lastName" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="player2_email">Email Address</label>
+                <input type="email" id="player2_email" name="player2_email" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="player2_handicap">Golf Handicap</label>
+                <input type="text" id="player2_handicap" name="player2_handicap" placeholder="e.g., 15 or N/A">
+              </div>
+              <div class="form-group">
+                <label for="player2_dietary">Dietary Restrictions</label>
+                <select id="player2_dietary" name="player2_dietary">
+                  <option value="">None</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="vegan">Vegan</option>
+                  <option value="gluten-free">Gluten-Free</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="player-section additional-player" data-player="3" style="display: none;">
+            <div class="player-section-header">
+              <h3 class="player-section-title">
+                <span class="player-number">3</span>
+                Player 3
+              </h3>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="player3_firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="player3_firstName" name="player3_firstName" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="player3_lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="player3_lastName" name="player3_lastName" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="player3_email">Email Address</label>
+                <input type="email" id="player3_email" name="player3_email" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="player3_handicap">Golf Handicap</label>
+                <input type="text" id="player3_handicap" name="player3_handicap" placeholder="e.g., 15 or N/A">
+              </div>
+              <div class="form-group">
+                <label for="player3_dietary">Dietary Restrictions</label>
+                <select id="player3_dietary" name="player3_dietary">
+                  <option value="">None</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="vegan">Vegan</option>
+                  <option value="gluten-free">Gluten-Free</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="player-section additional-player" data-player="4" style="display: none;">
+            <div class="player-section-header">
+              <h3 class="player-section-title">
+                <span class="player-number">4</span>
+                Player 4
+              </h3>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="player4_firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="player4_firstName" name="player4_firstName" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="player4_lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="player4_lastName" name="player4_lastName" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="player4_email">Email Address</label>
+                <input type="email" id="player4_email" name="player4_email" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="player4_handicap">Golf Handicap</label>
+                <input type="text" id="player4_handicap" name="player4_handicap" placeholder="e.g., 15 or N/A">
+              </div>
+              <div class="form-group">
+                <label for="player4_dietary">Dietary Restrictions</label>
+                <select id="player4_dietary" name="player4_dietary">
+                  <option value="">None</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="vegan">Vegan</option>
+                  <option value="gluten-free">Gluten-Free</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Special Requests -->
+          <div class="special-requests-section">
+            <h3 class="section-title">Special Requests</h3>
+            <div class="form-group full-width">
+              <label for="special_requests">Additional notes or requests</label>
+              <textarea id="special_requests" name="special_requests" rows="3" placeholder="Pairing requests, dietary details, accessibility needs, etc."></textarea>
+            </div>
+          </div>
+
+          <!-- Step 2 Actions -->
+          <div class="form-actions">
+            <button type="button" class="btn-back" data-back="1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Back
+            </button>
+            <button type="button" class="btn-next" data-next="3">
+              Review Order
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!--
+          STEP 3: Order Review
+        -->
+        <div class="form-step" data-step="3">
+          <div class="form-step-header">
+            <h2 class="form-step-title">Review Your Order</h2>
+            <p class="form-step-desc">Please verify your information before proceeding to payment</p>
+          </div>
+
+          <div class="review-grid">
+            <!-- Order Summary -->
+            <div class="review-card">
+              <h3 class="review-card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                Order Summary
+              </h3>
+              <div class="summary-items" id="summary-items">
+                <!-- Populated by JavaScript -->
+              </div>
+              <div class="summary-divider"></div>
+              <div class="summary-total">
+                <span>Total</span>
+                <span id="summary-total">$0</span>
+              </div>
+            </div>
+
+            <!-- Player Summary -->
+            <div class="review-card">
+              <h3 class="review-card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Players
+              </h3>
+              <div class="player-summary-list" id="player-summary-list">
+                <!-- Populated by JavaScript -->
+              </div>
+            </div>
+
+            <!-- Special Requests Summary -->
+            <div class="review-card" id="requests-summary" style="display: none;">
+              <h3 class="review-card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                Special Requests
+              </h3>
+              <p class="requests-text" id="requests-summary-text"></p>
+            </div>
+          </div>
+
+          <!-- Step 3 Actions -->
+          <div class="form-actions">
+            <button type="button" class="btn-back" data-back="2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Edit Details
+            </button>
+            <button type="button" class="btn-next" data-next="4">
+              Proceed to Payment
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!--
+          STEP 4: Payment
+        -->
+        <div class="form-step" data-step="4">
+          <div class="form-step-header">
+            <h2 class="form-step-title">Complete Payment</h2>
+            <p class="form-step-desc">Secure payment processing</p>
+          </div>
+
+          <div class="payment-layout">
+            <!-- Payment Amount -->
+            <div class="payment-amount-card">
+              <div class="payment-amount-header">
+                <span>Amount Due</span>
+                <span class="payment-amount" id="payment-total">$0</span>
+              </div>
+              <p class="payment-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                Your payment is secured with SSL encryption
+              </p>
+            </div>
+
+            <!-- Payment Method Selection -->
+            <div class="payment-methods">
+              <h3 class="payment-methods-title">Select Payment Method</h3>
+
+              <div class="payment-method-grid">
+                <label class="payment-method-card">
+                  <input type="radio" name="payment_method" value="card" checked>
+                  <div class="payment-method-content">
+                    <div class="payment-method-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                      </svg>
+                    </div>
+                    <span class="payment-method-name">Credit Card</span>
+                    <span class="payment-method-desc">Visa, Mastercard, Amex</span>
+                  </div>
+                </label>
+
+                <label class="payment-method-card">
+                  <input type="radio" name="payment_method" value="paypal">
+                  <div class="payment-method-content">
+                    <div class="payment-method-icon paypal">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.77.77 0 0 1 .757-.64h6.919c2.299 0 3.924.644 4.833 1.914.404.564.674 1.207.796 1.911.127.736.07 1.617-.17 2.62-.3 1.254-.796 2.3-1.478 3.104-.654.77-1.466 1.347-2.412 1.716-.912.357-1.996.537-3.222.537H9.14a.95.95 0 0 0-.938.803l-.002.014-.74 4.704-.029.158a.283.283 0 0 1-.28.276h-.075z"/>
+                      </svg>
+                    </div>
+                    <span class="payment-method-name">PayPal</span>
+                    <span class="payment-method-desc">Pay with your PayPal account</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Card Payment Form -->
+            <div class="payment-form" id="card-payment-form">
+              <h3 class="payment-form-title">Card Details</h3>
+
+              <div class="form-grid">
+                <div class="form-group full-width">
+                  <label for="card_name">Cardholder Name <span class="required">*</span></label>
+                  <input type="text" id="card_name" name="card_name" autocomplete="cc-name" placeholder="Name as it appears on card">
+                </div>
+
+                <!-- Stripe/Square Card Element Placeholder -->
+                <div class="form-group full-width">
+                  <label for="card-element">Card Number <span class="required">*</span></label>
+                  <div id="card-element" class="card-element-placeholder">
+                    <!-- Stripe Elements or Square Web SDK will mount here -->
+                    <input type="text" placeholder="4242 4242 4242 4242" class="card-input-placeholder">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="card_expiry">Expiration <span class="required">*</span></label>
+                  <input type="text" id="card_expiry" placeholder="MM / YY" class="card-input-placeholder">
+                </div>
+
+                <div class="form-group">
+                  <label for="card_cvc">CVC <span class="required">*</span></label>
+                  <input type="text" id="card_cvc" placeholder="123" class="card-input-placeholder">
+                </div>
+              </div>
+
+              <!-- Billing Address -->
+              <h3 class="payment-form-title billing-title">Billing Address</h3>
+              <div class="form-grid">
+                <div class="form-group full-width">
+                  <label for="billing_name">Full Name <span class="required">*</span></label>
+                  <input type="text" id="billing_name" name="billing_name" autocomplete="name">
+                </div>
+                <div class="form-group full-width">
+                  <label for="billing_address">Street Address <span class="required">*</span></label>
+                  <input type="text" id="billing_address" name="billing_address" autocomplete="street-address">
+                </div>
+                <div class="form-group">
+                  <label for="billing_city">City <span class="required">*</span></label>
+                  <input type="text" id="billing_city" name="billing_city" autocomplete="address-level2">
+                </div>
+                <div class="form-group">
+                  <label for="billing_state">State <span class="required">*</span></label>
+                  <select id="billing_state" name="billing_state" autocomplete="address-level1">
+                    <option value="">Select State</option>
+                    <option value="CO">Colorado</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="CA">California</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NV">Nevada</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="WY">Wyoming</option>
+                    <!-- Add more states as needed -->
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="billing_zip">ZIP Code <span class="required">*</span></label>
+                  <input type="text" id="billing_zip" name="billing_zip" autocomplete="postal-code" placeholder="80202">
+                </div>
+              </div>
+            </div>
+
+            <!-- PayPal Payment Form -->
+            <div class="payment-form" id="paypal-payment-form" style="display: none;">
+              <div class="paypal-placeholder">
+                <div class="paypal-logo">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.77.77 0 0 1 .757-.64h6.919c2.299 0 3.924.644 4.833 1.914.404.564.674 1.207.796 1.911.127.736.07 1.617-.17 2.62-.3 1.254-.796 2.3-1.478 3.104-.654.77-1.466 1.347-2.412 1.716-.912.357-1.996.537-3.222.537H9.14a.95.95 0 0 0-.938.803l-.002.014-.74 4.704-.029.158a.283.283 0 0 1-.28.276h-.075z"/>
+                  </svg>
+                </div>
+                <p>Click "Complete Registration" to be redirected to PayPal to complete your payment securely.</p>
+                <div id="paypal-button-container">
+                  <!-- PayPal SDK will render buttons here -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Terms and Submit -->
+            <div class="payment-submit">
+              <label class="terms-checkbox">
+                <input type="checkbox" id="terms_accepted" name="terms_accepted" required>
+                <span class="checkbox-custom"></span>
+                <span class="terms-text">
+                  I agree to the <a href="#" target="_blank">terms and conditions</a> and understand that all sales are final. Proceeds benefit the Sarah L. Rector Memorial Scholarship Fund.
+                </span>
+              </label>
+
+              <button type="submit" class="btn-submit" id="submit-btn" disabled>
+                <span class="btn-text">Complete Registration</span>
+                <span class="btn-loading" style="display: none;">
+                  <svg class="spinner" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="60" stroke-dashoffset="20"></circle>
+                  </svg>
+                  Processing...
+                </span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </button>
+
+              <p class="payment-disclaimer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                100% of proceeds benefit the Sarah L. Rector Memorial Scholarship Fund
+              </p>
+            </div>
+          </div>
+
+          <!-- Back button -->
+          <div class="form-actions step-4-back">
+            <button type="button" class="btn-back" data-back="3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Back to Review
+            </button>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- Contact for Help -->
+      <div class="register-help">
+        <p>
+          <strong>Questions?</strong> Contact us at
+          <a href="mailto:coloradolawgolf@gmail.com">coloradolawgolf@gmail.com</a>
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bento-footer">
+    <div class="bento-footer-inner">
+      <div class="bento-footer-brand">
+        <h4 class="bento-footer-title">Colorado Law Classic</h4>
+        <p class="bento-footer-desc">
+          Benefiting the Sarah L. Rector Memorial Scholarship Fund.<br>
+          University of Colorado Law School.
+        </p>
+      </div>
+
+      <div class="bento-footer-links">
+        <a href="contact.html" class="bento-footer-link">Contact</a>
+        <a href="sponsors.html" class="bento-footer-link">Sponsors</a>
+        <a href="faq.html" class="bento-footer-link">FAQ</a>
+      </div>
+
+      <div class="bento-footer-badge">
+        <span>Est. 2012</span>
+        <div class="bento-footer-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/mockup.js"></script>
+  <script src="assets/js/registration-mockup.js"></script>
+</body>
+</html>
