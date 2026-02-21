@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
-export default function Navigation() {
+export default function Navigation({ registrationUrl }: { registrationUrl: string }) {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -137,7 +137,7 @@ export default function Navigation() {
             </Link>
           ))}
           <a
-            href="https://coloradolawclassic.org/home/register-here/"
+            href={registrationUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-small"

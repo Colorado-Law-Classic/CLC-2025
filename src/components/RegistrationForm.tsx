@@ -17,7 +17,7 @@ const PACKAGES = {
   foursome: { price: 600, players: 4, name: 'Foursome' },
 };
 
-export default function RegistrationForm() {
+export default function RegistrationForm({ contactEmail = 'coloradolawgolf@gmail.com' }: { contactEmail?: string }) {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedPackage, setSelectedPackage] = useState<'individual' | 'foursome' | null>(null);
   const [players, setPlayers] = useState<PlayerInfo[]>([
@@ -87,7 +87,7 @@ export default function RegistrationForm() {
     alert(
       'Payment integration coming soon!\n\n' +
       'Your registration details have been collected. ' +
-      'Please email coloradolawgolf@gmail.com to complete your registration.\n\n' +
+      `Please email ${contactEmail} to complete your registration.\n\n` +
       'Total: $' + total
     );
   };
@@ -306,7 +306,7 @@ export default function RegistrationForm() {
               <div className="payment-integration-placeholder">
                 <p><strong>Payment Integration Pending</strong></p>
                 <p>This form will connect to your chosen payment processor.</p>
-                <p>For now, please contact <a href="mailto:coloradolawgolf@gmail.com">coloradolawgolf@gmail.com</a> to complete your registration.</p>
+                <p>For now, please contact <a href={`mailto:${contactEmail}`}>{contactEmail}</a> to complete your registration.</p>
               </div>
             </div>
           </div>

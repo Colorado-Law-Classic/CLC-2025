@@ -1,7 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function Footer() {
+interface FooterProps {
+  description: string;
+  email: string;
+  location: string;
+  city: string;
+  state: string;
+  registrationUrl: string;
+}
+
+export default function Footer({ description, email, location, city, state, registrationUrl }: FooterProps) {
   return (
     <footer className="site-footer">
       <div className="footer-main">
@@ -16,8 +25,8 @@ export default function Footer() {
               />
               <span>Colorado Law Classic</span>
             </Link>
-            <p>A charity golf tournament benefiting scholarship funds at CU Law School. Fifteen years of tradition, camaraderie, and purpose.</p>
-            <p className="mt-sm">City Park Golf Course &bull; Denver, Colorado</p>
+            <p>{description}</p>
+            <p className="mt-sm">{location} &bull; {city}, {state}</p>
           </div>
           <div className="footer-nav">
             <h4 className="footer-heading">Nav</h4>
@@ -28,7 +37,7 @@ export default function Footer() {
               <li><Link href="/anniversary">15 Years</Link></li>
               <li><Link href="/course-map">Course Map</Link></li>
               <li>
-                <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener noreferrer">
+                <a href={registrationUrl} target="_blank" rel="noopener noreferrer">
                   Register
                 </a>
               </li>
@@ -39,7 +48,7 @@ export default function Footer() {
             <ul className="footer-links">
               <li><Link href="/contact">Contact</Link></li>
               <li><Link href="/faq">FAQ</Link></li>
-              <li><a href="mailto:coloradolawgolf@gmail.com">coloradolawgolf@gmail.com</a></li>
+              <li><a href={`mailto:${email}`}>{email}</a></li>
             </ul>
           </div>
         </div>

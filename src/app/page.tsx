@@ -14,7 +14,7 @@ export default function HomePage() {
     description:
       'Charity golf tournament benefiting scholarship funds at CU Law School',
     startDate: content.event.dateISO,
-    endDate: '2026-08-16T15:00:00-06:00',
+    endDate: content.event.dateISO.replace(/T\d{2}:\d{2}/, 'T15:00'),
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     location: {

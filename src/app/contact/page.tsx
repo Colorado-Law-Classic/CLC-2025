@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { getContent } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -6,17 +7,19 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const content = getContent();
+
   return (
     <>
       <header className="page-header" id="main-content">
         <div className="container">
           <h1>Contact Us</h1>
-          <p className="page-subtitle">Have questions about the Colorado Law Classic? We&apos;d love to hear from you.</p>
+          <p className="page-subtitle">Have questions about the {content.event.name}? We&apos;d love to hear from you.</p>
         </div>
       </header>
 
       <section className="container">
-        <form className="contact-form" action="https://formspree.io/f/coloradolawgolf@gmail.com" method="POST">
+        <form className="contact-form" action={`https://formspree.io/f/${content.footer.email}`} method="POST">
           <div className="honeypot" style={{ display: 'none' }}>
             <label>Don&apos;t fill this out if you&apos;re human: <input type="text" name="_gotcha" /></label>
           </div>
@@ -53,7 +56,7 @@ export default function ContactPage() {
 
         <div className="mt-lg text-center">
           <h2>Other Ways to Reach Us</h2>
-          <p>Prefer email? Contact us directly at <a href="mailto:coloradolawgolf@gmail.com">coloradolawgolf@gmail.com</a></p>
+          <p>Prefer email? Contact us directly at <a href={`mailto:${content.footer.email}`}>{content.footer.email}</a></p>
         </div>
       </section>
     </>

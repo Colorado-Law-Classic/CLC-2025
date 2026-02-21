@@ -1906,30 +1906,91 @@ html.dark-mode .news-card {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.gallery-grid a {
+.gallery-item {
   display: block;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  border: none;
+  padding: 0;
+  background: none;
   border-radius: var(--radius-md);
   overflow: hidden;
-}
-
-.gallery-grid a.visible {
-  opacity: 1;
-  transform: translateY(0);
+  cursor: zoom-in;
 }
 
 .gallery-grid img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  cursor: zoom-in;
   transition: transform var(--transition-base);
 }
 
-.gallery-grid a:hover img {
+.gallery-item:hover img {
   transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -2.5rem;
+  right: -0.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  z-index: 1;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  line-height: 1;
+  transition: background 0.2s;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-prev { left: -3.5rem; }
+.lightbox-next { right: -3.5rem; }
+
+.lightbox-caption {
+  color: #ccc;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .hidden {

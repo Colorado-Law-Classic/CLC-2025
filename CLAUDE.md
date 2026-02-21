@@ -73,17 +73,18 @@ src/
 
 **Content Management:**
 - Default content defined in `src/data/content.ts`
-- Admin panel at `/admin` for browser-based editing
-- Overrides stored in `content.json` at project root
+- Admin panel at `/admin` for browser-based editing (development/self-hosted only)
+- On Vercel, the filesystem is ephemeral — edit `src/data/content.ts` directly and redeploy
 - API routes handle auth and content CRUD
 
 ## Browser-Based Content Editing
 
-1. Navigate to `/admin`
-2. Enter the admin password (default dev: `clc-admin-2026`, set `ADMIN_PASSWORD` env var in production)
-3. Edit event details, hero text, FAQ, stats, footer content
-4. Click "Save All Changes"
-5. Changes are saved to `content.json` and reflected on the site
+1. Set `ADMIN_PASSWORD` in `.env.local` (development) or Vercel dashboard (production)
+2. Navigate to `/admin`
+3. Enter the admin password
+4. Edit event details, hero text, FAQ, stats, footer content
+5. Click "Save All Changes"
+6. **Note:** Content saving only works in development or self-hosted environments. On Vercel, edit `src/data/content.ts` and redeploy.
 
 ## Commonly Updated
 

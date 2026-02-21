@@ -24,6 +24,7 @@ export async function GET(request: NextRequest) {
 /**
  * PUT /api/content - Update site content
  * Accepts a partial content object and merges with defaults.
+ * Note: On Vercel, saving is not supported due to the ephemeral filesystem.
  */
 export async function PUT(request: NextRequest) {
   if (!isAuthenticated(request)) {
@@ -35,7 +36,9 @@ export async function PUT(request: NextRequest) {
     saveContent(updates);
     const content = getContent();
     return NextResponse.json({ success: true, content });
-  } catch {
-    return NextResponse.json({ error: 'Invalid content data' }, { status: 400 });
+  } catch (e) {
+    const message = e instanceof Error ? e.message : 'Invalid content data';
+    const status = message.includes('not available') ? 501 : 400;
+    return NextResponse.json({ error: message }, { status });
   }
 }

@@ -25,7 +25,7 @@ export default function FAQPage() {
         {content.faq.map((item, i) => (
           <details key={i}>
             <summary>{item.question}</summary>
-            <p dangerouslySetInnerHTML={{ __html: item.answer }} />
+            <p>{item.answer}</p>
           </details>
         ))}
       </section>

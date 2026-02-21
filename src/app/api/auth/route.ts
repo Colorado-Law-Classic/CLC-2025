@@ -2,13 +2,21 @@ import { NextRequest, NextResponse } from 'next/server';
 
 /**
  * Simple password-based authentication for the admin panel.
- * Set ADMIN_PASSWORD environment variable in Vercel dashboard.
- * Falls back to 'clc-admin-2026' for development.
+ * Requires ADMIN_PASSWORD environment variable to be set.
+ * In development, set it in .env.local. In production, set it in Vercel dashboard.
  */
 export async function POST(request: NextRequest) {
   try {
+    const adminPassword = process.env.ADMIN_PASSWORD;
+    if (!adminPassword) {
+      console.error('ADMIN_PASSWORD environment variable is not set');
+      return NextResponse.json(
+        { success: false, error: 'Admin authentication is not configured' },
+        { status: 503 }
+      );
+    }
+
     const { password } = await request.json();
-    const adminPassword = process.env.ADMIN_PASSWORD || 'clc-admin-2026';
 
     if (password === adminPassword) {
       const response = NextResponse.json({ success: true });

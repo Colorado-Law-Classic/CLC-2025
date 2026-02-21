@@ -3,6 +3,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import ReadingProgress from '@/components/ReadingProgress';
+import { getContent } from '@/lib/content';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -33,6 +34,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const content = getContent();
+
   return (
     <html lang="en">
       <body>
@@ -40,9 +43,16 @@ export default function RootLayout({
           Skip to main content
         </a>
         <ReadingProgress />
-        <Navigation />
+        <Navigation registrationUrl={content.event.registrationUrl} />
         {children}
-        <Footer />
+        <Footer
+          description={content.footer.description}
+          email={content.footer.email}
+          location={content.event.location}
+          city={content.event.city}
+          state={content.event.state}
+          registrationUrl={content.event.registrationUrl}
+        />
         <ScrollToTop />
       </body>
     </html>
