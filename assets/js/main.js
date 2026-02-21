@@ -446,9 +446,10 @@
           const el = entry.target;
           const target = parseInt(el.dataset.count, 10);
           const duration = parseInt(el.dataset.duration, 10) || 2000;
+          const prefix = el.dataset.prefix || '';
           const suffix = el.dataset.suffix || '';
 
-          animateCounter(el, target, duration, suffix);
+          animateCounter(el, target, duration, prefix, suffix);
           observer.unobserve(el);
         }
       });
@@ -456,7 +457,7 @@
     { threshold: 0.5 }
   );
 
-  function animateCounter(el, target, duration, suffix) {
+  function animateCounter(el, target, duration, prefix, suffix) {
     const startTime = performance.now();
     const startValue = 0;
 
@@ -468,12 +469,12 @@
       const easeOut = 1 - Math.pow(1 - progress, 3);
       const currentValue = Math.floor(startValue + (target - startValue) * easeOut);
 
-      el.textContent = currentValue + suffix;
+      el.textContent = prefix + currentValue + suffix;
 
       if (progress < 1) {
         requestAnimationFrame(update);
       } else {
-        el.textContent = target + suffix;
+        el.textContent = prefix + target + suffix;
       }
     }
 
