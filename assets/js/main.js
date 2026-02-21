@@ -550,3 +550,36 @@
     });
   });
 })();
+
+// Scroll-to-top button.
+// Shows a button when user scrolls past 400px, scrolls smoothly to top on click.
+(function () {
+  const scrollBtn = document.querySelector('.scroll-to-top');
+  if (!scrollBtn) return;
+
+  const SHOW_THRESHOLD = 400;
+  let ticking = false;
+
+  function updateVisibility() {
+    if (window.scrollY > SHOW_THRESHOLD) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateVisibility);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Check initial position
+  updateVisibility();
+})();
