@@ -459,6 +459,8 @@
   function animateCounter(el, target, duration, suffix) {
     const startTime = performance.now();
     const startValue = 0;
+    // Check for prefix in the element's initial text (e.g. "$" in "$0")
+    const prefix = el.dataset.prefix || (el.textContent.startsWith('$') ? '$' : '');
 
     function update(currentTime) {
       const elapsed = currentTime - startTime;
@@ -468,12 +470,12 @@
       const easeOut = 1 - Math.pow(1 - progress, 3);
       const currentValue = Math.floor(startValue + (target - startValue) * easeOut);
 
-      el.textContent = currentValue + suffix;
+      el.textContent = prefix + currentValue + suffix;
 
       if (progress < 1) {
         requestAnimationFrame(update);
       } else {
-        el.textContent = target + suffix;
+        el.textContent = prefix + target + suffix;
       }
     }
 

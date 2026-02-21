@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <!-- JSON-LD structured data for Event (helps Google display rich results) -->
   <script type="application/ld+json">
   {
@@ -59,14 +59,15 @@
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <!-- Navigation - Mobile hamburger menu enabled at 768px breakpoint -->
+
+  <!-- Navigation: transparent at top, frosted glass on scroll -->
   <nav class="nav">
     <div class="container">
       <a href="index.html" class="brand" data-nav>
         <img src="assets/img/clc-logo.jpg" alt="Colorado Law Classic logo" class="logo-image">
         <span>Colorado Law Classic</span>
       </a>
-      <!-- Hamburger button for mobile - hidden on desktop via CSS -->
+      <!-- Hamburger button for mobile -->
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
         <span></span>
         <span></span>
@@ -74,61 +75,88 @@
       </button>
       <div class="nav-links" id="nav-links">
         <a href="index.html" data-nav>Home</a>
-        <a href="sponsors.html" data-nav>Sponsors</a>
-        <!-- Register link opens external registration in a new tab -->
-        <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn btn-small" data-nav>Register</a>
+        <a href="anniversary.html" data-nav>Impact</a>
+        <a href="sponsors.html" data-nav>Sponsorship</a>
         <a href="gallery.html" data-nav>Gallery</a>
-        <a href="anniversary.html" data-nav>15 Years</a>
         <a href="course-map.html" data-nav>Course</a>
-        <a href="contact.html" data-nav>Contact</a>
         <a href="faq.html" data-nav>FAQ</a>
+        <a href="contact.html" data-nav>Contact</a>
+        <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn btn-small" data-nav>Register</a>
       </div>
     </div>
     <!-- Overlay for closing mobile menu when clicking outside -->
     <div class="nav-overlay"></div>
   </nav>
 
-  <!-- Hero Section with Video Background -->
-  <header class="hero hero-video-enabled" id="main-content">
+  <!-- Hero Section: full viewport, obsidian background, Quiet Luxury aesthetic -->
+  <header class="hero" id="main-content">
     <!-- Video Background (add hero-bg.mp4 to assets/video/ to enable)
          See docs/GEMINI-VEO-SCRIPT.md for video generation instructions -->
     <video class="hero-video" autoplay muted loop playsinline poster="assets/img/hero-fallback.jpg">
       <source src="assets/video/hero-bg.mp4" type="video/mp4">
-      <!-- Video not supported or file missing - falls back to poster image and CSS gradient -->
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-card">
-      <h1>15th Annual Colorado Law Classic</h1>
-      <p>Benefiting Scholarship Funds at CU Law School</p>
+      <span class="hero-badge">2026 Tournament Edition</span>
+      <h1>A Legacy of <span class="text-gold-gradient">Excellence</span></h1>
+      <p>Join the University of Colorado Law School community for a premier charity classic supporting the future of legal leadership.</p>
       <div id="countdown" class="countdown" aria-live="polite" aria-atomic="true">Loading…</div>
       <div class="hero-buttons">
-        <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn">Register Now</a>
-        <a href="sponsors.html" class="btn btn-outline-light">Become a Sponsor</a>
+        <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn">Register to Play</a>
+        <a href="sponsors.html" class="btn btn-outline-light">View Sponsorships</a>
       </div>
+    </div>
+    <!-- Animated scroll-down indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-indicator-line"></div>
     </div>
   </header>
 
-  <!-- 15 Years Anniversary Banner -->
-  <section class="anniversary-banner">
-    <div class="container anniversary-content" data-animate="fade-in">
-      <div class="stat-block">
-        <div class="stat-number" data-count="15" data-duration="2000">0</div>
-        <div class="stat-label">Years of Tradition</div>
+  <!-- Stats Row: three stat cards on parchment background -->
+  <section class="stats-row" data-animate="fade-up">
+    <div class="stats-row-grid">
+      <div class="stats-row-item">
+        <div class="stats-row-number" data-count="45" data-suffix="+" data-duration="2000">0</div>
+        <div class="stats-row-label">Scholarships</div>
+      </div>
+      <div class="stats-row-item">
+        <div class="stats-row-number" data-count="15" data-duration="2000">0</div>
+        <div class="stats-row-label">Years of Tradition</div>
+      </div>
+      <div class="stats-row-item">
+        <div class="stats-row-number" data-count="100" data-suffix="%" data-duration="2000">0</div>
+        <div class="stats-row-label">Community</div>
       </div>
     </div>
   </section>
 
-  <!-- Divider -->
-  <div class="section-divider-gold" aria-hidden="true">
-    <svg class="divider-icon" viewBox="0 0 24 24" fill="currentColor">
-      <circle cx="12" cy="12" r="3"/>
-    </svg>
-  </div>
+  <!-- Impact Section: dark obsidian, mission statement, feature list -->
+  <section class="impact-section" data-animate="fade-up">
+    <div class="impact-content">
+      <div class="impact-text">
+        <span class="section-label">The Mission</span>
+        <h2>Empowering Future Legal Minds</h2>
+        <p>The Colorado Law Classic is more than a day on the links. For fifteen years, our tournament has directly funded scholarships that open doors for the next generation of legal professionals at CU Law School.</p>
+        <p>Every registration, sponsorship, and donation helps students pursue their passion for justice and build the foundation for distinguished legal careers.</p>
+        <ul class="impact-features">
+          <li>Diversity in Law</li>
+          <li>Academic Merit</li>
+          <li>Community Leadership</li>
+          <li>Public Interest Service</li>
+        </ul>
+      </div>
+      <div class="impact-stats-card" data-animate="fade-up" data-delay="200">
+        <div class="impact-stat-number" data-count="500" data-suffix="k+" data-duration="2500">$0</div>
+        <div class="impact-stat-label">Raised to Date</div>
+      </div>
+    </div>
+  </section>
 
   <!-- Event Summary -->
   <section class="container">
     <div class="grid grid-3">
-      <div class="card card-icon" data-animate="fade-up" data-delay="0" data-tilt data-shimmer>
+      <div class="card card-icon" data-animate="fade-up" data-delay="0">
         <div class="card-icon-wrapper">
           <svg class="card-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -140,9 +168,9 @@
         </div>
         <h2>Date & Time</h2>
         <p>August 16, 2026</p>
-        <p>Check‑in at 6:30&nbsp;AM • Shotgun start at 7:30&nbsp;AM</p>
+        <p>Check&#8209;in at 6:30&nbsp;AM &bull; Shotgun start at 7:30&nbsp;AM</p>
       </div>
-      <div class="card card-icon" data-animate="fade-up" data-delay="100" data-tilt data-shimmer>
+      <div class="card card-icon" data-animate="fade-up" data-delay="100">
         <div class="card-icon-wrapper">
           <svg class="card-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -153,7 +181,7 @@
         <p>City Park Golf Course</p>
         <p>Denver, Colorado</p>
       </div>
-      <div class="card card-icon" data-animate="fade-up" data-delay="200" data-tilt data-shimmer>
+      <div class="card card-icon" data-animate="fade-up" data-delay="200">
         <div class="card-icon-wrapper">
           <svg class="card-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
             <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
@@ -162,14 +190,11 @@
           </svg>
         </div>
         <h2>Format & Cost</h2>
-        <p>4‑person scramble</p>
-        <p>$150 per player • includes 18 holes, lunch, gift, and team & individual competition</p>
+        <p>4&#8209;person scramble</p>
+        <p>$150 per player &bull; includes 18 holes, lunch, gift, and team & individual competition</p>
       </div>
     </div>
   </section>
-
-  <!-- Divider -->
-  <div class="section-divider-grass" aria-hidden="true"></div>
 
   <!-- Our Cause -->
   <section class="section-textured" data-animate="fade-up">
@@ -178,15 +203,12 @@
     <p>The Colorado Law Classic is more than a day on the links—it's an opportunity to support scholarship funds that open doors for future leaders. Your participation directly benefits students at Colorado Law, providing critical financial aid that helps them thrive.</p>
     <p>Whether you're teeing off with friends, sponsoring a hole, or making a donation, you are investing in the next generation of legal professionals. Thank you for making a difference.</p>
     <div class="btn-group mt-lg">
-      <a href="sponsors.html" class="btn btn-outline" data-shimmer>Sponsor Opportunities</a>
-      <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn btn-pulse">Register a Team</a>
+      <a href="sponsors.html" class="btn btn-outline">Sponsor Opportunities</a>
+      <a href="https://coloradolawclassic.org/home/register-here/" target="_blank" rel="noopener" class="btn">Register a Team</a>
       <a href="flyer.html" class="btn btn-outline" target="_blank">View Flyer</a>
     </div>
     </div>
   </section>
-
-  <!-- Divider -->
-  <div class="section-divider-wave" aria-hidden="true"></div>
 
   <!-- In the News -->
   <section class="news-section" data-animate="fade-up">
@@ -238,14 +260,7 @@
     </div>
   </section>
 
-  <!-- Divider -->
-  <div class="section-divider-gold" aria-hidden="true">
-    <svg class="divider-icon" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"/>
-    </svg>
-  </div>
-
-  <!-- Featured Sponsors preview (top three) -->
+  <!-- Featured Sponsors preview -->
   <section class="container" data-animate="fade-up">
     <h2>Thank You to Our Sponsors</h2>
     <div class="sponsor-grid">
@@ -262,7 +277,7 @@
     <p class="mt-md text-center">Discover all of our incredible partners on the <a href="sponsors.html" class="btn btn-outline btn-small">Sponsors</a> page.</p>
   </section>
 
-  <!-- Enhanced Footer -->
+  <!-- Footer: three-column layout with gold heading accents -->
   <footer class="site-footer">
     <div class="footer-main">
       <div class="footer-grid">
@@ -274,18 +289,18 @@
           <p>A charity golf tournament benefiting scholarship funds at CU Law School. Fifteen years of tradition, camaraderie, and giving back.</p>
         </div>
         <div class="footer-nav">
-          <h4 class="footer-heading">Quick Links</h4>
+          <h4 class="footer-heading">Navigation</h4>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="anniversary.html">Impact</a></li>
+            <li><a href="sponsors.html">Sponsorship</a></li>
             <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="anniversary.html">15 Years</a></li>
-            <li><a href="course-map.html">Course Map</a></li>
+            <li><a href="course-map.html">Course</a></li>
             <li><a href="faq.html">FAQ</a></li>
           </ul>
         </div>
         <div class="footer-contact">
-          <h4 class="footer-heading">Contact</h4>
+          <h4 class="footer-heading">Legal & Contact</h4>
           <p><a href="mailto:coloradolawgolf@gmail.com">coloradolawgolf@gmail.com</a></p>
           <p class="mt-md">City Park Golf Course<br>Denver, Colorado</p>
           <p class="mt-md"><a href="contact.html">Send us a message</a></p>

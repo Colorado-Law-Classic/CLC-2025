@@ -3,10 +3,10 @@
  * COLORADO LAW CLASSIC - Main Stylesheet
  * ==========================================================================
  *
- * DESIGN DIRECTION: "Refined Country Club Prestige"
- * A sophisticated, luxurious aesthetic befitting a charity golf tournament
- * benefiting CU Law School scholarships. Generous whitespace, elegant typography,
- * and strategic gold accents convey trust and prestige.
+ * DESIGN DIRECTION: "Quiet Luxury"
+ * An understated, prestigious aesthetic for a charity golf tournament
+ * benefiting CU Law School scholarships. Generous whitespace, refined
+ * serif typography, and restrained gold accents convey quiet confidence.
  *
  * DOCUMENTATION RULES (for all contributors):
  * 1. Documentation in code — Include comments explaining what each section does
@@ -20,8 +20,8 @@
  * - Layout Sections: Page-specific styling (hero, nav, footer)
  * - Responsive: Mobile-first breakpoints at 768px and 480px
  *
- * BRAND: Black + Gold (CU Law School colors)
- * TYPOGRAPHY: Playfair Display (headlines) + Inter (body)
+ * BRAND: Obsidian + Gold (CU Law School colors)
+ * TYPOGRAPHY: Cormorant Garamond (headlines) + Inter (body)
  */
 
 /*
@@ -29,25 +29,28 @@
  * Design tokens that control the entire site's appearance.
  */
 :root {
-  /* Brand colors - Black + Gold (CU Law School identity) */
-  --clr-black: #0a0a0a;
+  /* Brand colors - Obsidian + Gold (Quiet Luxury palette) */
+  --clr-black: #121212;
   --clr-charcoal: #1a1a1a;
   --clr-charcoal-light: #2d2d2d;
-  --clr-gold: #d4af37;
-  --clr-gold-light: #e8c860;
-  --clr-gold-dark: #b8962e;
+  --clr-gold: #C5A059;
+  --clr-gold-light: #F1D592;
+  --clr-gold-dark: #B38B47;
+  --gold-gradient: linear-gradient(135deg, #C5A059 0%, #F1D592 50%, #B38B47 100%);
 
   /* Neutral colors */
   --clr-light: #ffffff;
-  --clr-cream: #faf9f7;
+  --clr-cream: #F9F7F2;
+  --clr-parchment: #F9F7F2;
   --clr-muted: #f5f4f2;
   --clr-border: #e8e6e3;
   --clr-border-dark: #d4d2cf;
-  --clr-text: #2d2d2d;
+  --clr-text: #4A4A4A;
   --clr-text-muted: #6b6b6b;
+  --clr-text-light: #FAFAFA;
 
   /* Typography */
-  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-size-base: 16px;
   --line-height-base: 1.7;
@@ -64,17 +67,18 @@
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
-  --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.15);
+  --shadow-gold: 0 4px 20px rgba(197, 160, 89, 0.15);
 
-  /* Transitions */
-  --transition-fast: 0.15s ease;
-  --transition-base: 0.25s ease;
-  --transition-slow: 0.4s ease;
+  /* Transitions - Quiet Luxury: smooth 300-500ms ease */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
 
   /* Border radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
+  --radius-full: 9999px;
 
   /* Z-index scale */
   --z-nav: 1000;
@@ -85,12 +89,12 @@
   /* Effects */
   --blur-md: 10px;
 
-  /* Section rhythm - consistent vertical padding for page sections */
-  --section-padding: var(--space-2xl);
+  /* Section rhythm - generous padding for Quiet Luxury breathing room */
+  --section-padding: 6rem;
 
   /* Theme-aware colors (default: light mode) */
   --clr-bg: var(--clr-light);
-  --clr-bg-alt: var(--clr-cream);
+  --clr-bg-alt: var(--clr-parchment);
   --clr-surface: var(--clr-light);
   --clr-text-primary: var(--clr-text);
   --clr-text-secondary: var(--clr-text-muted);
@@ -246,13 +250,12 @@ html {
 
 body {
   font-family: var(--font-body);
+  font-weight: 300;
   line-height: var(--line-height-base);
   color: var(--clr-text-primary);
-  background-color: var(--clr-bg-alt);
+  background-color: var(--clr-parchment);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Subtle diagonal pattern for texture */
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 a {
@@ -268,32 +271,56 @@ img {
 }
 
 /* ---------- Typography ---------- */
+/* Cormorant Garamond headings with tight tracking for Quiet Luxury feel */
 h1, h2, h3, h4, h5 {
   font-family: var(--font-heading);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.15;
   color: var(--clr-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
   margin-bottom: var(--space-md);
+  font-weight: 500;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
   margin-bottom: var(--space-md);
+  font-weight: 500;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: var(--space-sm);
 }
 
 p {
   margin-bottom: var(--space-sm);
   color: var(--clr-text);
+  font-weight: 300;
+}
+
+/* Gold gradient text utility */
+.text-gold-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section label: small caps gold text above section headings */
+.section-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--clr-gold);
+  margin-bottom: var(--space-md);
 }
 
 /* Gold accent text */
@@ -306,7 +333,7 @@ p {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--section-padding) var(--space-md);
 }
 
 /* Section spacing */
@@ -320,27 +347,26 @@ section {
   align-items: center;
   justify-content: center;
   gap: 0.5em;
-  padding: 0.875em 2em;
-  border-radius: 4px;
+  padding: 0.875em 2.5em;
+  border-radius: var(--radius-full);
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  background: var(--clr-gold);
-  color: var(--clr-charcoal);
-  border: 2px solid var(--clr-gold);
+  background: var(--gold-gradient);
+  color: var(--clr-black);
+  border: 2px solid transparent;
   cursor: pointer;
-  transition: background-color var(--transition-base), border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
   text-decoration: none;
 }
 
 .btn:hover,
 .btn:focus {
-  background: var(--clr-gold-dark);
-  border-color: var(--clr-gold-dark);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 8px 24px rgba(197, 160, 89, 0.25);
+  opacity: 0.92;
 }
 
 .btn-outline {
@@ -357,18 +383,18 @@ section {
   box-shadow: var(--shadow-md);
 }
 
-/* Light outline for dark backgrounds - CRITICAL for visibility */
+/* Light outline for dark backgrounds */
 .btn-outline-light {
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.9);
-  color: var(--clr-light);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--clr-text-light);
 }
 
 .btn-outline-light:hover,
 .btn-outline-light:focus {
-  background: var(--clr-light);
-  border-color: var(--clr-light);
-  color: var(--clr-charcoal);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--clr-text-light);
+  color: var(--clr-text-light);
   transform: translateY(-2px);
 }
 
@@ -395,22 +421,24 @@ section {
 }
 
 /* ---------- Navigation ---------- */
+/* Transparent at top, frosted glass on scroll */
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: var(--z-nav);
-  background: var(--clr-charcoal);
-  color: var(--clr-light);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  color: var(--clr-text-light);
   transition: background var(--transition-base), box-shadow var(--transition-base), padding var(--transition-base);
 }
 
-/* Scroll-aware nav: smaller, more prominent when scrolled */
+/* Frosted glass effect when scrolled */
 .nav.scrolled {
-  background: rgba(26, 26, 26, 0.98);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), 0 0 1px rgba(212, 175, 55, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(18, 18, 18, 0.85);
+  box-shadow: 0 1px 0 rgba(197, 160, 89, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .nav.scrolled .container {
@@ -422,14 +450,23 @@ section {
   height: 28px;
 }
 
+/* On inner pages (non-home), nav starts with dark background */
+.nav--solid {
+  background: var(--clr-black);
+}
+
+.nav--solid.scrolled {
+  background: rgba(18, 18, 18, 0.95);
+}
+
 /* Reading progress bar - shows scroll position */
 .reading-progress {
   position: fixed;
   top: 0;
   left: 0;
   width: 0%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--clr-gold) 0%, var(--clr-gold-light) 100%);
+  height: 2px;
+  background: var(--gold-gradient);
   z-index: calc(var(--z-nav) + 1);
   transition: width 0.1s linear;
   pointer-events: none;
@@ -446,10 +483,10 @@ section {
 .nav .brand {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
-  color: var(--clr-light);
+  color: var(--clr-text-light);
   letter-spacing: 0.02em;
 }
 
@@ -467,13 +504,13 @@ section {
 }
 
 .nav a {
-  color: var(--clr-light);
-  opacity: 0.8;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
+  color: var(--clr-text-light);
+  opacity: 0.85;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  transition: opacity var(--transition-fast), color var(--transition-fast);
+  transition: opacity var(--transition-base), color var(--transition-base);
   margin-left: 0;
 }
 
@@ -520,19 +557,32 @@ section {
 }
 
 /* ---------- Hero Section ---------- */
+/* Quiet Luxury hero: full viewport, obsidian bg, desaturated background image */
 .hero {
-  min-height: 75vh;
-  display: grid;
-  place-items: center;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-    linear-gradient(160deg, var(--clr-black) 0%, var(--clr-charcoal) 50%, var(--clr-charcoal-light) 100%);
-  color: var(--clr-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-black);
+  color: var(--clr-text-light);
   text-align: center;
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-2xl) var(--space-md);
   position: relative;
   overflow: hidden;
+}
+
+/* Background image: desaturated at 20% opacity */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../img/hero-fallback.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 /* Hero Video Background */
@@ -549,22 +599,23 @@ section {
   z-index: 0;
   opacity: 0;
   transition: opacity 1s ease;
+  filter: grayscale(100%);
 }
 
-/* Show video when loaded */
+/* Show video when loaded - 20% opacity for Quiet Luxury */
 .hero-video-enabled .hero-video {
-  opacity: 1;
+  opacity: 0.2;
 }
 
-/* Overlay for text readability over video */
+/* Overlay for text readability */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    rgba(0, 0, 0, 0.6) 100%
+    rgba(18, 18, 18, 0.3) 0%,
+    rgba(18, 18, 18, 0.1) 50%,
+    rgba(18, 18, 18, 0.5) 100%
   );
   z-index: 1;
 }
@@ -592,38 +643,94 @@ section {
   }
 }
 
-/* Subtle pattern overlay */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  pointer-events: none;
-}
-
+/* Hero content - no card/backdrop, clean centered layout */
 .hero-card {
-  background: rgba(0, 0, 0, 0.5);
+  background: none;
   padding: var(--space-xl) var(--space-lg);
-  border-radius: 8px;
-  max-width: 800px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 0;
+  max-width: 860px;
+  backdrop-filter: none;
+  border: none;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-card h1 {
-  font-size: clamp(2.25rem, 6vw, 3.25rem);
-  margin-bottom: var(--space-xs);
-  color: var(--clr-light);
-  font-weight: 700;
+  font-size: clamp(3rem, 7vw, 5rem);
+  margin-bottom: var(--space-md);
+  color: var(--clr-text-light);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
 }
 
 .hero-card p {
-  margin-bottom: var(--space-md);
-  opacity: 0.9;
+  margin-bottom: var(--space-lg);
+  opacity: 0.75;
   font-size: 1.125rem;
-  color: var(--clr-light);
+  color: var(--clr-text-light);
+  font-weight: 300;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+
+/* Hero badge: "2026 TOURNAMENT EDITION" */
+.hero-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--clr-gold);
+  color: var(--clr-gold);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+}
+
+/* Animated scroll-down indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(250, 250, 250, 0.4);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.scroll-indicator-line {
+  width: 1px;
+  height: 40px;
+  background: rgba(250, 250, 250, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-indicator-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr-gold);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0% { top: -100%; }
+  50% { top: 100%; }
+  100% { top: 100%; }
 }
 
 /* Flip-clock countdown timer */
@@ -762,35 +869,142 @@ section {
   margin-left: 0;
 }
 
+/* ---------- Stats Row ---------- */
+/* Three stat cards on parchment background */
+.stats-row {
+  background: var(--clr-parchment);
+  padding: var(--section-padding) var(--space-md);
+}
+
+.stats-row-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stats-row-item {
+  padding: var(--space-lg) var(--space-md);
+}
+
+.stats-row-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: var(--clr-gold);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.stats-row-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--clr-text);
+}
+
+/* ---------- Impact Section ---------- */
+/* Dark obsidian section with mission statement and feature list */
+.impact-section {
+  background: var(--clr-black);
+  color: var(--clr-text-light);
+  padding: var(--section-padding) var(--space-md);
+  position: relative;
+}
+
+.impact-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.impact-text h2 {
+  color: var(--clr-text-light);
+  margin-bottom: var(--space-lg);
+}
+
+.impact-text p {
+  color: rgba(250, 250, 250, 0.7);
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: var(--space-lg);
+}
+
+/* Feature list with gold left border */
+.impact-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.impact-features li {
+  padding-left: var(--space-md);
+  border-left: 2px solid var(--clr-gold);
+  color: rgba(250, 250, 250, 0.85);
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+/* Stats overlay card */
+.impact-stats-card {
+  background: rgba(197, 160, 89, 0.08);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.impact-stats-card .impact-stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.impact-stats-card .impact-stat-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(250, 250, 250, 0.6);
+}
+
 /* ---------- Page Header (Inner Pages) ---------- */
 /* Styled banner for non-home pages: sponsors, gallery, FAQ, contact, etc. */
 .page-header {
-  background: linear-gradient(160deg, var(--clr-black) 0%, var(--clr-charcoal) 60%, var(--clr-charcoal-light) 100%);
-  color: var(--clr-light);
+  background: var(--clr-black);
+  color: var(--clr-text-light);
   text-align: center;
-  padding: var(--space-2xl) var(--space-md) var(--space-xl);
+  padding: calc(var(--space-2xl) + 4rem) var(--space-md) var(--space-2xl);
   position: relative;
   overflow: hidden;
 }
 
-/* Subtle gold radial accent */
-.page-header::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-/* Gold accent line at bottom */
+/* Subtle gold accent line at bottom */
 .page-header::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.3), transparent);
 }
 
 .page-header .container {
@@ -801,21 +1015,23 @@ section {
 }
 
 .page-header h1 {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  color: var(--clr-light);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--clr-text-light);
   margin-bottom: var(--space-sm);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .page-header .page-subtitle {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  color: rgba(250, 250, 250, 0.6);
+  font-weight: 300;
   max-width: 640px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* ---------- Cards ---------- */
+/* Subtle, gentle hover for Quiet Luxury - no aggressive transforms */
 .card {
   background: var(--clr-light);
   border: 1px solid var(--clr-border);
@@ -831,8 +1047,8 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--clr-gold), var(--clr-gold-light));
+  height: 2px;
+  background: var(--gold-gradient);
   border-radius: 8px 8px 0 0;
   opacity: 0;
   transition: opacity var(--transition-base);
@@ -840,7 +1056,7 @@ section {
 
 .card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
 .card:hover::before {
@@ -1719,9 +1935,10 @@ details p {
 }
 
 /* ---------- Footer ---------- */
+/* Three-column layout: brand (left), navigation (center), legal/contact (right) */
 .site-footer {
   background: var(--clr-black);
-  color: var(--clr-light);
+  color: var(--clr-text-light);
   position: relative;
 }
 
@@ -1731,18 +1948,18 @@ details p {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.3), transparent);
 }
 
 /* Main footer content grid */
 .footer-main {
-  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  padding: var(--section-padding) var(--space-md) var(--space-lg);
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr;
   gap: var(--space-xl);
   max-width: 1200px;
   margin: 0 auto;
@@ -1755,8 +1972,8 @@ details p {
   margin-bottom: var(--space-md);
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--clr-light);
+  font-size: 1.2rem;
+  color: var(--clr-text-light);
 }
 
 .footer-about .footer-brand img {
@@ -1766,20 +1983,22 @@ details p {
 }
 
 .footer-about p {
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.9rem;
-  line-height: 1.7;
+  color: rgba(250, 250, 250, 0.5);
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.8;
   max-width: 360px;
 }
 
+/* Gold heading accents */
 .footer-heading {
   font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
   color: var(--clr-gold);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .footer-links {
@@ -1788,13 +2007,14 @@ details p {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: var(--space-sm);
 }
 
 .footer-links li a {
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.9rem;
-  transition: color var(--transition-fast);
+  color: rgba(250, 250, 250, 0.5);
+  font-size: 0.875rem;
+  font-weight: 300;
+  transition: color var(--transition-base);
 }
 
 .footer-links li a:hover {
@@ -1802,38 +2022,41 @@ details p {
 }
 
 .footer-contact p {
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.9rem;
-  margin-bottom: var(--space-xs);
+  color: rgba(250, 250, 250, 0.5);
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin-bottom: var(--space-sm);
 }
 
 .footer-contact a {
-  color: var(--clr-gold);
-  transition: color var(--transition-fast);
+  color: rgba(250, 250, 250, 0.5);
+  transition: color var(--transition-base);
 }
 
 .footer-contact a:hover {
-  color: var(--clr-gold-light);
+  color: var(--clr-gold);
 }
 
-/* Bottom bar with copyright */
+/* Copyright bar at bottom */
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(250, 250, 250, 0.06);
   padding: var(--space-md) var(--space-md);
   text-align: center;
 }
 
 .footer-bottom p {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.8rem;
+  color: rgba(250, 250, 250, 0.3);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Legacy footer support (pages not yet updated) */
+/* Legacy footer support */
 footer {
   background: var(--clr-black);
-  color: var(--clr-light);
+  color: var(--clr-text-light);
   text-align: center;
   position: relative;
 }
@@ -1844,8 +2067,8 @@ footer::before {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.3), transparent);
 }
 
 footer .container {
@@ -1853,8 +2076,9 @@ footer .container {
 }
 
 footer p {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(250, 250, 250, 0.5);
   font-size: 0.875rem;
+  font-weight: 300;
 }
 
 footer a {
@@ -2195,17 +2419,46 @@ footer a:hover {
     font-size: 0.65rem;
   }
 
+  /* Hero responsive */
+  .hero {
+    min-height: 90vh;
+  }
+
+  .hero-card h1 {
+    font-size: 2.5rem;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  /* Stats row responsive */
+  .stats-row-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .stats-row-item {
+    padding: var(--space-md);
+  }
+
+  /* Impact section responsive */
+  .impact-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
   /* Page header responsive */
   .page-header {
-    padding: var(--space-xl) var(--space-md) var(--space-lg);
+    padding: calc(var(--space-xl) + 4rem) var(--space-md) var(--space-lg);
   }
 
   .page-header h1 {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
   .page-header .page-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   /* Mobile navigation */
@@ -2221,7 +2474,7 @@ footer a:hover {
     max-width: 320px;
     height: 100vh;
     height: 100dvh;
-    background: var(--clr-charcoal);
+    background: var(--clr-black);
     flex-direction: column;
     justify-content: flex-start;
     padding: 5rem var(--space-lg) var(--space-lg);
@@ -3319,8 +3572,8 @@ footer a:hover {
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md), 0 0 20px rgba(212, 175, 55, 0.06);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(197, 160, 89, 0.06);
 }
 
 /* ---------- Anniversary Section ---------- */
