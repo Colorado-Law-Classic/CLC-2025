@@ -12,7 +12,7 @@ export default function HomePage() {
     '@type': 'SportsEvent',
     name: `${content.event.edition} ${content.event.name}`,
     description:
-      'Charity golf tournament benefiting scholarship funds at CU Law School',
+      'Charity golf tournament benefiting CU Law School',
     startDate: content.event.dateISO,
     endDate: content.event.dateISO.replace(/T\d{2}:\d{2}/, 'T15:00'),
     eventStatus: 'https://schema.org/EventScheduled',
@@ -69,8 +69,6 @@ export default function HomePage() {
           <div className="hero-buttons">
             <a
               href={content.event.registrationUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="btn btn-gold"
             >
               {content.hero.ctaPrimary}
@@ -96,29 +94,33 @@ export default function HomePage() {
                 <div className="impact-label">{content.impact.label}</div>
                 <h2 className="impact-heading">{content.impact.heading}</h2>
                 <p className="impact-text">{content.impact.description}</p>
-                <div className="impact-features">
-                  {content.impact.features.map((feature, i) => (
-                    <ScrollReveal
-                      key={i}
-                      animation="fade-up"
-                      delay={(i + 1) * 100}
-                    >
-                      <div className="impact-feature">
-                        <h3>{feature.title}</h3>
-                        <p>{feature.description}</p>
-                      </div>
-                    </ScrollReveal>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <ScrollReveal animation="fade-up" delay={150}>
-                  <div className="impact-stats-card">
-                    <div className="stat-amount">{content.impact.amountRaised}</div>
-                    <p className="stat-description">Raised to Date</p>
+                {content.impact.features.length > 0 && (
+                  <div className="impact-features">
+                    {content.impact.features.map((feature, i) => (
+                      <ScrollReveal
+                        key={i}
+                        animation="fade-up"
+                        delay={(i + 1) * 100}
+                      >
+                        <div className="impact-feature">
+                          <h3>{feature.title}</h3>
+                          <p>{feature.description}</p>
+                        </div>
+                      </ScrollReveal>
+                    ))}
                   </div>
-                </ScrollReveal>
+                )}
               </div>
+              {content.impact.amountRaised && (
+                <div>
+                  <ScrollReveal animation="fade-up" delay={150}>
+                    <div className="impact-stats-card">
+                      <div className="stat-amount">{content.impact.amountRaised}</div>
+                      <p className="stat-description">Raised to Date</p>
+                    </div>
+                  </ScrollReveal>
+                </div>
+              )}
             </div>
           </div>
         </section>

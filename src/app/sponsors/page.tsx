@@ -19,7 +19,7 @@ export default function SponsorsPage() {
       <header className="page-header" id="main-content">
         <div className="container">
           <h1>Our Valued Sponsors</h1>
-          <p className="page-subtitle">Their generosity makes the Colorado Law Classic possible and helps provide vital scholarship funds for CU Law students.</p>
+          <p className="page-subtitle">Their generosity makes the Colorado Law Classic possible and helps support CU Law School.</p>
         </div>
       </header>
 
@@ -121,7 +121,7 @@ export default function SponsorsPage() {
         {/* CTA Card */}
         <div className="cta-card">
           <h3>Become a Sponsor</h3>
-          <p>Your partnership helps fund scholarships and makes this event special. Sponsors enjoy brand visibility, complimentary player packages and unique networking opportunities.</p>
+          <p>Your partnership makes this event special. Sponsors enjoy brand visibility, complimentary player packages and unique networking opportunities.</p>
           <p><strong>Sponsorship Levels:</strong></p>
           <ul>
             {content.sponsorTiers.map((tier, i) => (
@@ -130,7 +130,7 @@ export default function SponsorsPage() {
           </ul>
           <p>Ready to support? Use the link below to register your sponsorship level or contact us for a custom package.</p>
           <div className="cta-buttons">
-            <a href={content.event.registrationUrl} target="_blank" rel="noopener noreferrer" className="btn">Sponsor Registration</a>
+            <a href={content.event.registrationUrl} className="btn">Sponsor Registration</a>
             <a href={`mailto:${content.footer.email}`} className="btn btn-outline">Contact Us</a>
           </div>
         </div>
