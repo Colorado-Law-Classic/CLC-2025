@@ -85,6 +85,9 @@
   /* Effects */
   --blur-md: 10px;
 
+  /* Section rhythm - consistent vertical padding for page sections */
+  --section-padding: var(--space-2xl);
+
   /* Theme-aware colors (default: light mode) */
   --clr-bg: var(--clr-light);
   --clr-bg-alt: var(--clr-cream);
@@ -311,10 +314,6 @@ section {
   position: relative;
 }
 
-section + section {
-  border-top: 1px solid var(--clr-border);
-}
-
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
@@ -378,7 +377,19 @@ section + section {
   font-size: 0.8rem;
 }
 
-/* Button group spacing */
+/* Button group - flexible wrapper for multiple buttons */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.btn-group .btn + .btn {
+  margin-left: 0;
+}
+
+/* Legacy inline button spacing */
 .btn + .btn {
   margin-left: var(--space-sm);
 }
@@ -751,6 +762,59 @@ section + section {
   margin-left: 0;
 }
 
+/* ---------- Page Header (Inner Pages) ---------- */
+/* Styled banner for non-home pages: sponsors, gallery, FAQ, contact, etc. */
+.page-header {
+  background: linear-gradient(160deg, var(--clr-black) 0%, var(--clr-charcoal) 60%, var(--clr-charcoal-light) 100%);
+  color: var(--clr-light);
+  text-align: center;
+  padding: var(--space-2xl) var(--space-md) var(--space-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gold radial accent */
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Gold accent line at bottom */
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 1;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.page-header h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--clr-light);
+  margin-bottom: var(--space-sm);
+  font-weight: 700;
+}
+
+.page-header .page-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
 /* ---------- Cards ---------- */
 .card {
   background: var(--clr-light);
@@ -1042,8 +1106,8 @@ section + section {
 }
 
 .sponsor-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg), 0 0 0 1px var(--clr-gold);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(212, 175, 55, 0.3);
 }
 
 .sponsor-logo {
@@ -1655,16 +1719,123 @@ details p {
 }
 
 /* ---------- Footer ---------- */
+.site-footer {
+  background: var(--clr-black);
+  color: var(--clr-light);
+  position: relative;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+}
+
+/* Main footer content grid */
+.footer-main {
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-about .footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--clr-light);
+}
+
+.footer-about .footer-brand img {
+  height: 32px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.footer-about p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  max-width: 360px;
+}
+
+.footer-heading {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-gold);
+  margin-bottom: var(--space-md);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.footer-links li a {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-links li a:hover {
+  color: var(--clr-gold);
+}
+
+.footer-contact p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-xs);
+}
+
+.footer-contact a {
+  color: var(--clr-gold);
+  transition: color var(--transition-fast);
+}
+
+.footer-contact a:hover {
+  color: var(--clr-gold-light);
+}
+
+/* Bottom bar with copyright */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: var(--space-md) var(--space-md);
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Legacy footer support (pages not yet updated) */
 footer {
   background: var(--clr-black);
   color: var(--clr-light);
   text-align: center;
   position: relative;
-  /* Denver skyline silhouette */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100' preserveAspectRatio='none'%3E%3Cpath fill='%23d4af37' fill-opacity='0.05' d='M0,100 L0,80 L50,80 L50,60 L80,60 L80,70 L100,70 L100,50 L120,50 L120,40 L140,40 L140,60 L160,60 L160,45 L180,45 L180,30 L200,30 L200,50 L230,50 L230,35 L250,35 L250,55 L280,55 L280,40 L320,40 L320,25 L340,25 L340,20 L360,20 L360,35 L400,35 L400,50 L450,50 L450,30 L480,30 L480,15 L500,15 L500,10 L520,10 L520,25 L550,25 L550,45 L600,45 L600,30 L650,30 L650,20 L680,20 L680,35 L720,35 L720,50 L800,50 L800,35 L850,35 L850,25 L880,25 L880,40 L950,40 L950,55 L1000,55 L1000,40 L1050,40 L1050,60 L1100,60 L1100,70 L1150,70 L1150,80 L1200,80 L1200,100 Z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: 100% 60px;
 }
 
 footer::before {
@@ -1978,10 +2149,24 @@ footer a:hover {
 .mb-lg { margin-bottom: var(--space-lg); }
 
 /* ---------- Responsive ---------- */
+
+/* Tablet: tighten nav spacing before hamburger kicks in */
+@media (max-width: 1100px) {
+  .nav-links {
+    gap: var(--space-sm);
+  }
+
+  .nav a {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet / Small Laptop */
 @media (max-width: 768px) {
   :root {
     --space-xl: 3rem;
     --space-2xl: 4rem;
+    --section-padding: var(--space-xl);
   }
 
   .hero {
@@ -2010,6 +2195,19 @@ footer a:hover {
     font-size: 0.65rem;
   }
 
+  /* Page header responsive */
+  .page-header {
+    padding: var(--space-xl) var(--space-md) var(--space-lg);
+  }
+
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .page-header .page-subtitle {
+    font-size: 1rem;
+  }
+
   /* Mobile navigation */
   .nav-toggle {
     display: block;
@@ -2022,13 +2220,16 @@ footer a:hover {
     width: 80%;
     max-width: 320px;
     height: 100vh;
+    height: 100dvh;
     background: var(--clr-charcoal);
     flex-direction: column;
     justify-content: flex-start;
     padding: 5rem var(--space-lg) var(--space-lg);
-    transition: right var(--transition-base);
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -4px 0 30px rgba(0, 0, 0, 0.3);
     gap: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-links.open {
@@ -2040,7 +2241,8 @@ footer a:hover {
     font-size: 1rem;
     width: 100%;
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    opacity: 1;
   }
 
   .nav-links .btn {
@@ -2058,7 +2260,8 @@ footer a:hover {
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     z-index: 999;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
   }
 
   .nav-overlay.active {
@@ -2079,7 +2282,7 @@ footer a:hover {
   .hero-buttons .btn,
   .cta-card .cta-buttons .btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
   }
 
   .btn + .btn {
@@ -2087,11 +2290,44 @@ footer a:hover {
     margin-top: var(--space-sm);
   }
 
+  /* Button groups stack on mobile */
+  .btn-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .tiers h3 {
     margin-top: var(--space-lg);
   }
+
+  /* Gallery grid: 2 columns on tablet */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Sponsor grid adjustments */
+  .sponsor-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  /* Footer grid stacks */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
 }
 
+/* Small mobile */
 @media (max-width: 480px) {
   :root {
     --space-lg: 2rem;
@@ -2100,14 +2336,19 @@ footer a:hover {
 
   .hero {
     min-height: 60vh;
+    padding: var(--space-lg) var(--space-sm);
   }
 
   .hero-card {
-    padding: var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
   }
 
   .hero-card h1 {
     font-size: 1.75rem;
+  }
+
+  .hero-card p {
+    font-size: 1rem;
   }
 
   .container {
@@ -2119,7 +2360,45 @@ footer a:hover {
   }
 
   .cta-card {
-    padding: var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
+    border-radius: var(--radius-md);
+  }
+
+  /* Gallery single column on small screens */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  /* Page header compact */
+  .page-header {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  /* News card content spacing */
+  .news-content {
+    padding: var(--space-md);
+  }
+
+  /* Contact form full width */
+  .contact-form {
+    padding: var(--space-md);
+  }
+
+  /* Countdown smaller */
+  .countdown-flip {
+    width: 44px;
+    height: 52px;
+  }
+
+  .countdown-flip-top,
+  .countdown-flip-bottom {
+    font-size: 1.5rem;
+    border-radius: 6px;
+  }
+
+  .countdown {
+    gap: var(--space-xs);
   }
 }
 
@@ -3034,13 +3313,14 @@ footer a:hover {
 }
 
 /* ---------- Enhanced Card Hover ---------- */
+/* Note: Base .card hover is at the Cards section. This adds subtle gold glow. */
 .card {
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg), 0 0 30px rgba(212, 175, 55, 0.1);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(212, 175, 55, 0.06);
 }
 
 /* ---------- Anniversary Section ---------- */
@@ -3512,18 +3792,99 @@ footer a:hover {
   gap: var(--space-md);
 }
 
+/* ---------- Scroll-to-Top Button ---------- */
+.scroll-to-top {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--clr-charcoal);
+  color: var(--clr-gold);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--transition-base), visibility var(--transition-base),
+    transform var(--transition-base), background var(--transition-fast);
+  z-index: var(--z-overlay);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background: var(--clr-gold);
+  color: var(--clr-charcoal);
+}
+
+.scroll-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    bottom: var(--space-md);
+    right: var(--space-md);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ---------- Reduced Motion ---------- */
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .countdown-flip.flip .countdown-flip-card-top,
+  .countdown-flip.flip .countdown-flip-card-bottom {
+    animation: none !important;
+  }
+
+  .btn-pulse {
+    animation: none !important;
+  }
+}
+
 /* ---------- Print Styles ---------- */
 @media print {
-  .nav, .nav-toggle, .nav-overlay {
+  .nav, .nav-toggle, .nav-overlay, .scroll-to-top, .reading-progress {
     display: none;
   }
 
-  .hero {
+  .hero, .page-header {
     min-height: auto;
     padding: var(--space-lg);
   }
 
   .btn {
     border: 1px solid currentColor;
+  }
+
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
