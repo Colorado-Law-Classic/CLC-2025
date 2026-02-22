@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getContent, saveContent } from '@/lib/content';
+import { getContent, saveContent, saveContentToGitHub } from '@/lib/content';
 
 /**
  * Check if the request has a valid admin session cookie.
@@ -23,8 +23,9 @@ export async function GET(request: NextRequest) {
 
 /**
  * PUT /api/content - Update site content
- * Accepts a partial content object and merges with defaults.
- * Note: On Vercel, saving is not supported due to the ephemeral filesystem.
+ * When GITHUB_TOKEN is set, commits the updated content.ts to the repo
+ * via the GitHub Contents API, triggering a Vercel redeployment.
+ * Otherwise falls back to local filesystem (development only).
  */
 export async function PUT(request: NextRequest) {
   if (!isAuthenticated(request)) {
@@ -33,6 +34,13 @@ export async function PUT(request: NextRequest) {
 
   try {
     const updates = await request.json();
+
+    if (process.env.GITHUB_TOKEN) {
+      await saveContentToGitHub(updates);
+      return NextResponse.json({ success: true, content: updates, deployPending: true });
+    }
+
+    // Fall back to local filesystem for development
     saveContent(updates);
     const content = getContent();
     return NextResponse.json({ success: true, content });

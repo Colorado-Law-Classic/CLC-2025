@@ -41,41 +41,15 @@ export default function CountdownTimer({ targetDate }: { targetDate: string }) {
     return () => clearInterval(interval);
   }, [calculateTimeLeft]);
 
-  if (!mounted) {
-    return (
-      <>
-        <div className="countdown" aria-live="polite" aria-atomic="true">
-          {['days', 'hours', 'minutes', 'seconds'].map((label) => (
-            <div key={label} className="countdown-unit">
-              <div className="countdown-flip" data-unit={label}>
-                <div className="countdown-flip-top">
-                  <span>--</span>
-                </div>
-                <div className="countdown-flip-bottom">
-                  <span>--</span>
-                </div>
-              </div>
-              <span className="countdown-label">{label}</span>
-            </div>
-          ))}
-        </div>
-        <div className="countdown-message">until tee-off</div>
-      </>
-    );
+  // Render nothing on the server to avoid hydration mismatch
+  if (!mounted || !timeLeft) {
+    return null;
   }
 
   if (isExpired) {
     return (
       <div className="countdown">
         <div className="countdown-message" style={{ marginTop: 0 }}>Event in progress!</div>
-      </div>
-    );
-  }
-
-  if (!timeLeft) {
-    return (
-      <div className="countdown" aria-live="polite" aria-atomic="true">
-        Loading&hellip;
       </div>
     );
   }
