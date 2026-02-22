@@ -64,10 +64,15 @@ export default function AdminPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(content),
       });
+      const data = await res.json();
       if (res.ok) {
-        setSaveStatus({ type: 'success', message: 'Content saved successfully! Changes will appear on the site.' });
+        if (data.deployPending) {
+          setSaveStatus({ type: 'success', message: 'Content saved! Site will redeploy in ~1 minute.' });
+        } else {
+          setSaveStatus({ type: 'success', message: 'Content saved successfully! Changes will appear on the site.' });
+        }
       } else {
-        setSaveStatus({ type: 'error', message: 'Failed to save content. Please try again.' });
+        setSaveStatus({ type: 'error', message: data.error || 'Failed to save content. Please try again.' });
       }
     } catch {
       setSaveStatus({ type: 'error', message: 'Network error. Please check your connection.' });
