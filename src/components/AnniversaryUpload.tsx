@@ -104,7 +104,7 @@ export default function AnniversaryUpload() {
     setIsSubmitting(true);
     await new Promise(resolve => setTimeout(resolve, 1500));
     setIsSubmitting(false);
-    setTestimonialStatus({ text: 'Thank you for sharing your story! We appreciate you being part of our 15-year journey.', type: 'success' });
+    setTestimonialStatus({ text: 'Thank you for sharing your story! We appreciate you being part of our 14-year journey.', type: 'success' });
     setTestimonialName('');
     setTestimonialYear('');
     setTestimonialRole('');
@@ -203,7 +203,7 @@ export default function AnniversaryUpload() {
               <option value="">Select one...</option>
               <option value="player">Player</option>
               <option value="sponsor">Sponsor</option>
-              <option value="recipient">Scholarship Recipient</option>
+              <option value="supporter">Supporter</option>
               <option value="volunteer">Volunteer</option>
               <option value="other">Other</option>
             </select>

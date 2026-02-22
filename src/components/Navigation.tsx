@@ -89,7 +89,7 @@ export default function Navigation({ registrationUrl }: { registrationUrl: strin
     { href: '/#impact', label: 'Impact' },
     { href: '/sponsors', label: 'Sponsorship' },
     { href: '/gallery', label: 'Gallery' },
-    { href: '/anniversary', label: '15 Years' },
+    { href: '/anniversary', label: '14 Years' },
     { href: '/course-map', label: 'Course' },
     { href: '/contact', label: 'Contact' },
     { href: '/faq', label: 'FAQ' },
@@ -138,8 +138,6 @@ export default function Navigation({ registrationUrl }: { registrationUrl: strin
           ))}
           <a
             href={registrationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="btn btn-small"
             onClick={closeMenu}
           >

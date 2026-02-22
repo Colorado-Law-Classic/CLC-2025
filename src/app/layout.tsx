@@ -8,15 +8,15 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Colorado Law Classic 2026 – Benefiting Scholarship Funds',
+    default: 'Colorado Law Classic 2025 – Benefiting CU Law School',
     template: '%s – Colorado Law Classic',
   },
   description:
-    'Join the 2026 Colorado Law Classic charity golf tournament benefiting scholarship funds at Colorado Law. Register to play, become a sponsor, or support our cause today.',
+    'Join the 2025 Colorado Law Classic charity golf tournament benefiting CU Law School. Register to play, become a sponsor, or support our cause today.',
   openGraph: {
-    title: 'Colorado Law Classic 2026 – Benefiting Scholarship Funds',
+    title: 'Colorado Law Classic 2025 – Benefiting CU Law School',
     description:
-      'Join the 2026 Colorado Law Classic charity golf tournament benefiting scholarship funds at Colorado Law.',
+      'Join the 2025 Colorado Law Classic charity golf tournament benefiting CU Law School.',
     images: ['/images/clc-logo.jpg'],
     type: 'website',
   },

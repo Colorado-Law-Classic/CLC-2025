@@ -5,8 +5,8 @@ import AnniversaryUpload from '@/components/AnniversaryUpload';
 import { getContent } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: '15 Years',
-  description: 'Celebrate 15 years of the Colorado Law Classic charity golf tournament.',
+  title: '14 Years',
+  description: 'Celebrate 14 years of the Colorado Law Classic charity golf tournament.',
 };
 
 export default function AnniversaryPage() {
@@ -74,7 +74,7 @@ export default function AnniversaryPage() {
               <h2>Join Us for Year {content.anniversary.years}</h2>
               <p>Be part of this milestone year. Register to play or become a sponsor today.</p>
               <div className="cta-buttons">
-                <a href={content.event.registrationUrl} target="_blank" rel="noopener noreferrer" className="btn btn-pulse">Register Now</a>
+                <a href={content.event.registrationUrl} className="btn btn-pulse">Register Now</a>
                 <Link href="/sponsors" className="btn btn-outline-light">Sponsor Opportunities</Link>
               </div>
             </div>

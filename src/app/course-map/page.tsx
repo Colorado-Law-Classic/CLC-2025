@@ -74,7 +74,7 @@ export default function CourseMapPage() {
               <p><strong>Shotgun Start:</strong> {content.event.teeOff}</p>
               <p><strong>Lunch &amp; Awards:</strong> Following play</p>
               <p style={{ marginTop: '0.5rem' }}>
-                <a href={content.event.registrationUrl} target="_blank" rel="noopener noreferrer" className="btn">Register Now</a>
+                <a href={content.event.registrationUrl} className="btn">Register Now</a>
               </p>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function CourseMapPage() {
             <h2>Ready to Play?</h2>
             <p>Join us for the {content.event.edition} Colorado Law Classic</p>
             <div className="cta-buttons">
-              <a href={content.event.registrationUrl} target="_blank" rel="noopener noreferrer" className="btn btn-lg">Register a Team</a>
+              <a href={content.event.registrationUrl} className="btn btn-lg">Register a Team</a>
               <Link href="/sponsors" className="btn btn-outline-light btn-lg">Sponsor a Hole</Link>
             </div>
           </div>

@@ -10,6 +10,7 @@ interface TimeLeft {
 }
 
 export default function CountdownTimer({ targetDate }: { targetDate: string }) {
+  const [mounted, setMounted] = useState(false);
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
   const [isExpired, setIsExpired] = useState(false);
 
@@ -32,12 +33,36 @@ export default function CountdownTimer({ targetDate }: { targetDate: string }) {
   }, [targetDate]);
 
   useEffect(() => {
+    setMounted(true);
     setTimeLeft(calculateTimeLeft());
     const interval = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
     return () => clearInterval(interval);
   }, [calculateTimeLeft]);
+
+  if (!mounted) {
+    return (
+      <>
+        <div className="countdown" aria-live="polite" aria-atomic="true">
+          {['days', 'hours', 'minutes', 'seconds'].map((label) => (
+            <div key={label} className="countdown-unit">
+              <div className="countdown-flip" data-unit={label}>
+                <div className="countdown-flip-top">
+                  <span>--</span>
+                </div>
+                <div className="countdown-flip-bottom">
+                  <span>--</span>
+                </div>
+              </div>
+              <span className="countdown-label">{label}</span>
+            </div>
+          ))}
+        </div>
+        <div className="countdown-message">until tee-off</div>
+      </>
+    );
+  }
 
   if (isExpired) {
     return (
@@ -50,7 +75,7 @@ export default function CountdownTimer({ targetDate }: { targetDate: string }) {
   if (!timeLeft) {
     return (
       <div className="countdown" aria-live="polite" aria-atomic="true">
-        Loading…
+        Loading&hellip;
       </div>
     );
   }

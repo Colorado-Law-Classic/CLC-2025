@@ -34,10 +34,10 @@ export default function Footer({ description, email, location, city, state, regi
               <li><Link href="/">Home</Link></li>
               <li><Link href="/sponsors">Sponsorship</Link></li>
               <li><Link href="/gallery">Gallery</Link></li>
-              <li><Link href="/anniversary">15 Years</Link></li>
+              <li><Link href="/anniversary">14 Years</Link></li>
               <li><Link href="/course-map">Course Map</Link></li>
               <li>
-                <a href={registrationUrl} target="_blank" rel="noopener noreferrer">
+                <a href={registrationUrl}>
                   Register
                 </a>
               </li>
@@ -54,7 +54,7 @@ export default function Footer({ description, email, location, city, state, regi
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Colorado Law Classic. All rights reserved.</p>
+        <p>&copy; 2025 Colorado Law Classic. All rights reserved.</p>
       </div>
     </footer>
   );
